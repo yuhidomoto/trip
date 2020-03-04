@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Admins::TripsControllerTest < ActionDispatch::IntegrationTest
+class FavoriteTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

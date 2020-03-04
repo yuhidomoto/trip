@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-11 col-xs-offset-1">
+
+
+			<h2>パスワードをお忘れですか？</h2>
+
+			<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+			  <%= render "devise/shared/error_messages", resource: resource %>
+
+			  <div class="field">
+			    <%= f.label :email, "email > >" %>
+			    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+			  </div>
+
+			  <br><div class="actions">
+			    <%= f.submit "パスワード再発行", class:"col-xs-3 btn btn-default" %>
+			  </div>
+			<% end %><br>
+
+			<%= render "devise/shared/links" %>
+        </div>
+    </div>
+</div>
