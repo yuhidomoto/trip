@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-3" style="border: 1px solid #000;">
+				<h2><i class="fas fa-plane-departure"></i>マイページ<i class="fas fa-plane-arrival"> </i></h2>
+						<table class="table table-bordered">
+									<tr class="user-tr">
+										<td>名　前</td>
+										<td><%= @user.name %></td>
+									</tr>
+
+									<tr class="user-tr">
+										<td>メールアドレス</td>
+										<td><%= @user.email %></td>
+									</tr>
+
+									<tr class="user-tr">
+										<td>性　別</td>
+										<td>
+	                    <% if @user.gender == true %>
+											 男性
+											<% else %>
+											 女性
+											<% end %>
+										</td>
+									</tr>
+
+										<tr class="user-tr">
+										<td>年　齢</td>
+										<td><%= @user.age %></td>
+										</tr>
+						</table>
+
+							<%= link_to "編集する", edit_user_path(@user.id), class:"col-xs-12 btn btn-default" %>
+							<%= link_to "投稿一覧へ", mytrips_path, class:"col-xs-12 btn btn-default" %>
+		  </div>
+		</div>
+</div>

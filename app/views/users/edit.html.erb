@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-3" style="border: 1px solid #000;">
+				<h2>マイページ編集</h2>
+					<%= form_for(@user) do |f| %>
+						<table class="table table-bordered">
+							<tr>
+								<td class="active">名　前</td>
+								<td><%= f.text_field :name, :size=>"30" %></td>
+							</tr>
+
+							<tr>
+								<td class="active">メールアドレス</td>
+								<td><%= f.text_field :email, :size=>"30" %></td>
+							</tr>
+
+							<tr>
+									<td class="active">性　別</td>
+									<td><%= f.radio_button :gender, :true, id:"gender-female" %>
+	                    <%= f.label :gender, "男性", for:"gender-female" %>
+	                    <%= f.radio_button :gender, :false, id:"gender-male" %>
+	                    <%= f.label :gender, "女性", for:"gender-male" %>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="active">年　齢</td>
+								<td><%= f.number_field :age %>歳</td>
+							</tr>
+						</table>
+
+						<%= f.submit "編集内容を保存する", class:"col-xs-12 btn btn-default" %>
+					<% end %>
+			 </div>
+		<div class="col-xs-4"></div>
+	</div>
+</div>

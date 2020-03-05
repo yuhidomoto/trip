@@ -24,24 +24,25 @@
 }
 
 header {
-	height: 160px;
-	line-height: 100px;
-	padding: 0 20px;
-	background-color: #EEEEEE;
-	font-size: 20px;
+	width:400px;
+	margin-right: auto;
+	margin-left : auto;
+	height: 50px;
+	line-height: 50px;
+	font-size: 17px;
 }
 
 footer {
-	height: 60px;
-	line-height: 60px;
+	height: 50px;
+	line-height: 50px;
 }
 
 .container {
 	margin: 0 auto;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 70px;
-	padding-bottom: 70px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 20px;
+	padding-bottom: 10px;
 }
 
 .main-visual {
@@ -62,5 +63,36 @@ footer {
   background-position: center;
 }
 
+.post {
+	background-image: url(post.jpg);
+	width: 35px;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+}
 
+.read {
+	background-image: url(read.jpg);
+	width: 35px;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+}
+
+.good {
+	background-image: url(good.jpg);
+	width: 35px;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.comment {
+	background-image: url(comment.jpg);
+	width: 45px;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+}
 

@@ -1,31 +1,51 @@
 <!DOCTYPE html>
-<html>
-  <div class="container">
-     <div class="row">
-        <div class="col-xs-10">
+ <html>
+          <head>
+            <title></title>
+            <%= csrf_meta_tags %>
+            <%= csp_meta_tag %>
 
-        <head>
-          <title>My Trip</title>
-          <%= csrf_meta_tags %>
-          <%= csp_meta_tag %>
+            <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+            <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
+          </head>
 
-          <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-          <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-          <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
-        </head>
+            <body>
+              <header>
+              <ul class="nav pull nav-pills" style="margin-top: 30px;">
+                <% if user_signed_in? %>
+                  <li class="mypage">
+                    <%= link_to 'My page', user_path(current_user.id) %></li>
+                  <li class="about">
+                    <%= link_to 'About', homes_about_path %></li>
+                  <li class="mytrip">
+                    <%= link_to 'My Trips', mytrips_path %></li>
+                  <li class="logout">
+                    <%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
 
-          <body>
-            <%= yield %>
-          </body>
-          <div class="row">
-            <div class="col-xs-3 col-xs-offset-12">
-              <footer>
-              <p>CopyRight YuhiDomoto.inc</p>
+
+                  <% else %>
+                    <li class="home">
+                      <%= link_to 'Home', root_path %></li>
+                    <li class="about">
+                      <%= link_to 'About', homes_about_path %></li>
+                    <li class="signup">
+                      <%= link_to "Sign up", new_user_registration_path %></li>
+                    <li class="login">
+                      <%= link_to "Log in", new_user_session_path %></li>
+                  <% end %>
+                 </ul>
+               </header>
+
+               <div class="container">
+                  <%= yield %>
+                </div>
+
+                <footer>
+                      <div class="pull-right" style="margin-right: 20px;">
+                      <p>CopyRight YuhiDomoto.inc</p>
+                    </div>
                 </footer>
-              </div>
-            </div>
-
-      </div>
-    </div>
-  </div>
+         </div>
+    </body>
 </html>
