@@ -1,0 +1,9 @@
+<% mytrip.comments.each do |comment| %>
+	<tr id="comment_<%= comment.id %>">
+			<%= comment.user.name %>
+		<td><%= comment.comment %></td>
+		<% if mytrip_comment.user == current_user %>
+			<td><%= link_to 'Destroy', mytrip_comments_path(mytrip_comment.id), class: 'btn-sm btn-danger', method: :delete, remote: true %></td>
+		<% end %>
+	</tr>
+<% end %>

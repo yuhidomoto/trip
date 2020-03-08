@@ -64,34 +64,33 @@ footer {
 }
 
 .post {
-	background-image: url(post.jpg);
-	width: 35px;
-  height: 120px;
-  background-size: cover;
+  background-image: url(post.jpg);
+  width: 120px;
+  height: 95px;
+
   background-position: center;
 }
 
 .read {
-	background-image: url(read.jpg);
-	width: 35px;
-  height: 120px;
+  background-image: url(read.jpg);
+  width: 120px;
+  height: 95px;
   background-size: cover;
   background-position: center;
 }
 
 .good {
-	background-image: url(good.jpg);
-	width: 35px;
-  height: 120px;
+  background-image: url(good.jpg);
+  width: 120px;
+  height: 95px;
   background-size: cover;
   background-position: center;
-
 }
 
 .comment {
-	background-image: url(comment.jpg);
-	width: 45px;
-  height: 120px;
+  background-image: url(comment.jpg);
+  width: 120px;
+  height: 95px;
   background-size: cover;
   background-position: center;
 }
