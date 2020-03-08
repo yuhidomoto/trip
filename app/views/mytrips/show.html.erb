@@ -1,0 +1,124 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11 col-xs-offset-1" >
+
+            <table class="table">
+                  <tr>
+                      <th>名　前</th>
+                      <th>年　齢</th>
+                      <th>性　別</th>
+                  </tr>
+                  <tr>
+                      <td><%= @user.name %></td>
+                      <td><%= @user.age %>歳</td>
+                      <td><% @user.gender %>
+                        <% if @user.gender == true %>
+                           男性
+                        <% else %>
+                           女性
+                        <% end %>
+                    </td>
+                  </tr>
+             </table>
+
+             <%= render 'mytrips/country', country: @country %>
+
+              <div class="row mytrip">
+                <p>国名　<%= @mytrip.country %><p>
+              </div>
+
+              <div class="row mytrip">
+                <p>地域　<%= @mytrip.area %></p>
+              </div>
+
+              <div class="row mytrip">
+                <p>時差　<%= @mytrip.time_difference %>時間</p>
+              </div>
+
+              <div class="row mytrip">
+                <p>気候  <%= @mytrip.climate %></p>
+              </div>
+
+              <div class="row mytrip">
+                <p>行った月　<%= @mytrip.month %>月<%= @mytrip.season %><p>
+              </div>
+
+              <div class="row mytrip">
+                <p>安全　<%= @mytrip.security %><p>
+              </div>
+
+              <div class="row mytrip">
+                <p>物価　<%= @mytrip.prices %><p>
+              </div>
+
+              <div class="row mytrip">
+                <p>交通　<%= @mytrip.traffic %><p>
+              </div>
+
+              <div class="row mytrip">
+                <p>飛行時間　<%= @mytrip.flight_time %><p>
+              </div>
+
+              <div class="row mytrip">
+                <p>航空会社　<%= @mytrip.airline %><p>
+              </div>
+
+              <div class="row mytrip">
+                <p>航空会社の評価　<%= @mytrip.airline_comment %><p>
+              </div>
+
+              <div class="row mytrip">
+                <p>誰と行った？　<%= @mytrip.with_whom %><p>
+              </div>
+
+              <div class="row mytrip">
+                <p>日数　<%= @mytrip.days %><p>
+              </div>
+
+              <div class="row mytrip">
+                <p>総額　<%= @mytrip.total_price %><p>
+              </div>
+
+              <div class="row mytrip">
+                 <p>クレジットカード　<%= @mytrip.card %><p>
+              </div>
+
+              <div class="row mytrip">
+                 <p>チップ　<%= @mytrip.tip %><p>
+              </div>
+
+              <div class="row mytrip">
+                <p>トイレ事情　<%= @mytrip.bathroom %><p>
+              </div>
+
+              <div class="row mytrip">
+                 <p>言語　<%= @mytrip.language %><p>
+              </div>
+
+              <div class="row mytrip">
+                  <p>行くべき場所　<%= @mytrip.must %><p>
+                  <%= attachment_image_tag @mytrip, :image, :fill, 300, 300, format: 'jpeg' %>
+              </div>
+
+              <div class="row mytrip">
+                 <p>良かった点　<%= @mytrip.good_point %><p>
+              </div>
+
+              <div class="row mytrip">
+                 <p>悪かった点　<%= @mytrip.bad_point %><p>
+              </div>
+
+              <div class="row mytrip">
+                 <p>伝えたいこと　<%= @mytrip.important %><p>
+              </div>
+
+              <% if @mytrip.user == current_user %>
+              <%= link_to "編集",edit_mytrip_path(@mytrip.id), class:"btn btn-default edit_mytrip_#{@mytrip.id}" %>
+              <%= link_to "削除",mytrip_path(@mytrip.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class:"btn btn-danger destroy_mytrip_#{@mytrip.id}" %>
+              <% end %>
+        </div>
+    </div>
+</div>
+
+

@@ -29,7 +29,7 @@
 
 												<div class="row mytrip">
 										        <%= f.label :行った国, class:"col-xs-3" %>
-														<%= f.select :country, @country_list %>
+										        <%= f.select :country, @country_list %>
 									      </div>
 
 									      <div class="row mytrip">
@@ -44,8 +44,8 @@
 
 												<div class="row mytrip">
 													 <%= f.label :行った月, class:"col-xs-3" %>
-													 <%= f.number_field :month, class:"col-xs-1" %>月
-													 <%= f.select :season,[["上旬","上旬"], ["中旬","中旬"],["下旬","下旬"]] %>
+													  <%= f.number_field :month, class:"col-xs-1" %>月
+													  <%= f.select :season,[["上旬","上旬"], ["中旬","中旬"],["下旬","下旬"]] %>
 												</div>
 
 												<div class="row mytrip">
@@ -121,6 +121,8 @@
 												<div class="row mytrip">
 													  <%= f.label :必見な場所, class:"col-xs-3" %>
 													  <%= f.text_area :must, class:"col-xs-6" %>
+													  
+													  <%= f.attachment_field :image, class:"col-xs-6" %>
 												</div>
 
 
@@ -144,7 +146,7 @@
 													  <%= f.text_area :important, class:"col-xs-6" %>
 												</div>
 
-							      		<%= f.submit "投稿",class: "btn btn-default col-xs-8 col-xs-offset-2" %>
+							      		<%= f.submit "アップロード",class: "btn btn-default col-xs-8 col-xs-offset-2" %>
 							       <% end %>
 						     </div>
 						</div>

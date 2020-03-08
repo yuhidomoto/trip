@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_061833) do
+ActiveRecord::Schema.define(version: 2020_03_07_024353) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(version: 2020_03_05_061833) do
     t.integer "user_id"
   end
 
+  create_table "countries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,12 +50,12 @@ ActiveRecord::Schema.define(version: 2020_03_05_061833) do
     t.integer "genre_id"
     t.string "image_id"
     t.string "countory"
-    t.decimal "time_difference"
+    t.integer "time_difference"
     t.string "flight_time"
     t.string "airline"
     t.text "airline_comment"
     t.string "days"
-    t.decimal "month"
+    t.integer "month"
     t.string "season"
     t.string "total_price"
     t.text "climate"
@@ -70,6 +75,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_061833) do
     t.float "latitude"
     t.float "longitude"
     t.string "area"
+    t.string "country"
   end
 
   create_table "users", force: :cascade do |t|
