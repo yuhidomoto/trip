@@ -1,18 +1,18 @@
-<div class="container">
-          <div class="main-visual2">
+<body>
+  <div class="main-visual2">
         <div class="row">
-          <div class="col-xs-8 col-xs-offset-4">
-            <h4>Welcome back to くわしめとりっぷ　!</h4>
-            <h1 class="fas fa-suitcase-rolling">ログイン</h1>
+          <div class="col-xs-8 col-xs-offset-4"><br><br><br>
+            <h3><strong>Welcome back to くわしめとりっぷ　!</strong></h3>
+            <h3 class="fas fa-suitcase-rolling"> ログイン</h3>
 
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="field">
-                <%= f.label :email, "メースアドレス" %>
+                <%= f.label :email, "メールアドレス" %>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email",:size=>"30" %>
             </div>
 
             <div class="field">
-                <%= f.label :password, "パスワード > > " %>
+                <%= f.label :password, "パスワ ー ド" %>
                 <%= f.password_field :password, autocomplete: "current-password",:size=>"30" %>
             </div>
 
@@ -29,5 +29,5 @@
             <%= render "devise/shared/links" %>
           </div>
         </div>
-    </div>
-</div>
+  </div>
+</body>

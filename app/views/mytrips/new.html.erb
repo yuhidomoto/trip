@@ -1,9 +1,12 @@
 <div class="container">
 		<div class="row">
 			<div class="col-xs-9 col-xs-offset-1">
-					<h2>Write your memory of trip.</h2>
+				<h2>Write your memory of trip.</h2>
+			</div>
+					<div class="col-xs-4 col-xs-offset-1">
+						<h4><strong>あなたの情報</strong></h4>
+							<table class="table table-bordered">
 
-						<table class="table">
 								<tr>
 										<th>名　前</th>
 										<th>年　齢</th>
@@ -24,130 +27,128 @@
 			 </div>
 		</div>
 
-						<%= form_for (@mytrip) do |f| %>
-							   <div class="col-xs-10 col-xs-offset-1">
+			<%= form_for (@mytrip) do |f| %>
+				   <br><div class="col-xs-10 col-xs-offset-1">
 
-												<div class="row mytrip">
-										        <%= f.label :行った国, class:"col-xs-3" %>
-														<%= f.select :country, @country_list %>
-									      </div>
+									<div class="row mytrip">
+							        <%= f.label :行った国, class:"col-xs-3" %>
+											<%= f.select :country, @country_list %>
+						      </div>
 
-									      <div class="row mytrip">
-										        <%= f.label :地域, class:"col-xs-3" %>
-										        <%= f.text_field :area, class:"col-xs-5" %>
-									      </div>
+						      <div class="row mytrip">
+							        <%= f.label :地域, class:"col-xs-3" %>
+							        <%= f.text_field :area, class:"col-xs-5" %>
+						      </div>
 
-									      <div class="row mytrip">
-										        <%= f.label :時差, class:"col-xs-3" %>時間
-													  <%= f.number_field :time_difference, class:"col-xs-1" %>
-												</div>
+						      <div class="row mytrip">
+							        <%= f.label :時差, class:"col-xs-3" %>時間
+										  <%= f.number_field :time_difference, class:"col-xs-1" %>
+									</div>
 
-												<div class="row mytrip">
-													 <%= f.label :行った月, class:"col-xs-3" %>
-													 <%= f.number_field :month, class:"col-xs-1" %>月
-													 <%= f.select :season,[["上旬","上旬"], ["中旬","中旬"],["下旬","下旬"]] %>
-												</div>
+									<div class="row mytrip">
+										 <%= f.label :行った月, class:"col-xs-3" %>
+										 <%= f.number_field :month, class:"col-xs-1" %>月
+										 <%= f.select :season,[["上旬","上旬"], ["中旬","中旬"],["下旬","下旬"]] %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :気候, class:"col-xs-3" %>
-													  <%= f.text_field :climate, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :気候, class:"col-xs-3" %>
+										  <%= f.text_field :climate, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :治安, class:"col-xs-3" %>
-													  <%= f.text_area :security, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :治安, class:"col-xs-3" %>
+										  <%= f.text_area :security, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :物価, class:"col-xs-3" %>
-													  <%= f.text_area :prices, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :物価, class:"col-xs-3" %>
+										  <%= f.text_area :prices, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :交通, class:"col-xs-3" %>
-													  <%= f.text_area :traffic, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :交通, class:"col-xs-3" %>
+										  <%= f.text_area :traffic, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :飛行時間, class:"col-xs-3" %>
-													  <%= f.text_field :flight_time, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :飛行時間, class:"col-xs-3" %>
+										  <%= f.text_field :flight_time, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :航空会社, class:"col-xs-3" %>
-													  <%= f.text_field :airline, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :航空会社, class:"col-xs-3" %>
+										  <%= f.text_field :airline, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :航空会社の評価, class:"col-xs-3" %>
-													  <%= f.text_area :airline_comment, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :航空会社の評価, class:"col-xs-3" %>
+										  <%= f.text_area :airline_comment, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :誰と行きましたか？, class:"col-xs-3" %>
-													  <%= f.text_field :with_whom, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :誰と行きましたか？, class:"col-xs-3" %>
+										  <%= f.text_field :with_whom, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :旅行の日数, class:"col-xs-3" %>
-													  <%= f.text_field :days, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :旅行の日数, class:"col-xs-3" %>
+										  <%= f.text_field :days, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :かかった費用（総額）, class:"col-xs-3" %>
-													  <%= f.text_field :total_price, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :かかった費用（総額）, class:"col-xs-3" %>
+										  <%= f.text_field :total_price, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :カード事情, class:"col-xs-3" %>
-													  <%= f.text_area :card, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :カード事情, class:"col-xs-3" %>
+										  <%= f.text_area :card, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :チップの文化, class:"col-xs-3" %>
-													  <%= f.text_area :tip, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :チップの文化, class:"col-xs-3" %>
+										  <%= f.text_area :tip, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :トイレ事情, class:"col-xs-3" %>
-													  <%= f.text_area :bathroom, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :トイレ事情, class:"col-xs-3" %>
+										  <%= f.text_area :bathroom, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :英語は通じましたか？, class:"col-xs-3" %>
-													  <%= f.text_area :language, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :英語は通じましたか？, class:"col-xs-3" %>
+										  <%= f.text_area :language, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :必見な場所, class:"col-xs-3" %>
-													  <%= f.text_area :must, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :必見な場所, class:"col-xs-3" %>
+										  <%= f.text_area :must, class:"col-xs-6" %>
+									</div>
 
 
-												<div class="row mytrip">
-													  <%= f.label :必見な場所の写真, class:"col-xs-3" %>
-													  <%= f.attachment_field :image, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :必見な場所の写真, class:"col-xs-3" %>
+										  <%= f.attachment_field :image, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :よかった点, class:"col-xs-3" %>
-													  <%= f.text_area :good_point, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :よかった点, class:"col-xs-3" %>
+										  <%= f.text_area :good_point, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :悪かった点, class:"col-xs-3" %>
-													  <%= f.text_area :bad_point, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :悪かった点, class:"col-xs-3" %>
+										  <%= f.text_area :bad_point, class:"col-xs-6" %>
+									</div>
 
-												<div class="row mytrip">
-													  <%= f.label :伝えたいこと, class:"col-xs-3" %>
-													  <%= f.text_area :important, class:"col-xs-6" %>
-												</div>
+									<div class="row mytrip">
+										  <%= f.label :伝えたいこと, class:"col-xs-3" %>
+										  <%= f.text_area :important, class:"col-xs-6" %>
+									</div>
 
-							      		<%= f.submit "投稿",class: "btn btn-default col-xs-8 col-xs-offset-2" %>
-							       <% end %>
-						     </div>
-						</div>
-				</div>
+				      		<%= f.submit "投稿",class: "btn btn-default col-xs-8 col-xs-offset-2" %>
+				       <% end %>
+
+					</div>
 		</div>
-</div>

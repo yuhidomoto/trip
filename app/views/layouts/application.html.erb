@@ -10,32 +10,65 @@
             <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
           </head>
 
-            <body>
+            <nav class="navbar navbar-fixed-top" role="navigation">
               <header>
-              <ul class="nav pull nav-pills" style="margin-top: 30px;">
-                <% if user_signed_in? %>
-                  <li class="mypage">
-                    <%= link_to 'My page', user_path(current_user.id) %></li>
-                  <li class="about">
-                    <%= link_to 'About', homes_about_path %></li>
-                  <li class="mytrip">
-                    <%= link_to 'My Trips', mytrips_path %></li>
-                  <li class="logout">
-                    <%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                  <ul class="nav pull nav-pills" style="margin-top: 30px;">
+                    <% if user_signed_in? %>
+                      <li class="mypage">
+                        <%= link_to user_path(current_user.id), target: "_blank" do %>
+                          <%= image_tag "mypage.jpg" %></li>
+                          <% end %>
+
+                      <li class="about">
+                        <%= link_to homes_about_path, target: "_blank" do %>
+                        <%= image_tag "about.jpg" %></li>
+                        <% end %>
+
+                      <li class="logo">
+                        <%= link_to root_path, target: "_blank" do %>
+                        <%= image_tag "logo.jpg" %></li>
+                        <% end %>
+
+                      <li class="mytrip">
+                        <%= link_to mytrips_path, target: "_blank" do %>
+                        <%= image_tag "mytrips.jpg" %></li>
+                        <% end %>
+
+                      <li class="logout">
+                        <%= link_to destroy_user_session_path, method: :delete, target: "_blank" do %>
+                        <%= image_tag "logout.jpg" %></li>
+                        <% end %>
 
 
-                  <% else %>
-                    <li class="home">
-                      <%= link_to 'Home', root_path %></li>
-                    <li class="about">
-                      <%= link_to 'About', homes_about_path %></li>
-                    <li class="signup">
-                      <%= link_to "Sign up", new_user_registration_path %></li>
-                    <li class="login">
-                      <%= link_to "Log in", new_user_session_path %></li>
-                  <% end %>
-                 </ul>
-               </header>
+                      <% else %>
+                        <li class="home">
+                          <%= link_to root_path, target: "_blank" do %>
+                        <%= image_tag "home.jpg" %></li>
+                        <% end %>
+
+                        <li class="about">
+                        <%= link_to homes_about_path, target: "_blank" do %>
+                        <%= image_tag "about.jpg" %></li>
+                        <% end %>
+
+                        <li class="logo">
+                        <%= link_to root_path, target: "_blank" do %>
+                        <%= image_tag "logo.jpg" %></li>
+                        <% end %>
+
+                        <li class="signup">
+                          <%= link_to new_user_registration_path, target: "_blank" do %>
+                        <%= image_tag "signup.jpg" %></li>
+                        <% end %>
+
+                        <li class="login">
+                          <%= link_to new_user_session_path, target: "_blank" do %>
+                        <%= image_tag "login.jpg" %></li>
+                        <% end %>
+                      <% end %>
+                     </ul>
+                   </header>
+                 </nav>
 
                <div class="container">
                   <%= yield %>
@@ -47,5 +80,4 @@
                     </div>
                 </footer>
          </div>
-    </body>
 </html>

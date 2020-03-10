@@ -17,81 +17,109 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+.container {
+  padding-top: 35px;
+  padding-bottom: 10px;
 }
 
 header {
-	width:400px;
+	width:800px;
 	margin-right: auto;
 	margin-left : auto;
-	height: 50px;
-	line-height: 50px;
+	height: 35px;
+	line-height: 35px;
 	font-size: 17px;
 }
+
+body {
+  padding-top: 60px;
+  margin: 0;
+ }
 
 footer {
 	height: 50px;
 	line-height: 50px;
 }
 
-.container {
-	margin: 0 auto;
-	padding-left: 5px;
-	padding-right: 5px;
-	padding-top: 20px;
-	padding-bottom: 10px;
-}
-
 .main-visual {
-  color: #EEEEEE;
-　padding-top: 110px;
-  width: 100%;
+  width: 104%;
   height: 600px;
-  background-image: url(5248.jpg);
+  background-image: url(b4da7755bb818655721f487749b338f1_s.jpg);
+  background-repeat:  no-repeat;
   background-size: cover;
   background-position: center;
 }
 .main-visual2 {
   padding-top: 110px;
-  width: 100%;
+  width: 104%;
   height: 600px;
-  background-image: url(5314.jpg);
+  background-image: url(a713289f97911807001343a7a5c6b24a_s.jpg);
+  background-repeat:  no-repeat;
   background-size: cover;
   background-position: center;
+}
+  .image1 {
+  background-image: url(image1.jpg);
+  }
+  .image2 {
+  background-image: url(image2.jpg);
+  }
+  .image3 {
+  background-image: url(image3.jpg);
+  }
+  .image4 {
+  background-image: url(image4.jpg);
+  }
+  .image5 {
+  background-image: url(image5.jpg);
+  }
+  #container{
+    height: 500px;
+  }
+.aboutpage {
+  width: 104%;
+  height: 1000px;
+  background-image: url(p0130_l.jpg);
+  background-repeat:  no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 .post {
   background-image: url(post.jpg);
-  width: 120px;
-  height: 95px;
-
-  background-position: center;
+  width: 160px;
+  height: 155px;
+  background-size: cover;
+  opacity:  0.5;
 }
 
 .read {
   background-image: url(read.jpg);
-  width: 120px;
-  height: 95px;
+  width: 150px;
+  height: 150px;
   background-size: cover;
-  background-position: center;
+  opacity:  0.5;
 }
 
 .good {
   background-image: url(good.jpg);
-  width: 120px;
-  height: 95px;
+  width: 155px;
+  height: 150px;
   background-size: cover;
-  background-position: center;
+  opacity:  0.5;
 }
-
 .comment {
   background-image: url(comment.jpg);
-  width: 120px;
-  height: 95px;
+  width: 155px;
+  height: 155px;
   background-size: cover;
-  background-position: center;
+  opacity:  0.5;
 }
 
+.trip {
+  background-image: url(trip.jpg);
+  width: 190px;
+  height: 190px;
+  background-size: cover;
+  opacity:  0.5;
+}
