@@ -15,54 +15,54 @@
                   <ul class="nav pull nav-pills" style="margin-top: 30px;">
                     <% if user_signed_in? %>
                       <li class="mypage">
-                        <%= link_to user_path(current_user.id), target: "_blank" do %>
+                        <%= link_to user_path(current_user.id) do %>
                           <%= image_tag "mypage.jpg" %></li>
                           <% end %>
 
                       <li class="about">
-                        <%= link_to homes_about_path, target: "_blank" do %>
+                        <%= link_to homes_about_path do %>
                         <%= image_tag "about.jpg" %></li>
                         <% end %>
 
                       <li class="logo">
-                        <%= link_to root_path, target: "_blank" do %>
+                        <%= link_to root_path do %>
                         <%= image_tag "logo.jpg" %></li>
                         <% end %>
 
                       <li class="mytrip">
-                        <%= link_to mytrips_path, target: "_blank" do %>
+                        <%= link_to mytrips_path do %>
                         <%= image_tag "mytrips.jpg" %></li>
                         <% end %>
 
                       <li class="logout">
-                        <%= link_to destroy_user_session_path, method: :delete, target: "_blank" do %>
+                        <%= link_to destroy_user_session_path, method: :delete do %>
                         <%= image_tag "logout.jpg" %></li>
                         <% end %>
 
 
                       <% else %>
                         <li class="home">
-                          <%= link_to root_path, target: "_blank" do %>
+                          <%= link_to root_path do %>
                         <%= image_tag "home.jpg" %></li>
                         <% end %>
 
                         <li class="about">
-                        <%= link_to homes_about_path, target: "_blank" do %>
+                        <%= link_to homes_about_path do %>
                         <%= image_tag "about.jpg" %></li>
                         <% end %>
 
                         <li class="logo">
-                        <%= link_to root_path, target: "_blank" do %>
+                        <%= link_to root_path do %>
                         <%= image_tag "logo.jpg" %></li>
                         <% end %>
 
                         <li class="signup">
-                          <%= link_to new_user_registration_path, target: "_blank" do %>
+                          <%= link_to new_user_registration_path do %>
                         <%= image_tag "signup.jpg" %></li>
                         <% end %>
 
                         <li class="login">
-                          <%= link_to new_user_session_path, target: "_blank" do %>
+                          <%= link_to new_user_session_path do %>
                         <%= image_tag "login.jpg" %></li>
                         <% end %>
                       <% end %>

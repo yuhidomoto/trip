@@ -59,19 +59,19 @@ footer {
   background-position: center;
 }
   .image1 {
-  background-image: url(image1.jpg);
+  background-image: url(IMG_5391.jpg);
   }
   .image2 {
-  background-image: url(image2.jpg);
+  background-image: url(IMG_5212.jpg);
   }
   .image3 {
-  background-image: url(image3.jpg);
+  background-image: url(IMG_1586.jpg);
   }
   .image4 {
   background-image: url(image4.jpg);
   }
   .image5 {
-  background-image: url(image5.jpg);
+  background-image: url(image2.jpg);
   }
   #container{
     height: 500px;
@@ -122,4 +122,8 @@ footer {
   height: 190px;
   background-size: cover;
   opacity:  0.5;
+}
+
+.underline{
+text-decoration: underline;
 }

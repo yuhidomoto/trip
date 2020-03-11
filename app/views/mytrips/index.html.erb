@@ -1,22 +1,50 @@
 <body>
 	<div class="row">
      <div class="col-xs-10 col-xs-offset-1">
-				<%= link_to "post my trip!", new_mytrip_path,class: "col-xs-5 btn btn-default" %><br><br><br>
+     	 <video src="<%= asset_path 'magic_kingdom.mp4' %>"width="100%" height="100%"autoplay muted loop playsinline></video>
 
-			  <% @mytrips.each do |mytrip| %>
-				<div class="row">
-		   			<div class="col-xs-4 col-xs-4">
-				    	  <div class="thumbnail">
-					      		<%= attachment_image_tag mytrip, :image, :fill, 300, 300, format: 'jpeg' %>
-					      		<div class="caption">
-								        <p>国名　<%= @country[mytrip.country].translation(:ja) %> (<%= mytrip.country %>)</p>
-								        <p><%= mytrip.important %></p>
-								        <%= link_to "Details",mytrip_path(mytrip.id), class: "btn btn-default" %>
-						      	</div>
-		   		 			</div>
-		  			</div>
-					 <% end %>
-				</div>
-		</div>
-	</div>
+					<%= link_to "post my trip!", new_mytrip_path,class: "col-xs-5 btn btn-default" %><br><br><br>
+
+						<div class="row">
+		   				<div class="col-xs-4 col-xs-4">
+
+	    	  				<h3>Europe</h3>
+	    	  				<div class="thumbnail">
+									  <% @region_europe.each do |europe| %>
+									  <%= render 'mytrips/trip', mytrip: europe %>
+									  <% end %>
+								  </div>
+
+								  <h3>Americas</h3>
+								  <div class="thumbnail">
+									  <% @region_americas.each do |americas| %>
+									  <%= render 'mytrips/trip', mytrip: americas %>
+									  <% end %>
+								  </div>
+
+								  <h3>Africa</h3>
+								  <div class="thumbnail">
+									  <% @region_africa.each do |africa| %>
+									  <%= render 'mytrips/trip', mytrip: africa %>
+								  	<% end %>
+								  </div>
+
+							    <h3>Asia</h3>
+							    <div class="thumbnail">
+								    <% @region_asia.each do |asia| %>
+								    <%= render 'mytrips/trip', mytrip: asia %>
+								    <% end %>
+								  </div>
+
+						     <h3>Oceania</h3>
+						     <div class="thumbnail">
+							     <% @region_oceania.each do |oceania| %>
+							     <%= render 'mytrips/trip', mytrip: oceania %>
+							     <% end %>
+							    </div>
+						   </div>
+						</div>
+			   </div>
+		  </div>
+	 </div>
 </body>

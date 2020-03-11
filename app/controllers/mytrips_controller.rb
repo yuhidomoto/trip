@@ -45,6 +45,8 @@ class MytripsController < ApplicationController
 		@mytrip = Mytrip.new(mytrip_params)
 		@user = current_user
 		@mytrip.user_id  = @user.id
+		country = ISO3166::Country.new(@mytrip.country)
+		@mytrip.region = country.region
 		if @mytrip.save
 			redirect_to mytrip_path(@mytrip.id)
 		else
@@ -54,6 +56,11 @@ class MytripsController < ApplicationController
 
 	def index
 		@mytrips = Mytrip.all
+		@region_americas = Mytrip.where(region: "Americas")
+		@region_europe = Mytrip.where(region: "Europe")
+		@region_asia = Mytrip.where(region: "Asia")
+		@region_oceania = Mytrip.where(region: "Oceania")
+		@region_africa = Mytrip.where(region: "Africa")
 		@country = {}
 		for mytrip in @mytrips do
 			country_name = mytrip.country
@@ -186,6 +193,9 @@ class MytripsController < ApplicationController
 	def update
 		 @mytrip = Mytrip.find(params[:id])
   if @mytrip.update(mytrip_params)
+  	country = ISO3166::Country.new(@mytrip.country)
+			@mytrip.region = country.region
+			@mytrip.update(mytrip_params)
   		redirect_to mytrips_path, notice: "successfully updated book!"
   	else
   		render "edit"

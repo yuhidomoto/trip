@@ -1,0 +1,7 @@
+	 	<%= attachment_image_tag mytrip, :image, :fill, 300, 300, format: 'jpeg', fallback: "no_image.jpg" %>
+
+		<div class="caption">
+      <p>国名　<%= @country[mytrip.country].translation(:ja) %> (<%= mytrip.country %>)</p>
+      <p><%= mytrip.important %></p>
+      <%= link_to "Details",mytrip_path(mytrip.id), class: "btn btn-default" %>
+		</div>
