@@ -32,7 +32,7 @@ header {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 90px;
   margin: 0;
  }
 
@@ -41,23 +41,26 @@ footer {
 	line-height: 50px;
 }
 
-.main-visual {
-  width: 104%;
+.signup-visual {
+  width: 100%;
   height: 600px;
   background-image: url(b4da7755bb818655721f487749b338f1_s.jpg);
   background-repeat:  no-repeat;
   background-size: cover;
   background-position: center;
 }
-.main-visual2 {
+.login-visual {
   padding-top: 110px;
-  width: 104%;
+  width: 100%;
   height: 600px;
   background-image: url(a713289f97911807001343a7a5c6b24a_s.jpg);
   background-repeat:  no-repeat;
   background-size: cover;
   background-position: center;
 }
+
+//top page
+
   .image1 {
   background-image: url(IMG_5391.jpg);
   }
@@ -76,6 +79,9 @@ footer {
   #container{
     height: 500px;
   }
+
+//about page
+
 .aboutpage {
   width: 104%;
   height: 1000px;
@@ -84,7 +90,6 @@ footer {
   background-size: cover;
   background-position: 50% 50%;
 }
-
 .post {
   background-image: url(post.jpg);
   width: 160px;
@@ -92,7 +97,6 @@ footer {
   background-size: cover;
   opacity:  0.5;
 }
-
 .read {
   background-image: url(read.jpg);
   width: 150px;
@@ -100,7 +104,6 @@ footer {
   background-size: cover;
   opacity:  0.5;
 }
-
 .good {
   background-image: url(good.jpg);
   width: 155px;
@@ -115,7 +118,6 @@ footer {
   background-size: cover;
   opacity:  0.5;
 }
-
 .trip {
   background-image: url(trip.jpg);
   width: 190px;
@@ -124,6 +126,17 @@ footer {
   opacity:  0.5;
 }
 
+//show page
 .underline{
 text-decoration: underline;
+}
+
+//index page
+.trip_box {
+  height: 400px;
+  margin-left: 25px;
+}
+
+.trip_box:first-child {
+  margin-left: 0;
 }
