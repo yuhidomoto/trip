@@ -62,7 +62,7 @@ class MytripsController < ApplicationController
 		@region_oceania = Mytrip.where(region: "Oceania")
 		@region_africa = Mytrip.where(region: "Africa")
 		@country = {}
-		for mytrip in @mytrips do
+		@mytrips.each do |mytrip|
 			country_name = mytrip.country
 			@country[mytrip.country] = ISO3166::Country.new(country_name)
 		end
@@ -102,6 +102,26 @@ class MytripsController < ApplicationController
 ["北マリアナ諸島","MP"],["フィリピン","PH"],["ベラルーシ","BY"],["ラトビア","LV"],["ノルウェー","NO"],["エジプト","EG"],["カンボジア","KH"],["イラク","IQ"],
 ["セントルシア","LC"],["ニュージーランド","NZ"],["サンバルテルミ","BL"],["ウズベキスタン","UZ"],["インドネシア","ID"],["エリトリア国","ER"],["ベネズエラ","VE"],
 ["ミクロネシア連邦","FM"],["ソロモン諸島","SB"],["モンテネグロ","ME"],["米領サモア","AS"],["パキスタン","PK"]]
+	end
+
+	def seemore
+		if params[:category] == "asia"
+			@mytrips = Mytrip.where(region: "Asia")
+		elsif params[:category] == "europe"
+			@mytrips = Mytrip.where(region: "Europe")
+		elsif params[:category] == "americas"
+			@mytrips = Mytrip.where(region: "Americas")
+		elsif params[:category] == "africa"
+			@mytrips = Mytrip.where(region: "Africa")
+		elsif params[:category] == "oceania"
+			@mytrips = Mytrip.where(region: "Oceania")
+		end
+
+		@country = {}
+		@mytrips.each do |mytrip|
+			country_name = mytrip.country
+			@country[mytrip.country] = ISO3166::Country.new(country_name)
+		end
 	end
 
 	def show

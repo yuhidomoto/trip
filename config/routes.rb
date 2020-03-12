@@ -6,11 +6,11 @@ Rails.application.routes.draw do
 	root 'homes#top'
 	get 'homes/about' => 'homes#about'
 	get 'admins/top' => 'admins#top'
+  get 'seemore' => 'mytrips#seemore'
 
-	resources :mytrips
 	resources :users
 
- 	resources :mytrips do
+  resources :mytrips do
   resource :favorites, only: [:create, :destroy]
   resource :comments, only: [:create, :destroy]
 

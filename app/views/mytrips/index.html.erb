@@ -1,4 +1,4 @@
-<video src="<%= asset_path 'magic_kingdom.mp4' %>"width="100%" height="100%"autoplay muted loop playsinline></video><br>
+<video src="<%= asset_path 'magic_kingdom.mp4' %>"width="100%" height="100%"autoplay muted loop playsinline></video><br><br><br>
 
 <div class="row">
    <div class="col-xs-10 col-xs-offset-2">
@@ -8,37 +8,41 @@
 			   <div class="row">
   	  				<h2>　Europe</h2>
 							  <% @region_europe.first(3).each do |europe| %>
-							  <%= render 'mytrips/trip', mytrip: europe %>
-							  <% end %>
-							  <%= link_to "もっと見る", mytrips_seedmore_path,class: "col-xs-3 btn btn-default" %>
+								  <%= render 'mytrips/trip', mytrip: europe ,country: @country %>
+								<% end %>
+								<%= link_to "もっと見る", seemore_path(category:"europe"),class: "col-xs-2 col-xs-offset-8 btn btn-default" %>
 						</div>
 
 						<div class="row">
 						  <h2>　Americas</h2>
-							  <% @region_americas.each do |americas| %>
-							  <%= render 'mytrips/trip', mytrip: americas %>
+							  <% @region_americas.first(3).each do |americas| %>
+							  	<%= render 'mytrips/trip', mytrip: americas ,country: @country %>
 							  <% end %>
+							  <%= link_to "もっと見る", seemore_path(category:"americas"),class: "col-xs-2 col-xs-offset-8 btn btn-default" %>
 						</div>
 
 						<div class="row">
 						  <h2>　Africa</h2>
-							  <% @region_africa.each do |africa| %>
-							  <%= render 'mytrips/trip', mytrip: africa %>
+							  <% @region_africa.first(3).each do |africa| %>
+							  	<%= render 'mytrips/trip', mytrip: africa ,country: @country %>
 						  	<% end %>
+								<%= link_to "もっと見る", seemore_path(category:"africa"),class: "col-xs-2 col-xs-offset-8 btn btn-default" %>
 						</div>
 
 						<div class="row">
 					    <h2>　Asia</h2>
-					    <% @region_asia.each do |asia| %>
-						    <%= render 'mytrips/trip', mytrip: asia %>
+					    	<% @region_asia.first(3).each do |asia| %>
+						    	<%= render 'mytrips/trip', mytrip: asia ,country: @country %>
 						    <% end %>
+						    <%= link_to "もっと見る", seemore_path(category:"asia"),class: "col-xs-2 col-xs-offset-8 btn btn-default" %>
 						</div>
 
 						<div class="row">
 					     <h2>　Oceania</h2>
-						     <% @region_oceania.each do |oceania| %>
-						     <%= render 'mytrips/trip', mytrip: oceania %>
+						     <% @region_oceania.first(3).each do |oceania| %>
+						     	<%= render 'mytrips/trip', mytrip: oceania ,country: @country %>
 						     <% end %>
+						     <%= link_to "もっと見る", seemore_path(category:"oceania"),class: "col-xs-2 col-xs-offset-8 btn btn-default" %>
 						 </div>
 					</div>
 			</div>
