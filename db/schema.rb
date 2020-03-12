@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_11_055634) do
+ActiveRecord::Schema.define(version: 2020_03_12_030814) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2020_03_11_055634) do
     t.float "longitude"
     t.string "area"
     t.string "country"
+    t.integer "year"
   end
 
   create_table "users", force: :cascade do |t|

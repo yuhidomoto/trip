@@ -195,7 +195,7 @@ class MytripsController < ApplicationController
   if @mytrip.update(mytrip_params)
   	country = ISO3166::Country.new(@mytrip.country)
 			@mytrip.region = country.region
-			@mytrip.update(mytrip_params)
+			@mytrip.save
   		redirect_to mytrips_path, notice: "successfully updated book!"
   	else
   		render "edit"
@@ -211,6 +211,6 @@ class MytripsController < ApplicationController
 
 	private
 	def mytrip_params
-		params.require(:mytrip).permit(:name,:genre_id,:gender,:age,:image,:country,:time_difference,:climate,:month,:season,:security,:prices,:traffic,:flight_time,:airline,:airline_comment,:with_whom,:days,:total_price,:bathroom,:card,:tip,:language,:must,:good_point,:bad_point,:important,:address,:area,:latitude,:longitude)
+		params.require(:mytrip).permit(:name,:genre_id,:gender,:age,:image,:country,:time_difference,:climate,:year,:month,:season,:security,:prices,:traffic,:flight_time,:airline,:airline_comment,:with_whom,:days,:total_price,:bathroom,:card,:tip,:language,:must,:good_point,:bad_point,:important,:address,:area,:latitude,:longitude)
 	end
 end

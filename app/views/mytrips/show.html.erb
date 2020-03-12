@@ -28,6 +28,8 @@
 
             <%= render 'mytrips/country', country: @country %>
 
+             <p>作成日時　：　<%= @mytrip.created_at.strftime('%Y/%m/%d') %></p>
+
               <div class="row">
                  <div class="col-lg-3">
                     <div class="thumbnail">
@@ -58,8 +60,8 @@
 
                  <div class="col-lg-3">
                    <div class="thumbnail">
-                    <p class="underline">　行った月　</p><br>
-                    <%= @mytrip.month %>月<%= @mytrip.season %>
+                    <p class="underline">　旅行時期　</p><br>
+                    <%= @mytrip.year %>年　<%= @mytrip.month %>月　<%= @mytrip.season %>
                   </div>
                 </div>
 

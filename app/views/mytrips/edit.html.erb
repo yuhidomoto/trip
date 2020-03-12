@@ -44,9 +44,10 @@
 												</div>
 
 												<div class="row mytrip">
-													 <%= f.label :行った月, class:"col-xs-3" %>
-													  <%= f.number_field :month, class:"col-xs-1" %>月
-													  <%= f.select :season,[["上旬","上旬"], ["中旬","中旬"],["下旬","下旬"]] %>
+													 <%= f.label :旅行時期, class:"col-xs-3" %>
+													 <%= f.number_field :year, class:"col-xs-1" %>年<br>
+													 <%= f.number_field :month, class:"col-xs-1" %>月
+													 <%= f.select :season,[["上旬","上旬"], ["中旬","中旬"],["下旬","下旬"]] %>
 												</div>
 
 												<div class="row mytrip">
