@@ -1,10 +1,8 @@
-<div class="row">
-   <div class="col-xs-10 col-xs-offset-2">
-   		<div class="row">
-				<h2>　<%= params[:category] %></h2>
-				<% @mytrips.each do |mytrip| %>
-			  	<%= render 'mytrips/trip', mytrip: mytrip ,country: @country %>
-				<% end %>
-		</div>
+<div class="container">
+	<div class="row">
+		<h2>　<%= params[:category] %></h2>
+		<% @mytrips.each do |mytrip| %>
+	  	<%= render 'mytrips/trip', mytrip: mytrip ,country: @country %>
+		<% end %>
 	</div>
 </div>

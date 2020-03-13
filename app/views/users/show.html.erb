@@ -1,37 +1,43 @@
-<div class="container">
-	<div class="row">
-		<div class="col-xs-6 col-xs-offset-3" style="border: 1px solid #000;">
-				<h2>マイページ</h2>
-						<table class="table table-bordered">
-									<tr class="user-tr">
-										<td>名　前</td>
-										<td><%= @user.name %></td>
-									</tr>
-
-									<tr class="user-tr">
-										<td>メールアドレス</td>
-										<td><%= @user.email %></td>
-									</tr>
-
-									<tr class="user-tr">
-										<td>性　別</td>
-										<td>
-	                    <% if @user.gender == true %>
-											 男性
-											<% else %>
-											 女性
-											<% end %>
-										</td>
-									</tr>
+<div class="row">
+		<div class="mypage-visual">
+			<div class="col-xs-3 col-xs-offset-1"><br>
+					<h2><strong>マイページ</strong></h2>
+							<table class="table table-bordered">
+										<tr class="user-tr">
+											<td><strong>名　前</strong></td>
+											<td><strong><%= @user.name %></strong></td>
+										</tr>
 
 										<tr class="user-tr">
-										<td>年　齢</td>
-										<td><%= @user.age %>歳</td>
+											<td><strong>メールアドレス</strong></td>
+											<td><strong><%= @user.email %></strong></td>
 										</tr>
-						</table>
 
-							<%= link_to "編集する", edit_user_path(@user.id), class:"col-xs-12 btn btn-default" %>
-							<%= link_to "投稿一覧へ", mytrips_path, class:"col-xs-12 btn btn-default" %>
-		  </div>
-		</div>
+										<tr class="user-tr">
+											<td><strong>性　別</strong></td>
+											<td>
+		                    <strong><% if @user.gender == true %>
+												 男性
+												<% else %>
+												 女性
+												</strong><% end %>
+											</td>
+										</tr>
+
+											<tr class="user-tr">
+											<td><strong>年　齢</strong></td>
+											<td><strong><%= @user.age %>歳</strong></td>
+											</tr>
+							</table>
+
+								<%= link_to "編集する", edit_user_path(@user.id), class:"col-xs-12 btn btn-default" %>
+								<%= link_to "投稿一覧へ", mytrips_path, class:"col-xs-12 btn btn-default" %>
+				 </div>
+				  </div>
+
+	
+							  <%# @mytrips.each do |mytrip| %>
+								  <%#= render 'mytrips/trip', mytrip: mytrip ,country: @country %>
+								<%# end %>
+
 </div>

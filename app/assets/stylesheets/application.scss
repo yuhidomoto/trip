@@ -16,25 +16,26 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .container {
-  padding-top: 35px;
+  margin: 0 auto;
+  padding-top: 65px;
   padding-bottom: 10px;
+  margin: 0 auto;
 }
 
 header {
 	width:800px;
 	margin-right: auto;
 	margin-left : auto;
-	height: 35px;
-	line-height: 35px;
-	font-size: 17px;
+	height: 20px;
+	line-height: 30px;
 }
-
-body {
-  padding-top: 90px;
-  margin: 0;
- }
 
 footer {
 	height: 50px;
@@ -77,18 +78,22 @@ footer {
   background-image: url(image2.jpg);
   }
   #container{
-    height: 500px;
+    height: 560px;
   }
+
+//mypage
+ .mypage-visual {
+ padding-top: 70px;
+  background-color: #FAEBD7;
+ }
 
 //about page
 
 .aboutpage {
-  width: 104%;
-  height: 1000px;
+  width: 98%;
   background-image: url(p0130_l.jpg);
   background-repeat:  no-repeat;
   background-size: cover;
-  background-position: 50% 50%;
 }
 .post {
   background-image: url(post.jpg);
@@ -133,8 +138,8 @@ text-decoration: underline;
 
 //index page,seemore page
 .trip_box {
-  height: 400px;
-  margin-left: 25px;
+  height: 450px;
+  margin-left: 0px;
 }
 .trip_box:first-child {
   margin-left: 0;
