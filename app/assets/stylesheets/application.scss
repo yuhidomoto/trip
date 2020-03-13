@@ -87,7 +87,7 @@ footer {
   background-color: #FAEBD7;
  }
 
-//about page
+//about
 
 .aboutpage {
   width: 98%;
@@ -131,16 +131,50 @@ footer {
   opacity:  0.5;
 }
 
-//show page
+//mytrip show
 .underline{
 text-decoration: underline;
 }
+.show-visual {
+ padding-top: 70px;
+  background-color: #F0F8FF;
+ }
 
-//index page,seemore page
+
+//mytrip index,seemore
 .trip_box {
-  height: 450px;
-  margin-left: 0px;
+  height: 460px;
 }
-.trip_box:first-child {
-  margin-left: 0;
+
+//mytrip index
+.new-btn {
+  display: inline-block;
+  padding: 0.9em 1.4em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #32CCFF;
+  color:  #32CCFF;
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+
+//mytrip new
+.new-visual {
+ width: 98%;
+ height: 1750px;
+ background-image: url(p0130_l.jpg);
+ background-repeat:  no-repeat;
+ background-size: cover;
+ }
+
+//mytrip edit
+.edit-visual {
+ width: 98%;
+ height: 1750px;
+ background-image: url(p0130_l.jpg);
+ background-repeat:  no-repeat;
+ background-size: cover;
+ }
+.box {
+    background: #FFFFFF;
 }

@@ -1,31 +1,37 @@
-<div class="container">
+<div class="show-visual">
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1" >
           <div class="row">
-              <div class="col-xs-5" >
-                <h4><strong>投稿者情報</strong></h4>
-                  <table class="table table-bordered">
-                        <tr>
-                            <th>名前</th>
-                            <th>年齢</th>
-                            <th>性別</th>
-                        </tr>
-                        <tr>
-                            <td><%= @mytrip.user.name %></td>
-                            <td><%= @mytrip.user.age %>歳</td>
-                            <td><% @mytrip.user.gender %>
-                              <% if @mytrip.user.gender == true %>
-                                 男性
-                              <% else %>
-                                 女性
-                              <% end %>
-                          </td>
-                        </tr>
-                  </table>
+              <div class="col-xs-3" >
+                  <h4><strong>投稿者情報</strong></h4>
+                  <div class="box">
+                    <table class="table table-bordered">
+                          <tr>
+                              <th>名前</th>
+                              <th>年齢</th>
+                              <th>性別</th>
+                          </tr>
+                          <tr>
+                              <td><%= @mytrip.user.name %></td>
+                              <td><%= @mytrip.user.age %>歳</td>
+                              <td><% @mytrip.user.gender %>
+                                <% if @mytrip.user.gender == true %>
+                                   男性
+                                <% else %>
+                                   女性
+                                <% end %>
+                            </td>
+                          </tr>
+                    </table>
+                </div>
               </div>
           </div>
 
-            <%= render 'mytrips/country', country: @country %>
+          <div class="row">
+              <div class="col-xs-9" >
+                <%= render 'mytrips/country', country: @country %>
+              </div>
+            </div>
 
              <p><strong>作成日時　：　<%= @mytrip.created_at.strftime('%Y/%m/%d') %></strong></p>
 
