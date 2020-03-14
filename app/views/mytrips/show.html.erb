@@ -198,8 +198,8 @@
                     </div>
 
                     <%= form_with model:[@mytrip, @comment], data: {remote: true} do |f| %>
-                    <%= f.text_area :body, rows:'4', class: "form-control",placeholder: "コメントを残してみましょう" %><br>
-                    <%= f.submit "送信する", class: "btn btn-warning pull-right" %><br><br>
+                      <%= f.text_area :body, rows:'4', class: "form-control",placeholder: "コメントを残してみましょう" %><br>
+                      <%= f.submit "送信する", class: "btn btn-warning pull-right" %><br><br>
                     <% end %>
                     <%= link_to "投稿一覧へ", mytrips_path, class: "col-xs-4 col-xs-offset-8 btn btn-warning" %>
                   </div>
