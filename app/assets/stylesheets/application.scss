@@ -60,7 +60,7 @@ footer {
   background-position: center;
 }
 
-//top page
+//-----------------------------top page
 
   .image1 {
   background-image: url(IMG_5391.jpg);
@@ -81,13 +81,13 @@ footer {
     height: 560px;
   }
 
-//mypage
+//-----------------------------mypage
  .mypage-visual {
  padding-top: 70px;
   background-color: #FAEBD7;
  }
 
-//about
+//------------------------------about
 
 .aboutpage {
   width: 98%;
@@ -131,17 +131,40 @@ footer {
   opacity:  0.5;
 }
 
-//mytrip show
-.underline{
-text-decoration: underline;
-}
+//----------------------------mytrip show
 .show-visual {
- padding-top: 70px;
-  background-color: #F0F8FF;
+ padding-top: 65px;
+ width: 98%;
+ height: 1910px;
+ background-image: url(p0130_l.jpg);
+ background-repeat:  no-repeat;
+ background-size: cover;
  }
+ .box1 {
+    position: relative;
+    margin: 1.5em 0;
+    padding: 1.5em 1.5em;
+    border: solid 3px #F6983B;
+    border-radius: 8px;
+}
+.box1 .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 19px;
+    background: #FFF;
+    color: #F6983B;
+    font-weight: bold;
+}
+.box1 p {
+    margin: 0;
+    padding: 0;
+}
 
-
-//mytrip index,seemore
+//---------------------mytrip index,seemore
 .trip_box {
   height: 460px;
 }
@@ -158,7 +181,7 @@ text-decoration: underline;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
 }
 
-//mytrip new
+//---------------------------------mytrip new
 .new-visual {
  width: 98%;
  height: 1750px;
@@ -167,7 +190,7 @@ text-decoration: underline;
  background-size: cover;
  }
 
-//mytrip edit
+//--------------------------------mytrip edit
 .edit-visual {
  width: 98%;
  height: 1750px;

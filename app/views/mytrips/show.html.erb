@@ -1,6 +1,6 @@
 <div class="show-visual">
     <div class="row">
-        <div class="col-xs-10 col-xs-offset-1" >
+        <div class="col-xs-9 col-xs-offset-2" >
           <div class="row">
               <div class="col-xs-3" >
                   <h4><strong>投稿者情報</strong></h4>
@@ -37,155 +37,155 @@
 
               <div class="row">
                  <div class="col-lg-3">
-                    <div class="thumbnail">
-                      <p class="underline">　国名　</p><%= @country.translation(:ja) %> (<%= @mytrip.country %>)
+                    <div class="box1">
+                       <span class="box-title">国 名</span>
+                       <p><%= @country.translation(:ja) %> (<%= @mytrip.country %>)</p>
                     </div>
                 </div>
 
                  <div class="col-lg-3">
-                    <div class="thumbnail">
-                     <p class="underline">　地域　</p><br>
-                     <%= @mytrip.area %>
+                   <div class="box1">
+                    <span class="box-title">地 域</span>
+                    <p><%= @mytrip.area %></p>
                    </div>
                 </div>
 
                  <div class="col-lg-3">
-                   <div class="thumbnail">
-                     <p class="underline">　時差　</p>
-                     <%= @mytrip.time_difference %>時間
+                   <div class="box1">
+                    <span class="box-title">時 差</span>
+                    <p><%= @mytrip.time_difference %>時間</p>
                    </div>
                 </div>
 
+                <div class="col-lg-3">
+                  <div class="box1">
+                    <span class="box-title">物 価</span>
+                    <p><%= @mytrip.prices %></p>
+                  </div>
+                </div>
+
+                <div class="col-lg-3">
+                   <div class="box1">
+                    <span class="box-title">旅行時期</span>
+                    <p><%= @mytrip.year %>年　<%= @mytrip.month %>月　<%= @mytrip.season %></p>
+                  </div>
+                </div>
+
                  <div class="col-lg-3">
-                   <div class="thumbnail">
-                    <p class="underline">　気候　</p><br>
-                    <%= @mytrip.climate %>
+                   <div class="box1">
+                    <span class="box-title">気 候</span>
+                    <p><%= @mytrip.climate %></p>
                   </div>
                 </div>
 
                  <div class="col-lg-3">
-                   <div class="thumbnail">
-                    <p class="underline">　旅行時期　</p><br>
-                    <%= @mytrip.year %>年　<%= @mytrip.month %>月　<%= @mytrip.season %>
-                  </div>
-                </div>
-
-                 <div class="col-lg-3">
-                   <div class="thumbnail">
-                    <p class="underline">　治安　</p><br>
-                    <%= @mytrip.security %>
+                    <div class="box1">
+                    <span class="box-title">治 安</span>
+                    <p><%= @mytrip.security %></p>
                   </div>
                 </div>
 
                 <div class="col-lg-3">
-                  <div class="thumbnail">
-                    <p class="underline">　物価　</p><br>
-                    <%= @mytrip.prices %>
+                  <div class="box1">
+                    <span class="box-title">交 通</span>
+                    <p><%= @mytrip.traffic %></p>
                   </div>
                 </div>
 
                 <div class="col-lg-3">
-                  <div class="thumbnail">
-                    <p class="underline">　交通　</p><br>
-                    <%= @mytrip.traffic %>
+                  <div class="box1">
+                    <span class="box-title">飛行時間</span>
+                    <p><%= @mytrip.security %></p>
                   </div>
                 </div>
 
                 <div class="col-lg-3">
-                  <div class="thumbnail">
-                    <p class="underline">　飛行時間　</p><br>
-                    <%= @mytrip.security %>
+                  <div class="box1">
+                    <span class="box-title">航空会社</span>
+                    <p><%= @mytrip.airline %></p>
                   </div>
                 </div>
 
                 <div class="col-lg-3">
-                  <div class="thumbnail">
-                    <p class="underline">　航空会社　</p><br>
-                    <%= @mytrip.airline %>
+                  <div class="box1">
+                    <span class="box-title">航空会社の評価</span>
+                    <p><%= @mytrip.airline_comment %></p>
                   </div>
                 </div>
 
                 <div class="col-lg-3">
-                  <div class="thumbnail">
-                    <p class="underline">　航空会社の評価　</p><br>
-                    <%= @mytrip.airline_comment %>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="thumbnail">
-                    <p class="underline">　誰と行った？　</p><br>
-                    <%= @mytrip.with_whom %>
+                  <div class="box1">
+                    <span class="box-title">誰と行った?</span>
+                    <p><%= @mytrip.with_whom %></p>
                   </div>
                 </div>
 
                 <div class="col-lg-4">
-                  <div class="thumbnail">
-                    <p class="underline">　日数　</p><br>
-                    <%= @mytrip.days %>
+                  <div class="box1">
+                    <span class="box-title">日 数</span>
+                    <p><%= @mytrip.days %></p>
                   </div>
                 </div>
 
                <div class="col-lg-4">
-                <div class="thumbnail">
-                    <p class="underline">　総額　</p><br>
-                    <%= @mytrip.total_price %>
+                <div class="box1">
+                    <span class="box-title">総 額</span>
+                    <p><%= @mytrip.total_price %></p>
                   </div>
                 </div>
 
                 <div class="col-lg-4">
-                  <div class="thumbnail">
-                    <p class="underline">　クレジットカード　</p><br>
-                    <%= @mytrip.card %>
+                  <div class="box1">
+                    <span class="box-title">クレジットカード</span>
+                    <p><%= @mytrip.card %></p>
                   </div>
                 </div>
 
                 <div class="col-lg-4">
-                  <div class="thumbnail">
-                    <p class="underline">　トイレ事情　</p><br>
-                    <%= @mytrip.bathroom %>
+                  <div class="box1">
+                    <span class="box-title">トイレ事情</span>
+                    <p><%= @mytrip.bathroom %></p>
                   </div>
                 </div>
 
                <div class="col-lg-4">
-                <div class="thumbnail">
-                    <p class="underline">　言語　</p><br>
-                    <%= @mytrip.language %>
+                <div class="box1">
+                    <span class="box-title">言 語</span>
+                    <p><%= @mytrip.language %></p>
                   </div>
                 </div>
 
                <div class="col-lg-4">
-                <div class="thumbnail">
-                    <p class="underline">　行くべき場所　</p><br>
-                    <%= @mytrip.must %>
+                <div class="box1">
+                    <span class="box-title">行くべき場所</span>
+                    <p><%= @mytrip.must %></p>
                   </div>
                 </div>
 
                 <div class="col-lg-4">
-                  <div class="thumbnail">
-                    <%= attachment_image_tag @mytrip, :image, :fill, 360, 260, format: 'jpeg' %>
+                  <div class="box1">
+                    <span class="box-title">良かった点</span>
+                    <p><%= @mytrip.good_point %></p>
                   </div>
                 </div>
 
                 <div class="col-lg-4">
-                  <div class="thumbnail">
-                    <p class="underline">　良かった点　</p><br>
-                    <%= @mytrip.good_point %>
+                 <div class="box1">
+                    <span class="box-title">悪かった点</span>
+                    <p><%= @mytrip.bad_point %></p>
                   </div>
                 </div>
 
                 <div class="col-lg-4">
-                  <div class="thumbnail">
-                    <p class="underline">　悪かった点　</p><br>
-                    <%= @mytrip.bad_point %>
-                  </div>
+                    <%= attachment_image_tag @mytrip, :image, :fill, 360, 260, format: 'jpeg' %><br><br>
                 </div>
             </div>
 
                   <% if @mytrip.user == current_user %>
-                    <%= link_to "編集",edit_mytrip_path(@mytrip.id), class: "btn btn-default edit_mytrip_#{@mytrip.id}" %>
-                    <%= link_to "削除",mytrip_path(@mytrip.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-danger destroy_mytrip_#{@mytrip.id}" %>
-                  <% end %>
+                    <%= link_to "編集",edit_mytrip_path(@mytrip.id), class: "col-xs-2 btn btn-default edit_mytrip_#{@mytrip.id}" %>
+
+                    <%= link_to "削除",mytrip_path(@mytrip.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "col-xs-2 btn btn-danger destroy_mytrip_#{@mytrip.id}" %>
+                  <% end %><br><br><br>
 
               <table id="comment">
                   <%= render 'mytrips/comment',mytrip: @mytrip %>
@@ -194,10 +194,11 @@
                     <%= form_with model:[@mytrip, @comment], data: {remote: true} do |f| %>
 
                <div class="row">
-                  <div class="col-xs-8 col-xs-offset-2" >
-                    <%= f.text_area :body, rows:'5', class: "form-control",placeholder: "コメントを残してみましょう" %><br>
-                    <%= f.submit "送信する", class: "btn btn-default pull-right" %>
+                  <div class="col-xs-7 col-xs-offset-5" >
+                    <%= f.text_area :body, rows:'4', class: "form-control",placeholder: "コメントを残してみましょう" %><br>
+                    <%= f.submit "送信する", class: "btn btn-warning pull-right" %><br><br>
                     <% end %>
+                    <%= link_to "投稿一覧へ", mytrips_path, class: "col-xs-4 col-xs-offset-8 btn btn-warning" %>
                   </div>
                </div>
         </div>
