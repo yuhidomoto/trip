@@ -71,3 +71,8 @@ gem 'kaminari','~> 1.1.1'
 gem 'countries'
 
 gem "select2-rails"
+
+gem 'dotenv-rails'
+group :production do
+gem 'mysql2'
+end
