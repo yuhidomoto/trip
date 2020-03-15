@@ -4,12 +4,12 @@ class AddUserIdToMytrip < ActiveRecord::Migration[5.2]
     add_column :mytrips, :genre_id, :integer
     add_column :mytrips, :image_id, :string
     add_column :mytrips, :countory, :string
-    add_column :mytrips, :time_difference, :number
+    add_column :mytrips, :time_difference, :integer
     add_column :mytrips, :flight_time, :string
     add_column :mytrips, :airline, :string
     add_column :mytrips, :airline_comment, :text
     add_column :mytrips, :days, :string
-    add_column :mytrips, :month, :number
+    add_column :mytrips, :month, :integer
     add_column :mytrips, :season, :string
     add_column :mytrips, :total_price, :string
     add_column :mytrips, :climate, :text
