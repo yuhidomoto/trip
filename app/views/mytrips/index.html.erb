@@ -8,7 +8,7 @@
   					<div class="row">
   	  				<h2>　Europe</h2>
 							  <% @region_europe.first(3).each do |europe| %>
-								  <%= render 'mytrips/trip', mytrip: europe ,country: @country %>
+								  <%= render 'trip', mytrip: europe ,country: @country %>
 								<% end %>
 								<%= link_to "もっと見る", seemore_path(category:"europe"),class: "col-xs-2 col-xs-offset-9 btn btn-info" %>
 						</div>
@@ -16,7 +16,7 @@
 						<div class="row">
 						  <h2>　Americas</h2>
 							  <% @region_americas.first(3).each do |americas| %>
-							  	<%= render 'mytrips/trip', mytrip: americas ,country: @country %>
+							  	<%= render 'trip', mytrip: americas ,country: @country %>
 							  <% end %>
 							  <%= link_to "もっと見る", seemore_path(category:"americas"),class: "col-xs-2 col-xs-offset-9 btn btn-info" %>
 						</div>
@@ -24,7 +24,7 @@
 						<div class="row">
 						  <h2>　Africa</h2>
 							  <% @region_africa.first(3).each do |africa| %>
-							  	<%= render 'mytrips/trip', mytrip: africa ,country: @country %>
+							  	<%= render 'trip', mytrip: africa ,country: @country %>
 						  	<% end %>
 								<%= link_to "もっと見る", seemore_path(category:"africa"),class: "col-xs-2 col-xs-offset-9 btn btn-info" %>
 						</div>
@@ -32,7 +32,7 @@
 						<div class="row">
 					    <h2>　Asia</h2>
 					    	<% @region_asia.first(3).each do |asia| %>
-						    	<%= render 'mytrips/trip', mytrip: asia ,country: @country %>
+						    	<%= render 'trip', mytrip: asia ,country: @country %>
 						    <% end %>
 						    <%= link_to "もっと見る", seemore_path(category:"asia"),class: "col-xs-2 col-xs-offset-9 btn btn-info" %>
 						</div>
@@ -40,7 +40,7 @@
 						<div class="row">
 					     <h2>　Oceania</h2>
 						     <% @region_oceania.first(3).each do |oceania| %>
-						     	<%= render 'mytrips/trip', mytrip: oceania ,country: @country %>
+						     	<%= render 'trip', mytrip: oceania ,country: @country %>
 						     <% end %>
 						     <%= link_to "もっと見る", seemore_path(category:"oceania"),class: "col-xs-2 col-xs-offset-9 btn btn-info" %>
 						 </div>
