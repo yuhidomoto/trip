@@ -5,10 +5,11 @@
 		<div class="caption">
 	    <p>国名　<%= country[mytrip.country].translation(:ja) %> (<%= mytrip.country %>)</p>
 	    <p><%= mytrip.important[0..40] %></p>
-	    <div class="iine__button2" id="mytrips_buttons_<%= mytrip.id %>">
-          <%= render 'mytrips/favorite',mytrip: mytrip %>　コメント<%= mytrip.comments.count %>件　
+	    <span class="iine__button2" id="mytrips_buttons_<%= mytrip.id %>">
+          <%= render 'mytrips/favorite',mytrip: mytrip %>
+      </span>
+　					コメント<%= mytrip.comments.count %>件　
 	      	<%= link_to "Details",mytrip_path(mytrip.id), class: "btn btn-default" %>
-		 	</div>
 		</div>
 	</div>
 </div>
