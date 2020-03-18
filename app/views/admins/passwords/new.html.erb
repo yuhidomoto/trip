@@ -1,16 +1,26 @@
-<h2>Forgot your password?</h2>
+<div class="admin-visual">
+  <div class="row">
+    <div class="col-xs-9 col-xs-offset-3">
+      <br><h3>パスワードをお忘れですか？</h3><br>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <div class="row">
+            <div class="form-group">
+              <div class="col-xs-2">
+                <%= f.label :email ,'　メールアドレス', class: 'control-label'%>
+              </div>
+              <div class="col-xs-5">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email",class: 'form-control' %><br>
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <%= f.submit "パスワード再発行",class: "col-xs-5 col-xs-offset-2 btn btn-default" %><br>
+          </div>
+        <% end %>
+      <%= render "admins/shared/links" %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "admins/shared/links" %>
+</div>
