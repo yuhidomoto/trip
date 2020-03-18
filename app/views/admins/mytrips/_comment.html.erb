@@ -1,0 +1,9 @@
+<% mytrip.comments.each do |comment| %>
+	<tr id="comment_<%= comment.id %>">
+		<td><%= comment.user.name %><br>
+      <%= comment.body %>
+    </td>
+			<td><%= link_to ' 削除 ', mytrip_comments_path(comment.id), class: 'btn-sm btn-danger', method: :delete, remote: true %>
+      </td>
+	</tr>
+<% end %>
