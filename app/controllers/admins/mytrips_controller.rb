@@ -112,6 +112,7 @@ class Admins::MytripsController < ApplicationController
 
 		def edit
 		 @mytrip = Mytrip.find(params[:id])
+		 @user = @mytrip.user
 		 @country_list = [["タジキスタン","TJ"],["ジャマイカ","JM"],["ハイチ","HT"],["サントメ・プリンシペ","ST"],["モントセラト","MS"],["アラブ首長国連邦","AE"],
 ["オランダ","NL"],["ルクセンブルク","LU"],["ベリーズ","BZ"],["イラン・イスラム共和国","IR"],["ボリビア","BO"],["ウルグアイ","UY"],["ガーナ","GH"],
 ["サウジアラビア","SA"],["コートジボワール","CI"],["サンマルタン(仏領)","MF"],["フランス南方領土","TF"],["アングイラ","AI"],["カタール","QA"],

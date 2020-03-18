@@ -27,7 +27,7 @@
 		</div>
 
 			<div class="form-horizontal" role="form">
-				<%= form_for (@mytrip) do |f| %>
+				<%= form_for(@mytrip, url:admins_mytrip_path(@mytrip), method: :patch) do |f| %>
 				   <br><div class="col-xs-9 col-xs-offset-2">
 									<div class="form-group">
 										<div class="col-xs-2">
