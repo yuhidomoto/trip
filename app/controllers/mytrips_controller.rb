@@ -41,33 +41,34 @@ class MytripsController < ApplicationController
 	end
 
 
-	def create
-		@mytrip = Mytrip.new(mytrip_params)
-		@user = current_user
-		@mytrip.user_id  = @user.id
-		country = ISO3166::Country.new(@mytrip.country)
-		@mytrip.region = country.region
-		if @mytrip.save
-			redirect_to mytrip_path(@mytrip.id)
-		else
-			redirect_to new_mytrip_path
-		end
+def create
+	@mytrip = Mytrip.new(mytrip_params)
+	@user = current_user
+	@mytrip.user_id  = @user.id
+	country = ISO3166::Country.new(@mytrip.country)
+	@mytrip.region = country.region
+	if @mytrip.save
+		redirect_to mytrip_path(@mytrip.id)
+	else
+		redirect_to new_mytrip_path
 	end
+end
 
-	def index
-		@mytrips = Mytrip.all
-		@region_americas = Mytrip.where(region: "Americas")
-		@region_europe = Mytrip.where(region: "Europe")
-		@region_asia = Mytrip.where(region: "Asia")
-		@region_oceania = Mytrip.where(region: "Oceania")
-		@region_africa = Mytrip.where(region: "Africa")
-		@country = {}
-		@mytrips.each do |mytrip|
-			country_name = mytrip.country
-			@country[mytrip.country] = ISO3166::Country.new(country_name)
-		end
-	  @user = current_user
-		@country_list = [["タジキスタン","TJ"],["ジャマイカ","JM"],["ハイチ","HT"],["サントメ・プリンシペ","ST"],["モントセラト","MS"],["アラブ首長国連邦","AE"],
+def index
+	@mytrips = Mytrip.all
+	@region_americas = Mytrip.where(region: "Americas")
+	@region_europe = Mytrip.where(region: "Europe")
+	pp @region_europe
+	@region_asia = Mytrip.where(region: "Asia")
+	@region_oceania = Mytrip.where(region: "Oceania")
+	@region_africa = Mytrip.where(region: "Africa")
+	@country = {}
+	@mytrips.each do |mytrip|
+		country_name = mytrip.country
+		@country[mytrip.country] = ISO3166::Country.new(country_name)
+	end
+  @user = current_user
+	@country_list = [["タジキスタン","TJ"],["ジャマイカ","JM"],["ハイチ","HT"],["サントメ・プリンシペ","ST"],["モントセラト","MS"],["アラブ首長国連邦","AE"],
 ["オランダ","NL"],["ルクセンブルク","LU"],["ベリーズ","BZ"],["イラン・イスラム共和国","IR"],["ボリビア","BO"],["ウルグアイ","UY"],["ガーナ","GH"],
 ["サウジアラビア","SA"],["コートジボワール","CI"],["サンマルタン(仏領)","MF"],["フランス南方領土","TF"],["アングイラ","AI"],["カタール","QA"],
 ["サンマルタン(オランダ領)","SX"],["リビア","LY"],["ブーベ島","BV"],["パプアニューギニア","PG"],["キルギスタン","KG"],["赤道ギニア","GQ"],
@@ -104,20 +105,20 @@ class MytripsController < ApplicationController
 ["ミクロネシア連邦","FM"],["ソロモン諸島","SB"],["モンテネグロ","ME"],["米領サモア","AS"],["パキスタン","PK"]]
 	end
 
-	def seemore
-		if params[:category] == "asia"
-			@mytrips = Mytrip.where(region: "Asia")
-		elsif params[:category] == "europe"
-			@mytrips = Mytrip.where(region: "Europe")
-		elsif params[:category] == "americas"
-			@mytrips = Mytrip.where(region: "Americas")
-		elsif params[:category] == "africa"
-			@mytrips = Mytrip.where(region: "Africa")
-		elsif params[:category] == "oceania"
-			@mytrips = Mytrip.where(region: "Oceania")
-		end
+def seemore
+	if params[:category] == "asia"
+		@mytrips = Mytrip.where(region: "Asia")
+	elsif params[:category] == "europe"
+		@mytrips = Mytrip.where(region: "Europe")
+	elsif params[:category] == "americas"
+		@mytrips = Mytrip.where(region: "Americas")
+	elsif params[:category] == "africa"
+		@mytrips = Mytrip.where(region: "Africa")
+	elsif params[:category] == "oceania"
+		@mytrips = Mytrip.where(region: "Oceania")
+	end
 
-		@country = {}
+	@country = {}
 		@mytrips.each do |mytrip|
 			country_name = mytrip.country
 			@country[mytrip.country] = ISO3166::Country.new(country_name)
@@ -168,9 +169,9 @@ class MytripsController < ApplicationController
 	end
 
 	def edit
-		 @user = current_user
-		 @mytrip = Mytrip.find(params[:id])
-		 @country_list = [["タジキスタン","TJ"],["ジャマイカ","JM"],["ハイチ","HT"],["サントメ・プリンシペ","ST"],["モントセラト","MS"],["アラブ首長国連邦","AE"],
+		@user = current_user
+		@mytrip = Mytrip.find(params[:id])
+		@country_list = [["タジキスタン","TJ"],["ジャマイカ","JM"],["ハイチ","HT"],["サントメ・プリンシペ","ST"],["モントセラト","MS"],["アラブ首長国連邦","AE"],
 ["オランダ","NL"],["ルクセンブルク","LU"],["ベリーズ","BZ"],["イラン・イスラム共和国","IR"],["ボリビア","BO"],["ウルグアイ","UY"],["ガーナ","GH"],
 ["サウジアラビア","SA"],["コートジボワール","CI"],["サンマルタン(仏領)","MF"],["フランス南方領土","TF"],["アングイラ","AI"],["カタール","QA"],
 ["サンマルタン(オランダ領)","SX"],["リビア","LY"],["ブーベ島","BV"],["パプアニューギニア","PG"],["キルギスタン","KG"],["赤道ギニア","GQ"],
@@ -206,17 +207,17 @@ class MytripsController < ApplicationController
 ["セントルシア","LC"],["ニュージーランド","NZ"],["サンバルテルミ","BL"],["ウズベキスタン","UZ"],["インドネシア","ID"],["エリトリア国","ER"],["ベネズエラ","VE"],
 ["ミクロネシア連邦","FM"],["ソロモン諸島","SB"],["モンテネグロ","ME"],["米領サモア","AS"],["パキスタン","PK"]]
 		if @mytrip.user.id != current_user.id
-     redirect_to mytrip_path(mytrip.id)
-   end
+     	redirect_to mytrip_path(mytrip.id)
+   	end
 	end
 
 	def update
-		 @mytrip = Mytrip.find(params[:id])
+		@mytrip = Mytrip.find(params[:id])
   if @mytrip.update(mytrip_params)
-  	country = ISO3166::Country.new(@mytrip.country)
+  		country = ISO3166::Country.new(@mytrip.country)
 			@mytrip.region = country.region
 			@mytrip.save
-  		redirect_to mytrips_path, notice: "successfully updated book!"
+  		redirect_to mytrips_path, notice: "successfully updated"
   	else
   		render "edit"
   	end
@@ -225,7 +226,7 @@ class MytripsController < ApplicationController
 	def destroy
 		@mytrip = Mytrip.find(params[:id])
   	@mytrip.destroy
-  	redirect_to mytrips_path, notice: "successfully delete book!"
+  	redirect_to mytrips_path, notice: "successfully delete!"
 	end
 
 
