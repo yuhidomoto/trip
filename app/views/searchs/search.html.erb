@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+        <div id="page_top"><a href="#"></a></div>
+        <h2>検索結果</h2>
+          <% @mytrips.each do |mytrip| %>
+          <div class="row">
+          <div class="col-md-4" >
+            <div class= "thumbnail trip_box" >
+              <%= attachment_image_tag mytrip, :image, :fill, 300, 300, format: 'jpeg', fallback: "no_image.jpg", size:"325x325" %>
+              <div class="caption">
+                <p>国名　<%= @country[mytrip.country].translation(:ja) %> (<%= mytrip.country %>)</p>
+                <p><%= mytrip.important[0..40] %></p>
+                <span class="iine__button2" id="mytrips_buttons_<%= mytrip.id %>">
+                    <%= render 'mytrips/favorite',mytrip: mytrip %>
+                </span>
+          　         コメント<%= mytrip.comments.count %>件　<br><br>
+                    <%= link_to "Details",mytrip_path(mytrip.id), class: "btn btn-default" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
