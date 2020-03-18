@@ -1,45 +1,51 @@
 <!DOCTYPE html>
- <html>
-          <head>
-            <title></title>
-            <%= csrf_meta_tags %>
-            <%= csp_meta_tag %>
+  <html>
+    <head>
+      <title></title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-            <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-            <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
-          </head>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
+    </head>
+    <nav class="navbar navbar-fixed-top" role="navigation">
+      <header>
+          <ul class="nav pull nav-pills" style="margin-top: 10px;">
+            <% if user_signed_in? && request.fullpath.index("/admins/") == nil %>
+              <li class="mypage">
+                <%= link_to user_path(current_user.id) do %>
+                  <%= image_tag "mypage.jpg" %></li>
+                  <% end %>
 
-            <nav class="navbar navbar-fixed-top" role="navigation">
-              <header>
-                  <ul class="nav pull nav-pills" style="margin-top: 10px;">
-                    <% if user_signed_in? %>
-                      <li class="mypage">
-                        <%= link_to user_path(current_user.id) do %>
-                          <%= image_tag "mypage.jpg" %></li>
-                          <% end %>
+                    <li class="about">
+                      <%= link_to homes_about_path do %>
+                      <%= image_tag "about.jpg" %></li>
+                      <% end %>
 
-                      <li class="about">
-                        <%= link_to homes_about_path do %>
-                        <%= image_tag "about.jpg" %></li>
-                        <% end %>
+                    <li class="logo">
+                      <%= link_to root_path do %>
+                      <%= image_tag "logo.jpg" %></li>
+                      <% end %>
 
-                      <li class="logo">
-                        <%= link_to root_path do %>
-                        <%= image_tag "logo.jpg" %></li>
-                        <% end %>
+                    <li class="mytrip">
+                      <%= link_to mytrips_path do %>
+                      <%= image_tag "mytrips.jpg" %></li>
+                      <% end %>
 
-                      <li class="mytrip">
-                        <%= link_to mytrips_path do %>
-                        <%= image_tag "mytrips.jpg" %></li>
-                        <% end %>
+                    <li class="logout">
+                      <%= link_to destroy_user_session_path, method: :delete do %>
+                      <%= image_tag "logout.jpg" %></li>
+                      <% end %>
 
-                      <li class="logout">
-                        <%= link_to destroy_user_session_path, method: :delete do %>
-                        <%= image_tag "logout.jpg" %></li>
-                        <% end %>
-
-
+                      <% elsif admin_signed_in? && request.fullpath.index("/admins/") %>
+                           <ul class="nav navbar-nav">
+                              <li><%= link_to "　くわしめとりっぷ　", root_path %></li>
+                              <li><%= link_to "　管理者トップ　", admins_top_path %></li>
+                              <li><%= link_to "　投稿一覧　", admins_mytrips_path %></li>
+                              <li><%= link_to "　ログアウト　", destroy_admin_session_path, method: :delete %></li>
+                          </ul>
+                          <br><p>　管理者ページにログイン中です。</p>
                       <% else %>
                         <li class="home">
                           <%= link_to root_path do %>
@@ -66,16 +72,16 @@
                         <%= image_tag "login.jpg" %></li>
                         <% end %>
                       <% end %>
-                     </ul>
-                   </header>
-                 </nav>
+                  </ul>
+              </header>
+           </nav>
 
-                  <%= yield %>
+             <%= yield %>
 
-                <footer>
-                      <div class="pull-right" style="margin-right: 20px;">
-                      <p>CopyRight YuhiDomoto.inc</p>
-                    </div>
-                </footer>
-         </div>
+            <footer>
+              <div class="pull-right" style="margin-right: 20px;">
+                ©CopyRight YuhiDomoto.inc
+                <%= link_to "　管理者はこちら　＞", admins_top_path %>
+              </div>
+            </footer>
 </html>
