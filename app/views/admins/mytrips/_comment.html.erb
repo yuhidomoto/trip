@@ -1,9 +1,15 @@
 <% mytrip.comments.each do |comment| %>
-	<tr id="comment_<%= comment.id %>">
-		<td><%= comment.user.name %><br>
-      <%= comment.body %>
-    </td>
-			<td><%= link_to ' 削除 ', mytrip_comments_path(comment.id), class: 'btn-sm btn-danger', method: :delete, remote: true %>
+  <table class="table">
+  	<tr id="comment_<%= comment.id %>">
+  		<td>
+        <span class="under"> <%= comment.user.name %> </span>
       </td>
-	</tr>
+      <td>
+        <strong><%= comment.body %>　</strong>
+        <% if comment.user == current_user %>
+        <%= link_to ' 削除 ', mytrip_comments_path(comment.id), class: 'btn-sm btn-warning', method: :delete, remote: true %>
+        <% end %>
+      </td>
+  	</tr>
+  </table>
 <% end %>

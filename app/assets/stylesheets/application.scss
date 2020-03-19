@@ -41,6 +41,12 @@ footer {
 	height: 40px;
 	line-height: 20px;
 }
+.under {
+  text-decoration: underline;
+}
+
+//--------------------------ページ先頭へ戻る
+
 #page_top{
   width: 100px;
   height: 60px;
@@ -86,6 +92,7 @@ footer {
   margin: auto;
   text-align: center;
 }
+//-----------------------------------
 
 .signup-visual {
   padding-top: 95px;
@@ -191,7 +198,7 @@ footer {
 
 //----------------------------mytrip show
 .show-visual {
-   padding-top: 65px;
+   padding-top: 90px;
    width: 98%;
    height: 1970px;
    background-image: url(p0130_l.jpg);
@@ -218,6 +225,30 @@ footer {
     font-weight: bold;
 }
 .box1 p {
+    margin: 0;
+    padding: 0;
+}
+
+.box2 {
+    position: relative;
+    margin: 1.5em 0;
+    padding: 1.5em 1.5em;
+    border: solid 3px #999999;
+    border-radius: 8px;
+}
+.box2 .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 19px;
+    background: #FFF;
+    color: #999999;
+    font-weight: bold;
+}
+.box2 p {
     margin: 0;
     padding: 0;
 }

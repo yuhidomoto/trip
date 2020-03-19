@@ -189,8 +189,13 @@
 
                <div class="row">
                   <div class="col-xs-7 col-xs-offset-5" >
-                    <div id="comment">
-                      <br><%= render 'comment',mytrip: @mytrip %>
+                    <% if @mytrip.comments.present? %>
+                      <div class="box2">
+                        <span class="box-title">コメント</span>
+                        <div id="comment">
+                        <%= render 'comment',mytrip: @mytrip %>
+                        </div>
+                      <% end %>
                     </div>
                     <%= link_to "投稿一覧へ", admins_mytrips_path, class: "col-xs-4 col-xs-offset-8 btn btn-default" %>
                   </div>

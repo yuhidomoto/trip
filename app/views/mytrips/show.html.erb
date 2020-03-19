@@ -190,16 +190,25 @@
                   <% end %>
 
                <div class="row">
-                  <div class="col-xs-7 col-xs-offset-5" >
+                  <div class="col-xs-2 col-xs-offset-10" >
                     <div class="iine__button" id="mytrips_buttons_<%= @mytrip.id %>">
                       <%= render 'mytrips/favorite',mytrip: @mytrip %>
                     </div>
+                  </div>
 
-                    <div id="comment">
-                      <br><%= render 'mytrips/comment',mytrip: @mytrip %>
+                  <div class="col-xs-8 col-xs-offset-4" >
+                    <% if @mytrip.comments.present? %>
+                      <div class="box2">
+                        <span class="box-title">コメント</span>
+                        <div id="comment">
+                        <%= render 'mytrips/comment',mytrip: @mytrip %>
+                        </div>
+                      <% end %>
                     </div>
+                  </div>
 
-                    <%= form_with model:[@mytrip, @comment], data: {remote: true} do |f| %>
+                   <div class="col-xs-8 col-xs-offset-4" >
+                    <br><%= form_with model:[@mytrip, @comment], data: {remote: true} do |f| %>
                       <%= f.text_area :body, rows:'4', class: "form-control",placeholder: "コメントを残してみましょう" %><br>
                       <%= f.submit "送信する", class: "btn btn-warning pull-right" %><br><br>
                     <% end %>
