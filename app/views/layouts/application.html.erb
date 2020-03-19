@@ -42,10 +42,11 @@
                            <ul class="nav navbar-nav">
                               <li><%= link_to "　くわしめとりっぷ　", root_path %></li>
                               <li><%= link_to "　管理者トップ　", admins_top_path %></li>
+                              <li><%= link_to "　会員一覧　", admins_users_path %></li>
                               <li><%= link_to "　投稿一覧　", admins_mytrips_path %></li>
                               <li><%= link_to "　ログアウト　", destroy_admin_session_path, method: :delete %></li>
+                              <h4>管理者ページにログイン中です。</h4><br><br>
                           </ul>
-                          <br><p>　管理者ページにログイン中です。</p>
                       <% else %>
                         <li class="home">
                           <%= link_to root_path do %>
@@ -79,9 +80,12 @@
              <%= yield %>
 
             <footer>
-              <div class="pull-right" style="margin-right: 20px;">
-                ©CopyRight YuhiDomoto.inc
-                <%= link_to "　管理者はこちら　＞", admins_top_path %>
-              </div>
+              <div class="pull-right" style="margin-right: 105px;">
+                <h4 class="fab fa-twitter-square"></h4>
+                <h4 class="fab fa-facebook-square"></h4>
+                <h4 class="fab fa-youtube-square"></h4><br>
+              <%= link_to "管理者はこちら　＞", new_admin_session_path %><br>
+              <div id="footer_copr">
+                <p id="copyright">Copyright &copy;&nbsp; 株式会社YuhiDomoto All rights reserved.</p>
             </footer>
 </html>
