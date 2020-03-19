@@ -1,47 +1,48 @@
-<div class="container">
+<div class="admin-index-visual">
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
         <div id="page_top"><a href="#"></a></div>
 
+      <br><h2>ー　投稿一覧　ー</h2>
       <div class="row">
-        <h2>　ヨーロッパ</h2>
+        <h3>　ヨーロッパ</h3>
         <% @region_europe.first(3).each do |europe| %>
           <%= render 'trip', mytrip: europe ,country: @country %>
         <% end %>
-        <%= link_to "ヨーロッパ一覧", seemore_path(category:"europe"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
+        <%= link_to "ヨーロッパ一覧", admins_seemore_path(category:"ヨーロッパ"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
       </div>
 
       <div class="row">
-        <h2>　アメリカ州</h2>
+        <h3>　アメリカ州</h3>
         <% @region_americas.first(3).each do |americas| %>
           <%= render 'trip', mytrip: americas ,country: @country %>
         <% end %>
-        <%= link_to "アメリカ州一覧", seemore_path(category:"americas"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
+        <%= link_to "アメリカ州一覧", admins_seemore_path(category:"アメリカ州"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
       </div>
 
       <div class="row">
-        <h2>　アフリカ</h2>
+        <h3>　アフリカ</h3>
         <% @region_africa.first(3).each do |africa| %>
           <%= render 'trip', mytrip: africa ,country: @country %>
         <% end %>
-        <%= link_to "アフリカ一覧", seemore_path(category:"africa"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
+        <%= link_to "アフリカ一覧", admins_seemore_path(category:"アフリカ"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
       </div>
 
       <div class="row">
-        <h2>　アジア</h2>
+        <h3>　アジア</h3>
         <% @region_asia.first(3).each do |asia| %>
           <%= render 'trip', mytrip: asia ,country: @country %>
         <% end %>
-        <%= link_to "アジア一覧", seemore_path(category:"asia"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
+        <%= link_to "アジア一覧", admins_seemore_path(category:"アジア"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
       </div>
 
       <div class="row">
-        <h2>　オセアニア</h2>
+        <h3>　オセアニア</h3>
         <% @region_oceania.first(3).each do |oceania| %>
           <%= render 'trip', mytrip: oceania ,country: @country %>
         <% end %>
-        <%= link_to "オセアニア一覧", seemore_path(category:"oceania"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
+        <%= link_to "オセアニア一覧", admins_seemore_path(category:"オセアニア"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
       </div>
     </div>
   </div>

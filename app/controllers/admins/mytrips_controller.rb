@@ -49,15 +49,15 @@ class Admins::MytripsController < ApplicationController
 	end
 
 	def seemore
-		if params[:category] == "asia"
+		if params[:category] == "アジア"
 			@mytrips = Mytrip.where(region: "Asia")
-		elsif params[:category] == "europe"
+		elsif params[:category] == "ヨーロッパ"
 			@mytrips = Mytrip.where(region: "Europe")
-		elsif params[:category] == "americas"
+		elsif params[:category] == "アメリカ州"
 			@mytrips = Mytrip.where(region: "Americas")
-		elsif params[:category] == "africa"
+		elsif params[:category] == "アフリカ"
 			@mytrips = Mytrip.where(region: "Africa")
-		elsif params[:category] == "oceania"
+		elsif params[:category] == "オセアニア"
 			@mytrips = Mytrip.where(region: "Oceania")
 		end
 

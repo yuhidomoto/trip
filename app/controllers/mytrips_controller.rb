@@ -37,15 +37,15 @@ def index
 end
 
 def seemore
-	if params[:category] == "asia"
+	if params[:category] == "Asia"
 		@mytrips = Mytrip.where(region: "Asia")
-	elsif params[:category] == "europe"
+	elsif params[:category] == "Europe"
 		@mytrips = Mytrip.where(region: "Europe")
-	elsif params[:category] == "americas"
+	elsif params[:category] == "Americas"
 		@mytrips = Mytrip.where(region: "Americas")
-	elsif params[:category] == "africa"
+	elsif params[:category] == "Africa"
 		@mytrips = Mytrip.where(region: "Africa")
-	elsif params[:category] == "oceania"
+	elsif params[:category] == "Oceania"
 		@mytrips = Mytrip.where(region: "Oceania")
 	end
 

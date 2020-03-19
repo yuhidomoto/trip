@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index,:show,:edit,:update]
     resources :mytrips, only: [:index,:show,:edit,:update,:destroy]
     get 'top' => 'homes#top'
+    get 'seemore' => 'mytrips#seemore'
   end
 
 	root 'homes#top'
