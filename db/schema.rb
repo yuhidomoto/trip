@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_12_030814) do
+ActiveRecord::Schema.define(version: 2020_03_19_233704) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -77,8 +77,6 @@ ActiveRecord::Schema.define(version: 2020_03_12_030814) do
     t.text "bad_point"
     t.text "important"
     t.text "address"
-    t.float "latitude"
-    t.float "longitude"
   end
 
   create_table "users", force: :cascade do |t|
