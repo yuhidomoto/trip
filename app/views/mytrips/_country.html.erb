@@ -1,6 +1,7 @@
 <h4><strong>国の概要</strong></h4>
 <div class="box">
-   <table class="table table-bordered">
+  <table class="table table-bordered">
+    <tr>
       <th></th>
       <th>国名</th>
       <th>日本語名</th>
@@ -9,17 +10,16 @@
       <th>通貨</th>
       <th>緯度</th>
       <th>経度</th>
-  </tr>
-
+    </tr>
     <tr>
-        <td><%= country.emoji_flag %></td>
-        <td><%= country.name %></td>
-        <td><%= country.translation(:ja) %></td>
-        <td><%= country.region %></td>
-        <td><%= country.subregion %></td>
-        <td><%= country.currency_code %></td>
-        <td><%= country.latitude %></td>
-　　　　 <td><%= country.longitude %></td>
-        </tr>
- </table>
+      <td><%= country.emoji_flag %></td>
+      <td><%= country.name %></td>
+      <td><%= country.translation(:ja) %></td>
+      <td><%= country.region %></td>
+      <td><%= country.subregion %></td>
+      <td><%= country.currency_code %></td>
+      <td><%= country.latitude %></td>
+      <td><%= country.longitude %></td>
+    </tr>
+  </table>
 </div>
