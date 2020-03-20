@@ -69,10 +69,12 @@ gem "refile-mini_magick"
 gem 'jquery-rails'
 gem 'kaminari','~> 1.1.1'
 gem 'countries'
+gem "gmaps4rails"
+gem "geocoder"
 
 gem "select2-rails"
 
 gem 'dotenv-rails'
 group :production do
-gem 'mysql2'
+  gem 'mysql2'
 end

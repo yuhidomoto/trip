@@ -63,6 +63,13 @@ def seemore
 		country_name = @mytrip.country
 		@country = ISO3166::Country.new(country_name)
 		@country_list = country_list
+		# latitude = 
+		# longitude = 
+		@hash = Gmaps4rails.build_markers(@mytrip) do |place, marker|
+	      marker.lat @country.latitude
+	      marker.lng @country.longitude
+	      marker.infowindow place.country
+    	end
 	end
 
 	def edit

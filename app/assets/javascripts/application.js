@@ -14,8 +14,9 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require rails-ujs
-
 //= require_tree .
+//= require underscore
+//= require gmaps/google
 
 $(document).ready(function () {
   $("#theTarget").skippr({
