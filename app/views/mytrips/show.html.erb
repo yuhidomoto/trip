@@ -1,6 +1,6 @@
 <div class="show-visual">
     <div class="row">
-        <div class="col-xs-9 col-xs-offset-2" >
+        <div class="col-xs-10 col-xs-offset-1" >
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
           <div id="page_top"><a href="#"></a></div>
           <div class="row">
@@ -29,8 +29,13 @@
               </div>
           </div>
           <div class="row">
-            <div class="col-xs-9" >
+            <div class="col-xs-11" >
               <%= render 'mytrips/country', country: @country %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6" >
               <div id="map" style="width: 490px; height: 320px;"></div>
               <script>
                 handler = Gmaps.build('Google');
@@ -41,6 +46,9 @@
                   handler.getMap().setZoom(5);
                 });
               </script>
+            </div>
+            <div class="col-xs-6" >
+            <%= attachment_image_tag @mytrip, :image, :fill, 360, 260, format: 'jpeg', size:"460x320" %>
             </div>
           </div>
              <br><h4><strong>作成日時　<%= @mytrip.created_at.strftime('%Y/%m/%d') %></strong></h4>
@@ -204,13 +212,10 @@
                     </div>
                   </div>
                 <% end %>
-                <div class="col-lg-4">
-                    <%= attachment_image_tag @mytrip, :image, :fill, 360, 260, format: 'jpeg' %><br><br>
-                </div>
             </div>
             <% if @mytrip.user == current_user %>
-              <%= link_to "編集",edit_mytrip_path(@mytrip.id), class: "col-xs-2 btn btn-default edit_mytrip_#{@mytrip.id}" %>
-              <%= link_to "削除",mytrip_path(@mytrip.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "col-xs-2 btn btn-danger destroy_mytrip_#{@mytrip.id}" %>
+              <%= link_to "投稿の編集",edit_mytrip_path(@mytrip.id), class: "col-xs-2 btn btn-default edit_mytrip_#{@mytrip.id}" %>
+              <%= link_to "投稿の削除",mytrip_path(@mytrip.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "col-xs-2 btn btn-warning destroy_mytrip_#{@mytrip.id}" %>
             <% end %>
              <div class="row">
                 <div class="col-xs-2 col-xs-offset-10" >
@@ -231,9 +236,9 @@
                  <div class="col-xs-8 col-xs-offset-4" >
                   <br><%= form_with model:[@mytrip, @comment], data: {remote: true} do |f| %>
                     <%= f.text_area :body, rows:'4', class: "form-control",placeholder: "コメントを残してみましょう" %><br>
-                    <%= f.submit "送信する", class: "btn btn-warning pull-right" %><br><br>
+                    <%= f.submit "送信する", class: "btn btn-info pull-right" %><br><br>
                   <% end %>
-                  <%= link_to "投稿一覧へ", mytrips_path, class: "col-xs-4 col-xs-offset-8 btn btn-warning" %>
+                  <%= link_to "投稿一覧へ", mytrips_path, class: "col-xs-4 col-xs-offset-8 btn btn-info" %>
                 </div>
              </div>
         </div>
