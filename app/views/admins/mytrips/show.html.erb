@@ -1,8 +1,8 @@
 <div class="show-visual">
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1" >
-         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-          <div id="page_top"><a href="#"></a></div>
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+        <div id="page_top"><a href="#"></a></div>
         <div class="row">
           <div class="col-xs-3" >
             <h4><strong>投稿者情報</strong></h4>
@@ -201,17 +201,20 @@
         <%= link_to "削除",admins_mytrip_path(@mytrip.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "col-xs-2 btn btn-danger destroy_mytrip_#{@mytrip.id}" %>
         <div class="row">
           <div class="col-xs-7 col-xs-offset-5" >
-            <% if @mytrip.comments.present? %>
-              <div class="box2">
-                <span class="box-title">コメント</span>
+            <div class="box2">
+              <span class="box-title">コメント</span>
+                <% unless @mytrip.comments.present? %>
+                  <p>コメント一覧</p>
+                <% end %>
                 <div id="comment">
-                <%= render 'comment',mytrip: @mytrip %>
+                  <%= render 'comment',mytrip: @mytrip %>
                 </div>
-              <% end %>
-              </div>
-              <%= link_to "投稿一覧へ", admins_mytrips_path, class: "col-xs-3 col-xs-offset-8 btn btn-default" %>
             </div>
-         </div>
+          </div>
+        </div>
+        <div>
+          <%= link_to "投稿一覧へ", admins_mytrips_path, class: "col-xs-3 col-xs-offset-8 btn btn-default" %>
+        </div>
     </div>
   </div>
 </div>
