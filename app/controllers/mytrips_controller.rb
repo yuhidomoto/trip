@@ -1,5 +1,5 @@
 class MytripsController < ApplicationController
-
+ before_action :authenticate_user!
 	def new
 		@mytrip = Mytrip.new
 		@user = current_user

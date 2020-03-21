@@ -1,5 +1,5 @@
 class SearchsController < ApplicationController
-
+	before_action :authenticate_user!
 def search
 	  @mytrips = Mytrip.search(params[:search])
 	  @country_list = country_list

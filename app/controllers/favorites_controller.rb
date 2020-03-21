@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+  before_action :authenticate_user!, except: [:create]
 	 def create
   	@mytrip = Mytrip.find(params[:mytrip_id])
     favorite = current_user.favorites.new(mytrip_id: @mytrip.id)
