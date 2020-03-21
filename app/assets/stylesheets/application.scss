@@ -98,7 +98,7 @@ footer {
   padding-top: 95px;
   width: 100%;
   height: 600px;
-  background-image: url(tumblr.jpg);
+  background-image: image-url("tumblr.jpg");
   background-repeat:  no-repeat;
   background-size: cover;
   background-position: center;
@@ -107,7 +107,7 @@ footer {
   padding-top: 95px;
   width: 100%;
   height: 600px;
-  background-image: url(tumblr.jpg);
+  background-image: image-url("tumblr.jpg");
   background-repeat:  no-repeat;
   background-size: cover;
   background-position: center;
@@ -131,16 +131,16 @@ footer {
     background-image: image-url("IMG_5391.jpg");
   }
   .image2 {
-  background-image: url(IMG_5212.jpg);
+  background-image: image-url("IMG_5212.jpg");
   }
   .image3 {
-  background-image: url(IMG_1586.jpg);
+  background-image: image-url("IMG_1586.jpg");
   }
   .image4 {
-  background-image: url(image4.jpg);
+  background-image: image-url("image4.jpg");
   }
   .image5 {
-  background-image: url(image2.jpg);
+  background-image: image-url("image2.jpg");
   }
   #container{
     height: 560px;
@@ -157,40 +157,40 @@ footer {
 
 .aboutpage {
   width: 98%;
-  background-image: url(p0130_l.jpg);
+  background-image: image-url("p0130_l.jpg");
   background-repeat:  no-repeat;
   background-size: cover;
 }
 .post {
-  background-image: url(post.jpg);
+  background-image: image-url("post.jpg");
   width: 160px;
   height: 155px;
   background-size: cover;
   opacity:  0.5;
 }
 .read {
-  background-image: url(read.jpg);
+  background-image: image-url("read.jpg");
   width: 150px;
   height: 150px;
   background-size: cover;
   opacity:  0.5;
 }
 .good {
-  background-image: url(good.jpg);
+  background-image: image-url("good.jpg");
   width: 155px;
   height: 150px;
   background-size: cover;
   opacity:  0.5;
 }
 .comment {
-  background-image: url(comment.jpg);
+  background-image: image-url("comment.jpg");
   width: 155px;
   height: 155px;
   background-size: cover;
   opacity:  0.5;
 }
 .trip {
-  background-image: url(trip.jpg);
+  background-image: image-url("trip.jpg");
   width: 190px;
   height: 190px;
   background-size: cover;
@@ -281,7 +281,7 @@ footer {
 .new-visual {
  width: 98%;
  height: 1800px;
- background-image: url(p0130_l.jpg);
+ background-image: image-url("p0130_l.jpg");
  background-repeat:  no-repeat;
  background-size: cover;
  }
@@ -290,7 +290,7 @@ footer {
 .edit-visual {
  width: 98%;
  height: 1750px;
- background-image: url(p0130_l.jpg);
+ background-image: image-url("p0130_l.jpg");
  background-repeat:  no-repeat;
  background-size: cover;
  }

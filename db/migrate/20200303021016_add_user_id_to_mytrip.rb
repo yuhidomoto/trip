@@ -3,7 +3,6 @@ class AddUserIdToMytrip < ActiveRecord::Migration[5.2]
     add_column :mytrips, :user_id, :integer
     add_column :mytrips, :genre_id, :integer
     add_column :mytrips, :image_id, :string
-    add_column :mytrips, :countory, :string
     add_column :mytrips, :time_difference, :integer
     add_column :mytrips, :flight_time, :string
     add_column :mytrips, :airline, :string

@@ -32,11 +32,6 @@ ActiveRecord::Schema.define(version: 2020_03_19_233704) do
     t.string "body"
   end
 
-  create_table "countries", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "favorites", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,14 +42,9 @@ ActiveRecord::Schema.define(version: 2020_03_19_233704) do
   create_table "mytrips", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "region"
-    t.string "area"
-    t.string "country"
-    t.integer "year"
     t.integer "user_id"
-    t.integer "genre_id"
+    t.string "region"
     t.string "image_id"
-    t.string "countory"
     t.integer "time_difference"
     t.string "flight_time"
     t.string "airline"
@@ -77,6 +67,9 @@ ActiveRecord::Schema.define(version: 2020_03_19_233704) do
     t.text "bad_point"
     t.text "important"
     t.text "address"
+    t.string "area"
+    t.string "country"
+    t.integer "year"
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,8 +81,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_233704) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.boolean "gender"
     t.integer "age"
+    t.boolean "gender"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
