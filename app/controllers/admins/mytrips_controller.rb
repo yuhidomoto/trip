@@ -1,4 +1,5 @@
 class Admins::MytripsController < ApplicationController
+	before_action :authenticate_admin!
 	def index
 		@mytrips = Mytrip.all
 		@region_americas = Mytrip.where(region: "Americas")
