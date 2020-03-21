@@ -1,18 +1,17 @@
 <% mytrip.comments.each do |comment| %>
-  <tr id="comment_<%= comment.id %>">
-		<div class="row">
+  <div id="comment_<%= comment.id %>">
+    <div class="row">
       <div class="col-xs-3">
-        <span class="under"> <%= comment.user.name %> </span><br><br>
+        <span class="under"> <%= comment.user.name %> </span>
       </div>
-
       <div class="col-xs-7">
-        <strong><%= comment.body %>　</strong>
-        <% if comment.user == current_user %>
+        <strong> <%= comment.body %> </strong>
       </div>
       <div class="col-xs-2">
-        <%= link_to ' 削除 ', mytrip_comments_path(comment.id), class: 'btn-sm btn-warning', method: :delete, remote: true %>
+        <% if comment.user == current_user %>
+        <%= link_to ' 削除 ', mytrip_comments_path(comment.id), class: 'btn-sm btn-danger', method: :delete, remote: true %>
         <% end %>
       </div>
-     </div>
-  </tr>
+    </div>
+  </div>
 <% end %>

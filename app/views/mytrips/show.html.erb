@@ -216,30 +216,33 @@
               <%= link_to "投稿の編集",edit_mytrip_path(@mytrip.id), class: "col-xs-2 btn btn-default edit_mytrip_#{@mytrip.id}" %>
               <%= link_to "投稿の削除",mytrip_path(@mytrip.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "col-xs-2 btn btn-warning destroy_mytrip_#{@mytrip.id}" %>
             <% end %>
-             <div class="row">
-                <div class="col-xs-2 col-xs-offset-10" >
-                  <div class="iine__button" id="mytrips_buttons_<%= @mytrip.id %>">
-                    <%= render 'mytrips/favorite',mytrip: @mytrip %>
+            <div class="row">
+              <div class="col-xs-2 col-xs-offset-10" >
+                <div class="iine__button" id="mytrips_buttons_<%= @mytrip.id %>">
+                  <%= render 'mytrips/favorite',mytrip: @mytrip %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-8 col-xs-offset-4" >
+                <div class="box2">
+                <span class="box-title">コメント</span>
+                <% unless @mytrip.comments.present? %>
+                  <p>コメントを残してみましょう</p>
+                <% end %>
+                  <div id="comment">
+                    <br><%= render 'mytrips/comment',mytrip: @mytrip %>
                   </div>
                 </div>
-                <div class="col-xs-8 col-xs-offset-4" >
-                  <% if @mytrip.comments.present? %>
-                    <div class="box2">
-                      <span class="box-title">コメント</span>
-                      <div id="comment">
-                      <%= render 'mytrips/comment',mytrip: @mytrip %>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
-                 <div class="col-xs-8 col-xs-offset-4" >
-                  <br><%= form_with model:[@mytrip, @comment], data: {remote: true} do |f| %>
-                    <%= f.text_area :body, rows:'4', class: "form-control",placeholder: "コメントを残してみましょう" %><br>
-                    <%= f.submit "送信する", class: "btn btn-info pull-right" %><br><br>
-                  <% end %>
-                  <%= link_to "投稿一覧へ", mytrips_path, class: "col-xs-4 col-xs-offset-8 btn btn-info" %>
-                </div>
-             </div>
+              </div>
+            </div>
+            <div class="col-xs-8 col-xs-offset-4" >
+              <br><%= form_with model:[@mytrip, @comment], data: {remote: true} do |f| %>
+                <%= f.text_area :body, rows:'4', class: "form-control" %><br>
+                <%= f.submit "送信する", class: "btn btn-info pull-right" %><br><br>
+              <% end %>
+              <%= link_to "投稿一覧へ", mytrips_path, class: "col-xs-4 col-xs-offset-8 btn btn-info" %>
+            </div>
         </div>
     </div>
 </div>
