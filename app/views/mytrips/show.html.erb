@@ -67,14 +67,13 @@
                      </div>
                   </div>
                 <% end %>
-                <% if @mytrip.time_difference.present? %>
                    <div class="col-lg-3">
                      <div class="box1">
                       <span class="box-title">時 差</span>
-                      <p><%= @mytrip.time_difference %>時間</p>
+                      <% japan = ISO3166::Country.new("JP") %>
+                      <h4><%= ((@country.longitude - japan.longitude) / 15).round(2) %>時間</h4>
                      </div>
                   </div>
-                <% end %>
                 <% if @mytrip.prices.present? %>
                   <div class="col-lg-3">
                     <div class="box1">
