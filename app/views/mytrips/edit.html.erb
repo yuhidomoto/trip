@@ -1,243 +1,220 @@
 <div class="edit-visual">
-		<div class="row">
-			<div class="col-xs-3 col-xs-offset-2"><br><br><br><br>
-				<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-      		<div id="page_top"><a href="#"></a></div>
-					<h2>編集ページ</h2>
-					<h4><strong>あなたの情報</strong></h4>
-					<div class="box">
-					<table class="table table-bordered">
-
-						<tr>
-								<th>名　前</th>
-								<th>年　齢</th>
-								<th>性　別</th>
-						</tr>
-					 	<tr>
-								<td><%= @user.name %></td>
-								<td><%= @user.age %>歳</td>
-								<td><% @user.gender %>
-	                <% if @user.gender == true %>
-										 男性
-									<% else %>
-										 女性
-									<% end %>
-								</td>
-						 </tr>
-			 		</table>
-			 	</div>
- 			</div>
+	<div class="row">
+		<div class="col-xs-3 col-xs-offset-2"><br><br><br><br>
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+    	<div id="page_top"><a href="#"></a></div>
+			<h2>編集ページ</h2>
+			<h4><strong>あなたの情報</strong></h4>
+			<div class="box">
+				<table class="table table-bordered">
+					<tr>
+						<th>名　前</th>
+						<th>年　齢</th>
+						<th>性　別</th>
+					</tr>
+				 	<tr>
+						<td><%= @user.name %></td>
+						<td><%= @user.age %>歳</td>
+						<td><% @user.gender %>
+	            <% if @user.gender == true %>
+								 男性
+							<% else %>
+								 女性
+							<% end %>
+						</td>
+					</tr>
+		 		</table>
+			</div>
 		</div>
-
-			<div class="form-horizontal" role="form">
-				<%= form_for (@mytrip) do |f| %>
-				   <br><div class="col-xs-9 col-xs-offset-2">
-									<div class="form-group">
-										<div class="col-xs-2">
-											<h4><%= f.label :country, '行った国', class: 'control-label' %></h4>
-										</div>
-
-										<div class="col-xs-6">
-											<%= f.select :country, @country_list, {}, class: 'form-control' %>
-										</div>
-						      </div>
-
-						      <div class="form-group">
-						      	<div class="col-xs-2">
-							        <h4><%= f.label :地域, class: 'control-label' %></h4>
-							      </div>
-							      <div class="col-xs-6">
-							        <%= f.text_field :area, class: 'form-control' %>
-							      </div>
-						      </div>
-									<div class="row">
-										<div class="form-group">
-											 <div class="col-xs-2">
-												 	<h4><%= f.label :　旅行時期, class: 'control-label' %></h4>
-												</div>
-												<div class="col-xs-2">
-												 	<%= f.number_field :year, class: 'form-control' %>
-												</div>
-												<div class="col-xs-1">
-												 	<h4>年</h4>
-												</div>
-												 <div class="col-xs-2">
-												 	<%= f.number_field :month, class: 'form-control' %>
-												</div>
-												<div class="col-xs-1">
-													<h4>月</h4>
-												</div>
-												<div class="col-xs-2">
-												 	<%= f.select :season,[["上旬","上旬"], ["中旬","中旬"],["下旬","下旬"]] , {}, class: 'form-control'%>
-												</div>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :気候, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_field :climate, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :治安, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_area :security, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :物価, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_area :prices, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :交通, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_area :traffic, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :飛行時間, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_field :flight_time, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :航空会社, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_field :airline, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :航空会社の評価, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_area :airline_comment, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :誰と行った？, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_field :with_whom, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :旅行の日数, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_field :days, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :費用（総額）, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_field :total_price, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :カード事情, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_area :card, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :チップの文化, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_area :tip, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :トイレ事情, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_area :bathroom, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :英語は通じた？, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_area :language, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :必見な場所, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_area :must, class: 'form-control' %>
-										  <%= f.attachment_field :image %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :よかった点, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_area :good_point, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :悪かった点, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_area :bad_point, class: 'form-control' %>
-									</div>
-								</div>
-
-									<div class="form-group">
-										<div class="col-xs-2">
-										  <h4><%= f.label :伝えたいこと, class: 'control-label' %></h4>
-										</div>
-										<div class="col-xs-6">
-										  <%= f.text_area :important, class: 'form-control' %>
-									</div>
-								</div>
-
-				      		<%= f.submit "アップロード",class: "btn btn-info col-xs-6 col-xs-offset-2" %>
-				       <% end %>
-			 </div>
-	 </div>
+	</div>
+	<div class="form-horizontal" role="form">
+		<%= form_for (@mytrip) do |f| %>
+	  <br><div class="col-xs-9 col-xs-offset-2">
+					<div class="form-group">
+						<div class="col-xs-2">
+							<h4><%= f.label :country, '行った国', class: 'control-label' %></h4>
+						</div>
+						<br><div class="col-xs-6">
+							<%= f.select :country, @country_list, {}, class: 'form-control' %>
+						</div>
+		      </div>
+		      <div class="form-group">
+		      	<div class="col-xs-2">
+			        <h4><%= f.label :地域, class: 'control-label' %></h4>
+			      </div>
+			      <br><div class="col-xs-6">
+			        <%= f.text_field :area, class: 'form-control' %>
+			      </div>
+		      </div>
+					<div class="row">
+						<div class="form-group">
+							<div class="col-xs-2">
+								 <h4><%= f.label :　旅行時期, class: 'control-label' %></h4>
+							</div>
+							<br><div class="col-xs-2">
+							 	<%= f.number_field :year, class: 'form-control' %>
+							</div>
+							<div class="col-xs-1">
+							 	<h4>年</h4>
+							</div>
+							 <div class="col-xs-2">
+							 	<%= f.number_field :month, class: 'form-control' %>
+							</div>
+							<div class="col-xs-1">
+								<h4>月</h4>
+							</div>
+							<div class="col-xs-2">
+							 	<%= f.select :season,[["上旬","上旬"], ["中旬","中旬"],["下旬","下旬"]] , {}, class: 'form-control'%>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :気候, class: 'control-label' %></h4>
+						</div>
+						<br><div class="col-xs-6">
+						  <%= f.text_field :climate, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :治安, class: 'control-label' %></h4>
+						</div>
+						<div class="col-xs-6">
+						  <br><%= f.text_area :security, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :物価, class: 'control-label' %></h4>
+						</div>
+						<br><div class="col-xs-6">
+					  	<%= f.select :prices,[["日本とほとんど同じ","日本とほとんど同じ"],["とても安い","とても安い"],["安い","安い"],["やや安い","やや安い"],["やや高い","やや高い"],["高い","高い"],["とても高い","とても高い"]], {}, class: 'form-control'%>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :交通, class: 'control-label' %></h4>
+						</div>
+						<div class="col-xs-6">
+						  <%= f.text_area :traffic, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :飛行時間, class: 'control-label' %></h4>
+						</div>
+						<br><div class="col-xs-6">
+						  <%= f.text_field :flight_time, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :航空会社, class: 'control-label' %></h4>
+						</div>
+						<br><div class="col-xs-6">
+						  <%= f.text_field :airline, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :航空会社の評価, class: 'control-label' %></h4>
+						</div>
+						<div class="col-xs-6">
+						  <%= f.text_area :airline_comment, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :誰と行った？, class: 'control-label' %></h4>
+						</div>
+						<br><div class="col-xs-6">
+					  <%= f.select :with_whom,[["一人旅","一人旅"],["家族で","家族で"],["夫婦で","夫婦で"],["カップルで","カップルで"],["女子旅（２〜３人で）","女子旅（２〜３人で）"],["女子旅（４〜5人で）","女子旅（４〜５人で）"],["女子旅（６人以上で）","女子旅（６人以上で）"],["友達と（２〜３人で）","友達と（２〜３人で）"],["友達と（４〜５人で）","友達と（４〜５人で）"],["友達と（６人以上で）","友達と（６人以上で）"],["会社の同僚と（２〜４人で）","会社の同僚と（２〜４人で）"],["会社の同僚と（５人以上で）","会社の同僚と（５人以上で）"]], {}, class: 'form-control'%>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :旅行の日数, class: 'control-label' %></h4>
+						</div>
+						<br><div class="col-xs-6">
+			  		<%= f.select :days,[["１泊２日","１泊２日"],["２泊３日","２泊３日"],["４〜６日間","４〜６日間"],["１週間","１週間"],["８〜１０日間","８〜１０日間"],["２週間","２週間"],["３週間","３週間"],["１ヶ月","１ヶ月"],["１ヶ月以上","１ヶ月以上"]], {}, class: 'form-control'%>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :費用（総額）, class: 'control-label' %></h4>
+						</div>
+						<br><div class="col-xs-6">
+						  <%= f.text_field :total_price, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :カード事情, class: 'control-label' %></h4>
+						</div>
+						<div class="col-xs-6">
+						  <%= f.text_area :card, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :チップの文化, class: 'control-label' %></h4>
+						</div>
+						<div class="col-xs-6">
+						  <%= f.text_area :tip, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :トイレ事情, class: 'control-label' %></h4>
+						</div>
+						<div class="col-xs-6">
+						  <%= f.text_area :bathroom, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :英語は通じた？, class: 'control-label' %></h4>
+						</div>
+						<div class="col-xs-6">
+						  <%= f.text_area :language, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :必見な場所, class: 'control-label' %></h4>
+						</div>
+						<div class="col-xs-6">
+						  <%= f.text_area :must, class: 'form-control' %>
+						  <%= f.attachment_field :image %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :よかった点, class: 'control-label' %></h4>
+						</div>
+						<div class="col-xs-6">
+						  <%= f.text_area :good_point, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :悪かった点, class: 'control-label' %></h4>
+						</div>
+						<div class="col-xs-6">
+						  <%= f.text_area :bad_point, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2">
+						  <h4><%= f.label :伝えたいこと, class: 'control-label' %></h4>
+						</div>
+						<div class="col-xs-6">
+						  <%= f.text_area :important, class: 'form-control' %>
+						</div>
+					</div>
+		      	<%= f.submit "アップロード",class: "btn btn-info col-xs-6 col-xs-offset-2" %>
+		      <% end %>
+		</div>
+ 	</div>
 </div>
