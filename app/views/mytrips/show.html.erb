@@ -74,14 +74,12 @@
                       <h4><%= ((@country.longitude - japan.longitude) / 15).round(2) %>時間</h4>
                      </div>
                   </div>
-                <% if @mytrip.prices.present? %>
                   <div class="col-lg-3">
                     <div class="box1">
                       <span class="box-title">物 価</span>
                       <p><%= @mytrip.prices %></p>
                     </div>
                   </div>
-                <% end %>
                 <% if @mytrip.year.present? %>
                   <div class="col-lg-3">
                      <div class="box1">
@@ -138,22 +136,18 @@
                     </div>
                   </div>
                 <% end %>
-                <% if @mytrip.with_whom.present? %>
                   <div class="col-lg-3">
                     <div class="box1">
                       <span class="box-title">誰と行った?</span>
                       <p><%= @mytrip.with_whom %></p>
                     </div>
                   </div>
-                <% end %>
-                <% if @mytrip.days.present? %>
                   <div class="col-lg-4">
                     <div class="box1">
                       <span class="box-title">日 数</span>
                       <p><%= @mytrip.days %></p>
                     </div>
                   </div>
-                <% end %>
                 <% if @mytrip.total_price.present? %>
                  <div class="col-lg-4">
                   <div class="box1">
