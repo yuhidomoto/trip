@@ -280,7 +280,7 @@ footer {
 //---------------------------------mytrip new
 .new-visual {
  width: 98%;
- height: 1800px;
+ height: 1900px;
  background-image: image-url("p0130_l.jpg");
  background-repeat:  no-repeat;
  background-size: cover;
@@ -289,7 +289,7 @@ footer {
 //--------------------------------mytrip edit
 .edit-visual {
  width: 98%;
- height: 1750px;
+ height: 1870px;
  background-image: image-url("p0130_l.jpg");
  background-repeat:  no-repeat;
  background-size: cover;
@@ -302,4 +302,20 @@ footer {
 
 .trip_box2 {
   height: 450px;
+}
+
+//-------------------------------admin top
+
+.admin-top-visual {
+  background-image: image-url("56758fb.jpg");
+  width: 385px;
+  height: 285px;
+  background-size: cover;
+ }
+
+.admin-container {
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  margin: 0 auto;
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_233704) do
+ActiveRecord::Schema.define(version: 2020_03_22_041823) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2020_03_19_233704) do
     t.integer "user_id"
     t.string "region"
     t.string "image_id"
-    t.integer "time_difference"
     t.string "flight_time"
     t.string "airline"
     t.text "airline_comment"
