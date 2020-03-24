@@ -29,12 +29,22 @@
 			</div>
 		</div>
 	</div>
+	<div class="col-xs-4 col-xs-offset-2">
+		<% if @mytrip.errors.any? %>
+		<div class="alert alert-warning">
+			<%= pluralize(@mytrip.errors.count,"つのエラーがあります。") %>
+ 			<% @mytrip.errors.full_messages.each do |message| %>
+    	<li><%= message %></li>
+    	<% end %>
+   	<% end %>
+  	</div>
+  </div>
 	<div class="form-horizontal" role="form">
 		<%= form_for (@mytrip) do |f| %>
 			<div class="col-xs-9 col-xs-offset-2">
 				<div class="form-group">
 					<div class="col-xs-2">
-						<h4><%= f.label :country, '行った国', class: 'control-label' %></h4><p class="must">＊必須</p>
+						<h4><%= f.label :country, '行った国', class: 'control-label' %><p class="must">＊ 必須</p></h4>
 					</div>
 					<br><div class="col-xs-6">
 						<%= f.select :country, @country_list, {}, class: 'js-searchable form-control' %>
@@ -42,7 +52,7 @@
 				</div>
 	      <div class="form-group">
 	      	<div class="col-xs-2">
-		        <h4><%= f.label :地域, class: 'control-label' %></h4><p class="must">＊必須</p>
+		        <h4><%= f.label :地域, class: 'control-label' %><p class="must">＊ 必須</p></h4>
 		      </div>
 		      <br><div class="col-xs-6">
 		        <%= f.text_field :area, class: 'form-control',placeholder: "都市の名前をお書きください。" %>
@@ -184,7 +194,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-xs-2">
-					  <h4><%= f.label :必見な場所, class: 'control-label' %></h4><p class="must">＊必須</p>
+					  <h4><%= f.label :必見な場所, class: 'control-label' %><p class="must">＊ 必須</p></h4>
 					</div>
 					<div class="col-xs-6">
 					  <%= f.text_area :must, class: 'form-control',placeholder: "ここだけは絶対に行って欲しい、おすすめの場所を教えてください。" %><br>
@@ -210,7 +220,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-xs-2">
-					  <h4><%= f.label :伝えたいこと, class: 'control-label' %></h4><p class="must">＊必須</p>
+					  <h4><%= f.label :伝えたいこと, class: 'control-label' %><p class="must">＊ 必須</p></h4>
 					</div>
 					<div class="col-xs-6">
 					  <%= f.text_area :important, class: 'form-control',placeholder: "閲覧者に一言お願いします！"%>
