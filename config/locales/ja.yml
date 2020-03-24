@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    errors:
+      models:
+    attributes:
+      mytrip:
+        important: 伝えたいこと
+        area: 地域
+        must: 必見な場所
+        user: ユーザー
