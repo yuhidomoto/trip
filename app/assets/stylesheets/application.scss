@@ -47,6 +47,10 @@ footer {
   text-decoration: underline;
 }
 
+.flash {
+  color:  #3299FF;
+}
+
 //--------------------------ページ先頭へ戻る
 
 #page_top{
@@ -286,6 +290,10 @@ footer {
  background-image: image-url("p0130_l.jpg");
  background-repeat:  no-repeat;
  background-size: cover;
+ }
+
+ .must {
+ color:  #FF0000;
  }
 
 //--------------------------------mytrip edit

@@ -15,6 +15,7 @@ def create
 	@mytrip.region = country.region
 	if @mytrip.save
 		redirect_to mytrip_path(@mytrip.id)
+		flash[:notice] = "新規投稿に成功しました !"
 	else
 		redirect_to new_mytrip_path
 	end
@@ -64,10 +65,10 @@ def seemore
 		@country = ISO3166::Country.new(country_name)
 		@country_list = country_list
 		@hash = Gmaps4rails.build_markers(@mytrip) do |place, marker|
-	      marker.lat @country.latitude
-	      marker.lng @country.longitude
-	      marker.infowindow place.country
-    	end
+      marker.lat @country.latitude
+      marker.lng @country.longitude
+      marker.infowindow place.country
+  	end
 	end
 
 	def edit
@@ -85,7 +86,7 @@ def seemore
   		country = ISO3166::Country.new(@mytrip.country)
 			@mytrip.region = country.region
 			@mytrip.save
-  		redirect_to mytrips_path, notice: "successfully updated"
+  		redirect_to mytrips_path, notice: "アップデートが完了しました !"
   	else
   		render "edit"
   	end
@@ -94,7 +95,7 @@ def seemore
 	def destroy
 		@mytrip = Mytrip.find(params[:id])
   	@mytrip.destroy
-  	redirect_to mytrips_path, notice: "successfully delete!"
+  	redirect_to mytrips_path, notice: "削除が完了しました !"
 	end
 
 	def country_list

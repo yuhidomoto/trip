@@ -34,7 +34,7 @@
 			<div class="col-xs-9 col-xs-offset-2">
 				<div class="form-group">
 					<div class="col-xs-2">
-						<h4><%= f.label :country, '行った国', class: 'control-label' %></h4>
+						<h4><%= f.label :country, '行った国', class: 'control-label' %></h4><p class="must">＊必須</p>
 					</div>
 					<br><div class="col-xs-6">
 						<%= f.select :country, @country_list, {}, class: 'js-searchable form-control' %>
@@ -42,7 +42,7 @@
 				</div>
 	      <div class="form-group">
 	      	<div class="col-xs-2">
-		        <h4><%= f.label :地域, class: 'control-label' %></h4>
+		        <h4><%= f.label :地域, class: 'control-label' %></h4><p class="must">＊必須</p>
 		      </div>
 		      <br><div class="col-xs-6">
 		        <%= f.text_field :area, class: 'form-control',placeholder: "都市の名前をお書きください。" %>
@@ -184,7 +184,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-xs-2">
-					  <h4><%= f.label :必見な場所, class: 'control-label' %></h4>
+					  <h4><%= f.label :必見な場所, class: 'control-label' %></h4><p class="must">＊必須</p>
 					</div>
 					<div class="col-xs-6">
 					  <%= f.text_area :must, class: 'form-control',placeholder: "ここだけは絶対に行って欲しい、おすすめの場所を教えてください。" %><br>
@@ -210,7 +210,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-xs-2">
-					  <h4><%= f.label :伝えたいこと, class: 'control-label' %></h4>
+					  <h4><%= f.label :伝えたいこと, class: 'control-label' %></h4><p class="must">＊必須</p>
 					</div>
 					<div class="col-xs-6">
 					  <%= f.text_area :important, class: 'form-control',placeholder: "閲覧者に一言お願いします！"%>

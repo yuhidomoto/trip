@@ -55,7 +55,7 @@ def update
   	country = ISO3166::Country.new(@mytrip.country)
 			@mytrip.region = country.region
 			@mytrip.save
-  		redirect_to admins_mytrips_path, notice: "successfully updated!"
+  		redirect_to admins_mytrips_path, notice: "アップデートが完了しました !"
   else
   	render "edit"
   end
@@ -64,7 +64,7 @@ end
 	def destroy
 		@mytrip = Mytrip.find(params[:id])
   	@mytrip.destroy
-  	redirect_to admins_mytrips_path, notice: "successfully delete!"
+  	redirect_to admins_mytrips_path, notice: "削除が完了しました !"
   end
 
   def country_list

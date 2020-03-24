@@ -4,6 +4,9 @@ class Mytrip < ApplicationRecord
 	attachment :image
 
 	validates :country, presence: true
+  validates :area, presence: true
+  validates :must, presence: true
+  validates :important, presence: true
 
 	has_many :comments, dependent: :destroy
 	has_many :favorites, dependent: :destroy

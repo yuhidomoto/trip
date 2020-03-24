@@ -1,5 +1,12 @@
 <div class="admin-index-visual">
   <div class="row">
+    <div class="col-xs-6 col-xs-offset-1" >
+      <div class="flash">
+        <h4><strong><% if flash[:notice] %><%= flash[:notice] %></strong></h4>
+        <% end %>
+      </div>
+    </div>
+  <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
         <div id="page_top"><a href="#"></a></div>
