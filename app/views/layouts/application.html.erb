@@ -37,6 +37,11 @@
                       <%= image_tag "mytrips.jpg" %></li>
                       <% end %>
 
+                    <li class="mytripnew">
+                      <%= link_to new_mytrip_path do %>
+                      <%= image_tag "new.jpg" %></li>
+                      <% end %>
+
                     <li class="logout">
                       <%= link_to destroy_user_session_path, method: :delete do %>
                       <%= image_tag "logout.jpg" %></li>
