@@ -11,13 +11,14 @@ def create
 	@mytrip = Mytrip.new(mytrip_params)
 	@user = current_user
 	@mytrip.user_id  = @user.id
+	@country_list = country_list
 	country = ISO3166::Country.new(@mytrip.country)
 	@mytrip.region = country.region
 	if @mytrip.save
 		redirect_to mytrip_path(@mytrip.id)
 		flash[:notice] = "新規投稿に成功しました !"
 	else
-		redirect_to new_mytrip_path
+		render "new"
 	end
 end
 
