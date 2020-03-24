@@ -10,6 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require select2-bootstrap
+ *= require select2
  *= require_tree .
  *= require_self
  */
@@ -315,7 +317,7 @@ footer {
 
 .admin-container {
   margin: 0 auto;
-  padding-top: 40px;
+  padding-top: 60px;
   padding-bottom: 10px;
   margin: 0 auto;
 }

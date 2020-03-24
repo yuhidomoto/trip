@@ -10,9 +10,9 @@
 			<div class="box">
 				<table class="table table-bordered">
 					<tr>
-							<th>名　前</th>
-							<th>年　齢</th>
-							<th>性　別</th>
+						<th>名　前</th>
+						<th>年　齢</th>
+						<th>性　別</th>
 					</tr>
 				 	<tr>
 						<td><%= @user.name %></td>
@@ -37,7 +37,7 @@
 						<h4><%= f.label :country, '行った国', class: 'control-label' %></h4>
 					</div>
 					<br><div class="col-xs-6">
-						<%= f.select :country, @country_list, {}, class: 'form-control' %>
+						<%= f.select :country, @country_list, {}, class: 'js-searchable form-control' %>
 					</div>
 				</div>
 	      <div class="form-group">
@@ -187,8 +187,9 @@
 					  <h4><%= f.label :必見な場所, class: 'control-label' %></h4>
 					</div>
 					<div class="col-xs-6">
-					  <%= f.text_area :must, class: 'form-control',placeholder: "ここだけは絶対に行って欲しい、おすすめの場所を教えてください。" %>
-					  <%= f.attachment_field :image %>
+					  <%= f.text_area :must, class: 'form-control',placeholder: "ここだけは絶対に行って欲しい、おすすめの場所を教えてください。" %><br>
+					  <%= f.label :image, "画像を投稿", class: 'control-label btn btn-info' %>
+					  <%= f.attachment_field :image, style: "display: none;" %>
 					</div>
 				</div>
 				<div class="form-group">
@@ -220,3 +221,10 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	$('.js-searchable').select2({
+  width: 270,
+  allowClear: true
+});
+</script>>

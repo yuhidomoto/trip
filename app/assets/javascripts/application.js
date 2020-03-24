@@ -14,6 +14,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require rails-ujs
+//= require select2
 //= require_tree .
 //= require underscore
 //= require gmaps/google

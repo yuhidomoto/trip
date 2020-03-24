@@ -35,7 +35,7 @@
 							<h4><%= f.label :country, '行った国', class: 'control-label' %></h4>
 						</div>
 						<br><div class="col-xs-6">
-							<%= f.select :country, @country_list, {}, class: 'form-control' %>
+							<%= f.select :country, @country_list, {}, class: 'js-searchable form-control' %>
 						</div>
 		      </div>
 		      <div class="form-group">
@@ -185,8 +185,9 @@
 						  <h4><%= f.label :必見な場所, class: 'control-label' %></h4>
 						</div>
 						<div class="col-xs-6">
-						  <%= f.text_area :must, class: 'form-control' %>
-						  <%= f.attachment_field :image %>
+						  <%= f.text_area :must, class: 'form-control' %><br>
+						  <%= f.label :image, "画像を変更", class: 'control-label btn btn-info' %>
+					  	<%= f.attachment_field :image, style: "display: none;" %>
 						</div>
 					</div>
 					<div class="form-group">
@@ -218,3 +219,9 @@
 		</div>
  	</div>
 </div>
+<script>
+	$('.js-searchable').select2({
+  width: 270,
+  allowClear: true
+});
+</script>>
