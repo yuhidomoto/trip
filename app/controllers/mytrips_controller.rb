@@ -83,7 +83,9 @@ def seemore
 
 	def update
 		@mytrip = Mytrip.find(params[:id])
-  if @mytrip.update(mytrip_params)
+		@user = current_user
+		@country_list = country_list
+  	if @mytrip.update(mytrip_params)
   		country = ISO3166::Country.new(@mytrip.country)
 			@mytrip.region = country.region
 			@mytrip.save

@@ -12,36 +12,36 @@
 				 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
 		      <div id="page_top"><a href="#"></a></div>
 				<% @users.each do |user| %>
-				<button type="button" class="btn btn-default col-xs-3 " data-toggle="modal" data-target="#sampleModal">
-				<%= user.name%>
-				</button>
-				<table class="table table-bordered">
-					<div class="modal fade" id="sampleModal" tabindex="-1">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
-									<h4 class="modal-title">ー　会員情報詳細　ー</h4>
-								</div>
-								<div class="modal-body">
-										<h4>名前　：　<%= user.name %></h4><br>
-										<h4>メールアドレス　：　<%= user.email %></h4><br>
-										<h4>性別　：　<% if user.gender == true %>
-									 	男性
-									<% else %>
-									 	女性
-									</h4><br>
-									<% end %>
-									<h4>年齢　：　<%= user.age %>歳</h4><br>
-								</div>
-								<div class="modal-footer">
-									<%= link_to "編集する", edit_admins_user_path(user.id), class: "col-xs-9 btn btn-default" %>
-									<button type="button" class="btn btn-default" data-dismiss="modal">　閉じる　</button>
+					<button type="button" class="btn btn-default col-xs-3 " data-toggle="modal" data-target="#modal<%= user.id %>">
+					<%= user.name%>
+					</button>
+					<table class="table table-bordered">
+						<div class="modal fade" id="modal<%= user.id %>" tabindex="-1">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+										<h4 class="modal-title">ー　会員情報詳細　ー</h4>
+									</div>
+									<div class="modal-body">
+											<h4>名前　：　<%= user.name %></h4><br>
+											<h4>メールアドレス　：　<%= user.email %></h4><br>
+											<h4>性別　：　<% if user.gender == true %>
+										 	男性
+										<% else %>
+										 	女性
+										</h4><br>
+										<% end %>
+										<h4>年齢　：　<%= user.age %>歳</h4><br>
+									</div>
+									<div class="modal-footer">
+										<%= link_to "編集する", edit_admins_user_path(user.id), class: "col-xs-9 btn btn-default" %>
+										<button type="button" class="btn btn-default" data-dismiss="modal">　閉じる　</button>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</table>
+					</table>
 				<% end %>
 		</div>
 	</div>
