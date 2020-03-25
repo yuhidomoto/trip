@@ -28,13 +28,6 @@ class UsersController < ApplicationController
   	redirect_to root_path
 	end
 
-	def withdraw
-		set_user
-		if @user != current_user
-			redirect_to mytrips_path
-		end
-	end
-
 	def country_list
 		@country_list = [["タジキスタン","TJ"],["ジャマイカ","JM"],["ハイチ","HT"],["サントメ・プリンシペ","ST"],["モントセラト","MS"],["アラブ首長国連邦","AE"],
 	["オランダ","NL"],["ルクセンブルク","LU"],["ベリーズ","BZ"],["イラン・イスラム共和国","IR"],["ボリビア","BO"],["ウルグアイ","UY"],["ガーナ","GH"],
