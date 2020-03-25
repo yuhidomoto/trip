@@ -51,6 +51,10 @@ footer {
   color:  #3299FF;
 }
 
+.pagenate {
+  margin-top: 10px;
+}
+
 //--------------------------ページ先頭へ戻る
 
 #page_top{
@@ -101,29 +105,32 @@ footer {
 //-----------------------------------
 
 .signup-visual {
-  padding-top: 95px;
-  width: 100%;
+  padding-top: 85px;
+  width: 99%;
   height: 600px;
-  background-image: image-url("tumblr.jpg");
+  background-image: image-url("gold.jpg");
   background-repeat:  no-repeat;
   background-size: cover;
   background-position: center;
 }
 .login-visual {
-  padding-top: 95px;
-  width: 100%;
+  padding-top: 110px;
+  width: 99%;
   height: 600px;
-  background-image: image-url("tumblr.jpg");
+  background-image: image-url("gold.jpg");
   background-repeat:  no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .admin-visual {
-  padding-top: 100px;
-  width: 100%;
+  padding-top: 105px;
+  width: 99%;
   height: 600px;
-  background-color: #FFD8CC;
+  background-image: image-url("gold.jpg");
+  background-repeat:  no-repeat;
+  background-size: cover;
+  background-position: center;
   }
 
 .admin-index-visual {
@@ -284,6 +291,10 @@ footer {
 }
 
 //---------------------------------mytrip new
+
+.top-item {
+  display: flex;
+}
 .new-visual {
  width: 98%;
  height: 2030px;
