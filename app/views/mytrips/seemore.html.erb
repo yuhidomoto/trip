@@ -2,17 +2,20 @@
 	<div class="row">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
       <div id="page_top"><a href="#"></a></div>
-		<h2>　<%= params[:category] %></h2>
-		<% @mytrips.each do |mytrip| %>
-	  	<%= render 'mytrips/trip', mytrip: mytrip ,country: @country %>
-		<% end %>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-    <div id="page_top"><a href="#"></a></div>
-    <p><%= link_to "投稿ページへ", new_mytrip_path,class: "col-xs-2 col-xs-offset-9 new-btn" %></p>
-		<%= link_to "投稿一覧へ", mytrips_path, class: "col-xs-2 col-xs-offset-9 btn btn-info" %>
-
-    <div class ="pagenate center">
-      <%= paginate @mytrips, class: "paginate" %>
+		<div class="font">　<%= params[:category] %></div>
+    <div class="font2">
+  		<% @mytrips.each do |mytrip| %>
+  	  	<%= render 'mytrips/trip', mytrip: mytrip ,country: @country %>
+  		<% end %>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+      <div id="page_top"><a href="#"></a></div>
+      <%= link_to "Post page", new_mytrip_path,class: "col-xs-2 col-xs-offset-9 new-btn" %>
+  		<%= link_to "Posts list", mytrips_path, class: "col-xs-2 col-xs-offset-9 new-btn" %>
+      <div class="text-center">
+        <div class ="pagenate center">
+          <%= paginate @mytrips, class: "paginate" %>
+        </div>
+      </div>
     </div>
 	</div>
 </div>
