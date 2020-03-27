@@ -8,7 +8,7 @@
 	    <span class="iine__button2" id="mytrips_buttons_<%= mytrip.id %>">
          <%= render 'mytrips/favorite',mytrip: mytrip %>
       </span>
-　			コメント<%= mytrip.comments.count %>件　
+　			コメント<%= mytrip.comments.count %>件　<br><br>
     	<%= link_to "Details",mytrip_path(mytrip.id), class: "btn btn-default" %>
 		</div>
 	</div>
