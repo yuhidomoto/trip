@@ -1,213 +1,214 @@
-<div class="show-visual">
-  <div class="row">
-    <div class="col-xs-10 col-xs-offset-1" >
-       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-        <div id="page_top"><a href="#"></a></div>
-        <div class="row">
-          <div class="col-xs-3" >
-            <h4><strong>投稿者情報</strong></h4>
-            <div class="box">
-              <table class="table table-bordered">
-                <tr>
-                  <th>名前</th>
-                  <th>年齢</th>
-                  <th>性別</th>
-                </tr>
-                <tr>
-                  <td><%= @mytrip.user.name %></td>
-                  <td><%= @mytrip.user.age %>歳</td>
-                  <td><% @mytrip.user.gender %>
-                    <% if @mytrip.user.gender == true %>
-                       男性
-                    <% else %>
-                       女性
-                    <% end %>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-9" >
-            <%= render 'country', country: @country %>
-          </div>
-        </div>
-        <div class="col-xs-6" >
-          <%= attachment_image_tag @mytrip, :image, :fill, 360, 260, format: 'jpeg', size:"460x320" %>
-        </div>
-         <h4><strong>作成日時　<%= @mytrip.created_at.strftime('%Y/%m/%d') %></strong></h4>
+<div class="visual">
+  <div class="admin-container">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1" >
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+          <div id="page_top"><a href="#"></a></div>
           <div class="row">
-            <div class="col-lg-3">
-              <div class="box1">
-                 <span class="box-title">国 名</span>
-                 <p><%= @country.translation(:ja) %> (<%= @mytrip.country %>)</p>
+            <div class="col-xs-3" ><br>
+              <h4><strong>投稿者情報</strong></h4>
+              <div class="box">
+                <table class="table table-bordered">
+                  <tr>
+                    <th>名前</th>
+                    <th>年齢</th>
+                    <th>性別</th>
+                  </tr>
+                  <tr>
+                    <td><%= @mytrip.user.name %></td>
+                    <td><%= @mytrip.user.age %>歳</td>
+                    <td><% @mytrip.user.gender %>
+                      <% if @mytrip.user.gender == true %>
+                         男性
+                      <% else %>
+                         女性
+                      <% end %>
+                    </td>
+                  </tr>
+                </table>
               </div>
             </div>
-             <% if @mytrip.area.present? %>
-               <div class="col-lg-3">
-                 <div class="box1">
-                  <span class="box-title">地 域</span>
-                  <p><%= @mytrip.area %></p>
-                 </div>
-              </div>
-            <% end %>
-            <div class="col-lg-3">
-              <div class="box1">
-                <span class="box-title">時 差</span>
-                <% japan = ISO3166::Country.new("JP") %>
-                <h4><%= ((@country.longitude - japan.longitude) / 15).round(2) %>時間</h4>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-9" >
+              <%= render 'country', country: @country %>
             </div>
+          </div>
+          <div class="col-xs-6" >
+            <%= attachment_image_tag @mytrip, :image, :fill, 360, 260, format: 'jpeg', size:"460x320" %>
+          </div>
+           <h4><strong>作成日時　<%= @mytrip.created_at.strftime('%Y/%m/%d') %></strong></h4>
+            <div class="row">
               <div class="col-lg-3">
                 <div class="box1">
-                  <span class="box-title">物 価</span>
-                  <p><%= @mytrip.prices %></p>
+                   <span class="box-title">国 名</span>
+                   <p><%= @country.translation(:ja) %> (<%= @mytrip.country %>)</p>
                 </div>
               </div>
-             <% if @mytrip.year.present? %>
+               <% if @mytrip.area.present? %>
+                 <div class="col-lg-3">
+                   <div class="box1">
+                    <span class="box-title">地 域</span>
+                    <p><%= @mytrip.area %></p>
+                   </div>
+                </div>
+              <% end %>
               <div class="col-lg-3">
-                 <div class="box1">
-                  <span class="box-title">旅行時期</span>
-                  <p><%= @mytrip.year %>年　<%= @mytrip.month %>月　<%= @mytrip.season %></p>
+                <div class="box1">
+                  <span class="box-title">時 差</span>
+                  <% japan = ISO3166::Country.new("JP") %>
+                  <h4><%= ((@country.longitude - japan.longitude) / 15).round(2) %>時間</h4>
                 </div>
               </div>
-            <% end %>
-             <% if @mytrip.climate.present? %>
-               <div class="col-lg-3">
-                 <div class="box1">
-                  <span class="box-title">気 候</span>
-                  <p><%= @mytrip.climate %></p>
-                </div>
-              </div>
-            <% end %>
-             <% if @mytrip.security.present? %>
-               <div class="col-lg-3">
+                <div class="col-lg-3">
                   <div class="box1">
-                  <span class="box-title">治 安</span>
-                  <p><%= @mytrip.security %></p>
+                    <span class="box-title">物 価</span>
+                    <p><%= @mytrip.prices %></p>
+                  </div>
                 </div>
-              </div>
-            <% end %>
-             <% if @mytrip.traffic.present? %>
-              <div class="col-lg-3">
+               <% if @mytrip.year.present? %>
+                <div class="col-lg-3">
+                   <div class="box1">
+                    <span class="box-title">旅行時期</span>
+                    <p><%= @mytrip.year %>年　<%= @mytrip.month %>月　<%= @mytrip.season %></p>
+                  </div>
+                </div>
+              <% end %>
+               <% if @mytrip.climate.present? %>
+                 <div class="col-lg-3">
+                   <div class="box1">
+                    <span class="box-title">気 候</span>
+                    <p><%= @mytrip.climate %></p>
+                  </div>
+                </div>
+              <% end %>
+               <% if @mytrip.security.present? %>
+                 <div class="col-lg-3">
+                    <div class="box1">
+                    <span class="box-title">治 安</span>
+                    <p><%= @mytrip.security %></p>
+                  </div>
+                </div>
+              <% end %>
+               <% if @mytrip.traffic.present? %>
+                <div class="col-lg-3">
+                  <div class="box1">
+                    <span class="box-title">交 通</span>
+                    <p><%= @mytrip.traffic %></p>
+                  </div>
+                </div>
+              <% end %>
+               <% if @mytrip.security.present? %>
+                <div class="col-lg-3">
+                  <div class="box1">
+                    <span class="box-title">飛行時間</span>
+                    <p><%= @mytrip.security %></p>
+                  </div>
+                </div>
+              <% end %>
+               <% if @mytrip.airline.present? %>
+                <div class="col-lg-3">
+                  <div class="box1">
+                    <span class="box-title">航空会社</span>
+                    <p><%= @mytrip.airline %></p>
+                  </div>
+                </div>
+              <% end %>
+               <% if @mytrip.airline_comment.present? %>
+                <div class="col-lg-3">
+                  <div class="box1">
+                    <span class="box-title">航空会社の評価</span>
+                    <p><%= @mytrip.airline_comment %></p>
+                  </div>
+                </div>
+              <% end %>
+                <div class="col-lg-3">
+                  <div class="box1">
+                    <span class="box-title">誰と行った?</span>
+                    <p><%= @mytrip.with_whom %></p>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="box1">
+                    <span class="box-title">日 数</span>
+                    <p><%= @mytrip.days %></p>
+                  </div>
+                </div>
+               <% if @mytrip.total_price.present? %>
+               <div class="col-lg-4">
                 <div class="box1">
-                  <span class="box-title">交 通</span>
-                  <p><%= @mytrip.traffic %></p>
+                    <span class="box-title">総 額</span>
+                    <p><%= @mytrip.total_price %></p>
+                  </div>
                 </div>
-              </div>
-            <% end %>
-             <% if @mytrip.security.present? %>
-              <div class="col-lg-3">
+              <% end %>
+               <% if @mytrip.card.present? %>
+                <div class="col-lg-4">
+                  <div class="box1">
+                    <span class="box-title">クレジットカード</span>
+                    <p><%= @mytrip.card %></p>
+                  </div>
+                </div>
+              <% end %>
+               <% if @mytrip.bathroom.present? %>
+                <div class="col-lg-4">
+                  <div class="box1">
+                    <span class="box-title">トイレ事情</span>
+                    <p><%= @mytrip.bathroom %></p>
+                  </div>
+                </div>
+              <% end %>
+               <% if @mytrip.language.present? %>
+               <div class="col-lg-4">
                 <div class="box1">
-                  <span class="box-title">飛行時間</span>
-                  <p><%= @mytrip.security %></p>
+                    <span class="box-title">言 語</span>
+                    <p><%= @mytrip.language %></p>
+                  </div>
                 </div>
-              </div>
-            <% end %>
-             <% if @mytrip.airline.present? %>
-              <div class="col-lg-3">
+              <% end %>
+            <% if @mytrip.must.present? %>
+               <div class="col-lg-4">
                 <div class="box1">
-                  <span class="box-title">航空会社</span>
-                  <p><%= @mytrip.airline %></p>
+                    <span class="box-title">行くべき場所</span>
+                    <p><%= @mytrip.must %></p>
+                  </div>
                 </div>
-              </div>
-            <% end %>
-             <% if @mytrip.airline_comment.present? %>
-              <div class="col-lg-3">
-                <div class="box1">
-                  <span class="box-title">航空会社の評価</span>
-                  <p><%= @mytrip.airline_comment %></p>
+              <% end %>
+               <% if @mytrip.good_point.present? %>
+                <div class="col-lg-4">
+                  <div class="box1">
+                    <span class="box-title">良かった点</span>
+                    <p><%= @mytrip.good_point %></p>
+                  </div>
                 </div>
-              </div>
-            <% end %>
-              <div class="col-lg-3">
-                <div class="box1">
-                  <span class="box-title">誰と行った?</span>
-                  <p><%= @mytrip.with_whom %></p>
+              <% end %>
+               <% if @mytrip.bad_point.present? %>
+                <div class="col-lg-4">
+                 <div class="box1">
+                    <span class="box-title">悪かった点</span>
+                    <p><%= @mytrip.bad_point %></p>
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="box1">
-                  <span class="box-title">日 数</span>
-                  <p><%= @mytrip.days %></p>
-                </div>
-              </div>
-             <% if @mytrip.total_price.present? %>
-             <div class="col-lg-4">
-              <div class="box1">
-                  <span class="box-title">総 額</span>
-                  <p><%= @mytrip.total_price %></p>
-                </div>
-              </div>
-            <% end %>
-             <% if @mytrip.card.present? %>
-              <div class="col-lg-4">
-                <div class="box1">
-                  <span class="box-title">クレジットカード</span>
-                  <p><%= @mytrip.card %></p>
-                </div>
-              </div>
-            <% end %>
-             <% if @mytrip.bathroom.present? %>
-              <div class="col-lg-4">
-                <div class="box1">
-                  <span class="box-title">トイレ事情</span>
-                  <p><%= @mytrip.bathroom %></p>
-                </div>
-              </div>
-            <% end %>
-             <% if @mytrip.language.present? %>
-             <div class="col-lg-4">
-              <div class="box1">
-                  <span class="box-title">言 語</span>
-                  <p><%= @mytrip.language %></p>
-                </div>
-              </div>
-            <% end %>
-          <% if @mytrip.must.present? %>
-             <div class="col-lg-4">
-              <div class="box1">
-                  <span class="box-title">行くべき場所</span>
-                  <p><%= @mytrip.must %></p>
-                </div>
-              </div>
-            <% end %>
-             <% if @mytrip.good_point.present? %>
-              <div class="col-lg-4">
-                <div class="box1">
-                  <span class="box-title">良かった点</span>
-                  <p><%= @mytrip.good_point %></p>
-                </div>
-              </div>
-            <% end %>
-             <% if @mytrip.bad_point.present? %>
-              <div class="col-lg-4">
-               <div class="box1">
-                  <span class="box-title">悪かった点</span>
-                  <p><%= @mytrip.bad_point %></p>
-                </div>
-              </div>
-            <% end %>
-        </div>
-        <%= link_to "編集",edit_admins_mytrip_path(@mytrip.id), class: "col-xs-2 btn btn-default edit_mytrip_#{@mytrip.id}" %>
-        <%= link_to "削除",admins_mytrip_path(@mytrip.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "col-xs-2 btn btn-danger destroy_mytrip_#{@mytrip.id}" %>
-        <div class="row">
-          <div class="col-xs-7 col-xs-offset-5" >
-            <div class="box2">
-              <span class="box-title">コメント</span>
-                <% unless @mytrip.comments.present? %>
+              <% end %>
+          </div>
+          <%= link_to "編集",edit_admins_mytrip_path(@mytrip.id), class: "col-xs-2 btn btn-default edit_mytrip_#{@mytrip.id}" %>
+          <%= link_to "削除",admins_mytrip_path(@mytrip.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "col-xs-2 btn btn-danger destroy_mytrip_#{@mytrip.id}" %>
+          <div class="row">
+            <div class="col-xs-7 col-xs-offset-5" >
+              <div class="box2">
+                  <% unless @mytrip.comments.present? %>
                   <p>コメント一覧</p>
                 <% end %>
                 <div id="comment">
                   <%= render 'comment',mytrip: @mytrip %>
                 </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div>
-          <%= link_to "投稿一覧へ", admins_mytrips_path, class: "col-xs-3 col-xs-offset-8 btn btn-default" %>
-        </div>
+          <div>
+            <%= link_to "投稿一覧へ", admins_mytrips_path, class: "col-xs-4 col-xs-offset-8 btn btn-default" %>
+          </div>
+      </div>
     </div>
   </div>
 </div>
