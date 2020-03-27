@@ -1,8 +1,6 @@
 <div class="-visual">
   <div class="row">
     <div class="col-xs-9 col-xs-offset-3">
-
-
 			<h2>パスワードをお忘れですか？</h2><br>
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 			  <%= render "devise/shared/error_messages", resource: resource %>
@@ -11,17 +9,16 @@
               <div class="col-xs-2">
                 <%= f.label :email ,'　メールアドレス', class: 'control-label'%>
               </div>
-              <div class="col-xs-5">
+              <div class="col-xs-4">
                 <%= f.email_field :email, autofocus: true, autocomplete: "email",class: 'form-control' %><br>
               </div>
             </div>
           </div>
           <div class="actions">
-			       <%= f.submit "パスワード再発行", class: "col-xs-5 col-xs-offset-2 btn btn-default" %>
+			       <%= f.submit "パスワード再発行", class: "col-xs-4 col-xs-offset-2 btn btn-default" %>
 			   </div>
 			   <% end %><br>
-
-			<%= render "devise/shared/links" %>
+			<%= render "devise/shared/links" %><br><br><br><br><br><br><br><br>
         </div>
     </div>
 </div>
