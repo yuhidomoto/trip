@@ -373,24 +373,38 @@ footer {
   background-size: cover;
  }
 
-//-------------------------------admin index(_trip)
+//-------------------------------admin index(_trip),seemore
 
 .trip_box2 {
   height: 450px;
 }
 
-//-------------------------------admin top
+.admin-visual {
+  padding-top: 60px;
+  width: 99%;
+  background-image: image-url("gold3.jpg");
+  background-repeat:  no-repeat;
+  background-size: cover;
+ }
 
+//-------------------------------admin top
+.admin-visual {
+  padding-top: 60px;
+  width: 99%;
+  background-image: image-url("gold3.jpg");
+  background-repeat:  no-repeat;
+  background-size: cover;
+ }
 .admin-top-visual {
   background-image: image-url("56758fb.jpg");
-  width: 385px;
-  height: 285px;
+  width: 390px;
+  height: 300px;
   background-size: cover;
  }
 
 .admin-container {
   margin: 0 auto;
-  padding-top: 60px;
+  padding-top: 70px;
   padding-bottom: 10px;
   margin: 0 auto;
 }

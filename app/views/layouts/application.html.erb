@@ -49,12 +49,27 @@
 
                       <% elsif admin_signed_in? && request.fullpath.index("/admins/") %>
                            <ul class="nav navbar-nav">
-                              <li><%= link_to "　くわしめとりっぷ　", root_path %></li>
-                              <li><%= link_to "　管理者トップ　", admins_top_path %></li>
-                              <li><%= link_to "　会員一覧　", admins_users_path %></li>
-                              <li><%= link_to "　投稿一覧　", admins_mytrips_path %></li>
-                              <li><%= link_to "　ログアウト　", destroy_admin_session_path, method: :delete %></li>
-                          </ul>
+                            <li class="logo">
+                              <%= link_to root_path do %>
+                              <%= image_tag "logo.jpg" %></li>
+                              <% end %>
+                             <li class="logo">
+                              <%= link_to admins_top_path do %>
+                              <%= image_tag "logo1.jpg" %></li>
+                              <% end %>
+                            <li class="logo">
+                              <%= link_to admins_users_path do %>
+                              <%= image_tag "logo3.jpg" %></li>
+                              <% end %>
+                            <li class="logo">
+                              <%= link_to admins_mytrips_path do %>
+                              <%= image_tag "logo2.jpg" %></li>
+                              <% end %>
+                            <li class="logout">
+                              <%= link_to destroy_admin_session_path, method: :delete do %>
+                              <%= image_tag "logout.jpg" %></li>
+                              <% end %>
+                            </ul>
                       <% else %>
                         <li class="home">
                           <%= link_to root_path do %>
@@ -92,7 +107,10 @@
                 <h4 class="fab fa-twitter-square"></h4>
                 <h4 class="fab fa-facebook-square"></h4>
                 <h4 class="fab fa-youtube-square"></h4><br>
-              <%= link_to "管理者はこちら　＞", new_admin_session_path %><br>
+                <div class="logo">
+                  <%= link_to new_admin_session_path do %>
+                  <%= image_tag "admin.jpg" %></div>
+                  <% end %>
               <div id="footer_copr">
                 <p id="copyright">Copyright &copy;&nbsp; 株式会社YuhiDomoto All rights reserved.</p>
             </footer>
