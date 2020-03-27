@@ -296,7 +296,7 @@ footer {
   transition: .6s;
  }
 
-//---------------------mytrip index,seemore
+//---------------------mytrip index,seemore,show
 .trip_box {
   height: 460px;
 }
@@ -332,22 +332,46 @@ footer {
   height: 140px;
   background-size: cover;
  }
+ .new2-visual {
+  background-image: image-url("airline.jpg");
+  width: 170px;
+  height: 100px;
+  background-size: cover;
+ }
+ .new3-visual {
+  background-image: image-url("map2.jpg");
+  width: 165px;
+  height: 81px;
+  background-size: cover;
+ }
 
  .must {
  color:  #FF0000;
  }
 
 //--------------------------------mytrip edit
-.edit-visual {
- width: 98%;
- height: 1870px;
- background-image: image-url("p0130_l.jpg");
- background-repeat:  no-repeat;
- background-size: cover;
- }
 .box {
     background: #FFFFFF;
 }
+
+.edit-visual {
+  background-image: image-url("bag.jpg");
+  width: 140px;
+  height: 140px;
+  background-size: cover;
+ }
+ .edit2-visual {
+  background-image: image-url("kai.jpg");
+  width: 170px;
+  height: 120px;
+  background-size: cover;
+ }
+ .edit3-visual {
+  background-image: image-url("makura.jpg");
+  width: 128px;
+  height: 80px;
+  background-size: cover;
+ }
 
 //-------------------------------admin index(_trip)
 
