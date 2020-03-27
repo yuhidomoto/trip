@@ -1,76 +1,78 @@
 <video src="<%= asset_path 'magic_kingdom.mp4' %>"width="100%" height="100%"autoplay muted loop playsinline></video>
-<div class="col-xs-6 col-xs-offset-1" >
-  <div class="flash"><br><br>
-    <h4><strong><% if flash[:notice] %><%= flash[:notice] %></strong></h4>
-    <% end %>
-  </div>
-</div>
-<div class="row">
- <div class="col-xs-10 col-xs-offset-1">
-    <div class="col-xs-9"><br>
-      <% if user_signed_in? %>
-        <div class="font3">気になる国や観光名所などを検索してみましょう。</div>
-        <div class="font2">
-          <%= form_tag search_mytrips_path, :method => 'get', class: "form-inline my-2 my-lg-0" do %>
-          <%= text_field_tag :search, '', class: "form-control mr-sm-2", :placeholder => "search" %>
-          <button class="btn btn-default" type="submit">　検索　</button>
-        	<% end %>
-        </div>
+<div class="visual" >
+  <div class="col-xs-6 col-xs-offset-1" >
+    <div class="flash"><br><br>
+      <h4><strong><% if flash[:notice] %><%= flash[:notice] %></strong></h4>
       <% end %>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="col-xs-9"><br>
+        <% if user_signed_in? %>
+          <div class="font3">気になる国や観光名所などを検索してみましょう。</div>
+          <div class="font2">
+            <%= form_tag search_mytrips_path, :method => 'get', class: "form-inline my-2 my-lg-0" do %>
+            <%= text_field_tag :search, '', class: "form-control mr-sm-2", :placeholder => "search" %>
+            <button class="btn btn-default" type="submit">　検索　</button>
+          	<% end %>
+          </div>
+        <% end %>
+      </div>
 
- 	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-      <div id="page_top"><a href="#"></a></div>
-      <h4><%= link_to "Post page", new_mytrip_path,class: "col-xs-offset-9 new-btn" %></h4>
-					<div class="row">
-	  				<div class="font">　Europe</div>
-						  <% @region_europe.first(3).each do |europe| %>
-              <div class="font2">
-							  <%= render 'trip', mytrip: europe ,country: @country %>
+   	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+        <div id="page_top"><a href="#"></a></div>
+        <h4><%= link_to "Post page", new_mytrip_path,class: "col-xs-offset-9 new-btn" %></h4>
+  					<div class="row">
+  	  				<div class="font">　Europe</div>
+  						  <% @region_europe.first(3).each do |europe| %>
+                <div class="font2">
+  							  <%= render 'trip', mytrip: europe ,country: @country %>
+                </div>
+  							<% end %>
+  							<%= link_to "もっと見る", seemore_path(category:"Europe"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
+  					</div>
+
+  					<div class="row">
+  					  <div class="font">　Americas</div>
+  						  <% @region_americas.first(3).each do |americas| %>
+                <div class="font2">
+  						  	<%= render 'trip', mytrip: americas ,country: @country %>
+                </div>
+  						  <% end %>
+  						  <%= link_to "もっと見る", seemore_path(category:"Americas"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
+  					</div>
+
+  					<div class="row">
+  					  <div class="font">　Africa</div>
+  						  <% @region_africa.first(3).each do |africa| %>
+                <div class="font2">
+  						  	<%= render 'trip', mytrip: africa ,country: @country %>
+                </div>
+  					  	<% end %>
+  							<%= link_to "もっと見る", seemore_path(category:"Africa"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
+  					</div>
+
+  					<div class="row">
+  				    <div class="font">　Asia</div>
+  				    	<% @region_asia.first(3).each do |asia| %>
+  					  <div class="font2">
+                <%= render 'trip', mytrip: asia ,country: @country %>
               </div>
-							<% end %>
-							<%= link_to "もっと見る", seemore_path(category:"Europe"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
-					</div>
+  					    <% end %>
+  					    <%= link_to "もっと見る", seemore_path(category:"Asia"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
+  					</div>
 
-					<div class="row">
-					  <div class="font">　Americas</div>
-						  <% @region_americas.first(3).each do |americas| %>
-              <div class="font2">
-						  	<%= render 'trip', mytrip: americas ,country: @country %>
-              </div>
-						  <% end %>
-						  <%= link_to "もっと見る", seemore_path(category:"Americas"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
-					</div>
-
-					<div class="row">
-					  <div class="font">　Africa</div>
-						  <% @region_africa.first(3).each do |africa| %>
-              <div class="font2">
-						  	<%= render 'trip', mytrip: africa ,country: @country %>
-              </div>
-					  	<% end %>
-							<%= link_to "もっと見る", seemore_path(category:"Africa"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
-					</div>
-
-					<div class="row">
-				    <div class="font">　Asia</div>
-				    	<% @region_asia.first(3).each do |asia| %>
-					  <div class="font2">
-              <%= render 'trip', mytrip: asia ,country: @country %>
-            </div>
-					    <% end %>
-					    <%= link_to "もっと見る", seemore_path(category:"Asia"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
-					</div>
-
-					<div class="row">
-				     <div class="font">　Oceania</div>
-					     <% @region_oceania.first(3).each do |oceania| %>
-              <div class="font2">
-					     	<%= render 'trip', mytrip: oceania ,country: @country %>
-              </div>
-					     <% end %>
-					     <%= link_to "もっと見る", seemore_path(category:"Oceania"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
-					 </div>
-				</div>
-		</div>
+  					<div class="row">
+  				     <div class="font">　Oceania</div>
+  					     <% @region_oceania.first(3).each do |oceania| %>
+                <div class="font2">
+  					     	<%= render 'trip', mytrip: oceania ,country: @country %>
+                </div>
+  					     <% end %>
+  					     <%= link_to "もっと見る", seemore_path(category:"Oceania"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
+  					</div>
+  	  </div>
+    </div>
+</div>
 

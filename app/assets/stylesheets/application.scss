@@ -161,7 +161,10 @@ footer {
 
 //-----------------------------mypage
  .mypage-visual {
- padding-top: 100px;
+  width: 99%;
+  background-image: image-url("gold2.jpg");
+  background-repeat:  no-repeat;
+  background-size: cover;
  }
  .trip_box3 {
   height: 390px;
@@ -170,7 +173,7 @@ footer {
 
 .aboutpage {
   width: 99%;
-  background-image: image-url("mother.jpg");
+  background-image: image-url("gold2.jpg");
   background-repeat:  no-repeat;
   background-size: cover;
 }
@@ -208,6 +211,18 @@ footer {
 }
 
 //----------------------------mytrip show
+.show {
+  background-image: image-url("case.jpg");
+  width: 125px;
+  height: 125px;
+  background-size: cover;
+}
+.show2 {
+  background-image: image-url("photo.jpg");
+  width: 175px;
+  height: 175px;
+  background-size: cover;
+}
 .show-visual {
    padding-top: 90px;
  }
@@ -215,9 +230,9 @@ footer {
     position: relative;
     margin: 1.5em 0;
     padding: 1.5em 1.5em;
-    border: solid 3px #434385;
+    border: solid 3px #a77e40;
     border-radius: 8px;
-    color: #a77e40;
+    color: #505050;
 }
 .box1 .box-title {
     position: absolute;
@@ -228,7 +243,7 @@ footer {
     line-height: 1;
     font-size: 19px;
     background: #FFF;
-    color: #434385;
+    color: #a77e40;
     font-weight: bold;
 }
 .box1 p {
@@ -240,8 +255,8 @@ footer {
     margin:2em 0;
     position: relative;
     padding: 0.5em 1.5em;
-    border-top: solid 3px #434385;
-    border-bottom: solid 3px #434385;
+    border-top: solid 3px #505050;
+    border-bottom: solid 3px #505050;
 }
 .box2:before, .box2:after{
     content: '';
@@ -250,7 +265,7 @@ footer {
     width: 2px;
     height: -webkit-calc(100% + 20px);
     height: calc(100% + 20px);
-    background-color: #434385;
+    background-color: #505050;
 }
 .box2:before {left: 10px;}
 .box2:after {right: 10px;}
@@ -285,6 +300,12 @@ footer {
 .trip_box {
   height: 460px;
 }
+ .visual {
+  width: 99%;
+  background-image: image-url("gold3.jpg");
+  background-repeat:  no-repeat;
+  background-size: cover;
+ }
 
 //------------------------------mytrip index
 .new-btn {
@@ -306,9 +327,9 @@ footer {
 //---------------------------------mytrip new
 
 .new-visual {
-  background-image: image-url("p0130_l.jpg");
-  width: 155px;
-  height: 155px;
+  background-image: image-url("passport.jpg");
+  width: 140px;
+  height: 140px;
   background-size: cover;
  }
 

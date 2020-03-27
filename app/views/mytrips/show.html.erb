@@ -34,8 +34,12 @@
               </table>
             </div>
           </div>
-          <div class="col-xs-6" >
-            <div class="flash"><br><br>
+          <div class="col-xs-3" >
+            <div class="show">
+            </div>
+          </div>
+          <div class="col-xs-4" >
+            <div class="flash">
               <h4><strong><% if flash[:notice] %><%= flash[:notice] %></strong></h4>
             </div>
             <% end %>
@@ -233,7 +237,11 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-xs-8 col-xs-offset-4" >
+            <div class="col-xs-3" >
+              <div class="show2">
+              </div>
+            </div>
+            <div class="col-xs-8 col-xs-offset-1" >
               <div class="box2">
               <% unless @mytrip.comments.present? %>
                 <p class="comment2">コメントを残してみましょう</p>
@@ -243,13 +251,15 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-xs-8 col-xs-offset-4" >
-            <br><%= form_with model:[@mytrip, @comment], data: {remote: true} do |f| %>
-              <%= f.text_area :body, rows:'4', class: "form-control" %>
-              <%= f.submit "Submit", class: "btn btn-default pull-right" %><br><br>
-            <% end %>
-            <%= link_to "Posts list", mytrips_path, class: "col-xs-4 col-xs-offset-8 btn btn-default" %>
+            <div class="col-xs-8 col-xs-offset-1" >
+              <div class="font">
+                <%= form_with model:[@mytrip, @comment], data: {remote: true} do |f| %>
+                <%= f.text_area :body, rows:'4', class: "form-control" %>
+                <%= f.submit "Submit", class: "btn btn-default pull-right" %><br><br>
+                <% end %>
+                <%= link_to "Posts list", mytrips_path, class: "col-xs-4 col-xs-offset-8 btn btn-default" %>
+              </div>
+            </div>
           </div>
     </div>
   </div>
