@@ -36,16 +36,16 @@
 	  </div>
 	</div>
 </div>
-<div class="col-xs-4 col-xs-offset-2">
 	<% if @mytrip.errors.any? %>
-	<div class="alert alert-warning">
-		<%= pluralize(@mytrip.errors.count,"つのエラーがあります。") %>
-			<% @mytrip.errors.full_messages.each do |message| %>
-  	<li><%= message %></li>
-  	<% end %>
- 	<% end %>
-	</div>
-</div>
+		<div class="col-xs-4 col-xs-offset-2">
+			<div class="alert alert-warning">
+				<%= pluralize(@mytrip.errors.count,"つのエラーがあります。") %>
+				<% @mytrip.errors.full_messages.each do |message| %>
+  			<li><%= message %></li>
+  			<% end %>
+  		</div>
+		</div>
+	<% end %>
 <div class="row">
 	<div class="form-horizontal" role="form">
 		<div class="font3">
