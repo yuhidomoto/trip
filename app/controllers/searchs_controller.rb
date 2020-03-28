@@ -5,7 +5,7 @@ def search
 	  @country_list = country_list
 	  if @mytrips.count == 0
 	  		pp @country_list
-	  		v = @country_list.find{|arr| arr[0] == params[:search] }[1]
+	  		v = @country_list.find{|trip| trip[0] == params[:search] }[1]
 	  		pp v
 	  		@mytrips = Mytrip.search(v)
 	 	end
