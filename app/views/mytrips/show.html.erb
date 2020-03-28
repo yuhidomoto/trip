@@ -11,8 +11,8 @@
         <div class="row">
           <div class="col-xs-3" >
             <div class="comment2">
-            <h4><strong>投稿者情報</strong></h4>
-          </div>
+              <h4><strong>投稿者情報</strong></h4>
+            </div>
             <div class="box">
               <table class="table table-bordered">
                 <tr>
@@ -38,13 +38,15 @@
             <div class="show">
             </div>
           </div>
-          <div class="col-xs-4" >
-            <div class="flash">
-              <h4><strong><% if flash[:notice] %><%= flash[:notice] %></strong></h4>
+          <% if flash[:notice] %>
+            <div class="col-xs-4" >
+                <div class="flash">
+                  <h4><strong>
+                    <%= flash[:notice] %>
+                  </strong></h4>
+                </div>
             </div>
-            <% end %>
-          </div>
-        </div>
+          <% end %>
         <div class="row">
           <div class="col-xs-9" >
             <%= render 'mytrips/country', country: @country %>
@@ -263,6 +265,7 @@
               </div>
             </div>
           </div>
+        </div>
     </div>
   </div>
 </div>
