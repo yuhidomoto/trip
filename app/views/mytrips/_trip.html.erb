@@ -1,7 +1,7 @@
 <% 	country = ISO3166::Country.new(mytrip.country) %>
 <div class="col-md-4" >
 	<div class= "thumbnail trip_box" >
-		<%= attachment_image_tag mytrip, :image, :fill, 300, 300, format: 'jpeg', fallback: "no_image.jpg", size:"325x325" %>
+		<%= attachment_image_tag mytrip, :image, :fill, 300, 300, format: 'jpeg', fallback: "no_image.jpg", size:"312x312" %>
 		<div class="caption">
 	    <p>国名　<%= country.translation(:ja) %> (<%= mytrip.country %>)</p>
 	    <p><%= mytrip.important[0..40] %></p>
