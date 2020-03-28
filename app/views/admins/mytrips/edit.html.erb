@@ -1,32 +1,35 @@
-<div class="edit-visual">
-	<div class="row">
-		<div class="col-xs-3 col-xs-offset-2"><br><br><br><br>
-			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-      <div id="page_top"><a href="#"></a></div>
-			<h2>編集ページ</h2>
-			<h4><strong>投稿者の情報</strong></h4>
-			<div class="box">
-				<table class="table table-bordered">
-					<tr>
-						<th>名　前</th>
-						<th>年　齢</th>
-						<th>性　別</th>
-					</tr>
-				 	<tr>
-						<td><%= @user.name %></td>
-						<td><%= @user.age %>歳</td>
-						<td><% @user.gender %>
-              <% if @user.gender == true %>
-								 男性
-							<% else %>
-								 女性
-							<% end %>
-						</td>
-					</tr>
-		 		</table>
-		 	</div>
-		</div>
+<div class="row">
+	<div class="col-xs-3 col-xs-offset-2"><br><br><br><br>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+    <div id="page_top"><a href="#"></a></div>
+		<h2>編集ページ</h2>
+		<h4><strong>投稿者の情報</strong></h4>
+		<div class="box">
+			<table class="table table-bordered">
+				<tr>
+					<th>名　前</th>
+					<th>年　齢</th>
+					<th>性　別</th>
+				</tr>
+			 	<tr>
+					<td><%= @user.name %></td>
+					<td><%= @user.age %>歳</td>
+					<td><% @user.gender %>
+            <% if @user.gender == true %>
+							 男性
+						<% else %>
+							 女性
+						<% end %>
+					</td>
+				</tr>
+	 		</table>
+	 	</div>
+	</div><br><br><br><br><br><br><br>
+	<div class="col-xs-6" >
+		<div class="edit-visual">
+	  </div>
 	</div>
+</div>
 	<div class="form-horizontal" role="form">
 		<%= form_for(@mytrip, url:admins_mytrip_path(@mytrip), method: :patch) do |f| %>
 		<div class="col-xs-9 col-xs-offset-2">
@@ -218,7 +221,7 @@
 		  <% end %>
 		</div>
  	</div>
-</div>
+
 
 <script>
 	$('.js-searchable').select2({
