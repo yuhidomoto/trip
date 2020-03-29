@@ -91,7 +91,7 @@
               <% end %>
                  <div class="col-lg-3">
                    <div class="box1">
-                    <span class="box-title">時 差</span>
+                    <span class="box-title">日本との時差</span>
                     <% japan = ISO3166::Country.new("JP") %>
                     <h4><%= ((@country.longitude - japan.longitude) / 15).round(2) %>時間</h4>
                    </div>
@@ -227,7 +227,7 @@
                 </div>
               <% end %>
           </div>
-          <div class="font">
+          <div class="font"><br><br>
             <% if @mytrip.user == current_user %>
               <%= link_to "Edit page",edit_mytrip_path(@mytrip.id), class: "col-xs-2 btn btn-default edit_mytrip_#{@mytrip.id}" %>
               <%= link_to "Delete page",mytrip_path(@mytrip.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "col-xs-2 btn btn-default destroy_mytrip_#{@mytrip.id}" %>

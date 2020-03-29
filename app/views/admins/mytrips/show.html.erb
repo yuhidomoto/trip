@@ -54,7 +54,7 @@
               <% end %>
               <div class="col-lg-3">
                 <div class="box1">
-                  <span class="box-title">時 差</span>
+                  <span class="box-title">日本との時差</span>
                   <% japan = ISO3166::Country.new("JP") %>
                   <h4><%= ((@country.longitude - japan.longitude) / 15).round(2) %>時間</h4>
                 </div>
