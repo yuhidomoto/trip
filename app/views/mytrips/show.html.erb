@@ -138,7 +138,7 @@
                 <div class="col-lg-3">
                   <div class="box1">
                     <span class="box-title">飛行時間</span>
-                    <p><%= @mytrip.security %></p>
+                    <p><%= @mytrip.flight_time %></p>
                   </div>
                 </div>
               <% end %>
@@ -226,7 +226,15 @@
                   </div>
                 </div>
               <% end %>
-          </div>
+                <div class="col-lg-4">
+                 <div class="box1">
+                    <span class="box-title">伝えたい点</span>
+                    <p><%= @mytrip.important %></p>
+                  </div>
+                </div>
+             </div>
+
+          important
           <div class="font"><br><br>
             <% if @mytrip.user == current_user %>
               <%= link_to "Edit page",edit_mytrip_path(@mytrip.id), class: "col-xs-2 btn btn-default edit_mytrip_#{@mytrip.id}" %>
