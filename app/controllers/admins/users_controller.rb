@@ -9,8 +9,8 @@ class Admins::UsersController < ApplicationController
 	end
 
 	def update
-		@user = User.find(params[:id])
-  	if @user.update(user_params)
+		user = User.find(params[:id])
+  	if user.update(user_params)
   		redirect_to admins_users_path, notice: "会員情報の変更が完了しました。"
   	else
 		 render "edit"
@@ -18,8 +18,8 @@ class Admins::UsersController < ApplicationController
 	end
 
 	def destroy
-	@user = User.find(params[:id])
-  	@user.destroy
+	user = User.find(params[:id])
+  	user.destroy
   	redirect_to admins_users_path, notice: "会員を削除しました"
   end
 

@@ -8,14 +8,14 @@ class MytripsController < ApplicationController
 
 
 def create
-	@mytrip = Mytrip.new(mytrip_params)
-	@user = current_user
-	@mytrip.user_id  = @user.id
-	@country_list = country_list
-	country = ISO3166::Country.new(@mytrip.country)
-	@mytrip.region = country.region
-	if @mytrip.save
-		redirect_to mytrip_path(@mytrip.id)
+	mytrip = Mytrip.new(mytrip_params)
+	user = current_user
+	mytrip.user_id  = user.id
+	country_list = country_list
+	country = ISO3166::Country.new(mytrip.country)
+	mytrip.region = country.region
+	if mytrip.save
+		redirect_to mytrip_path(mytrip.id)
 		flash[:notice] = "新規投稿に成功しました !"
 	else
 		render "new"
@@ -82,13 +82,13 @@ def seemore
 	end
 
 	def update
-		@mytrip = Mytrip.find(params[:id])
-		@user = current_user
-		@country_list = country_list
-  	if @mytrip.update(mytrip_params)
-  		country = ISO3166::Country.new(@mytrip.country)
-			@mytrip.region = country.region
-			@mytrip.save
+		mytrip = Mytrip.find(params[:id])
+		user = current_user
+		country_list = country_list
+  	if mytrip.update(mytrip_params)
+  		country = ISO3166::Country.new(mytrip.country)
+			mytrip.region = country.region
+			mytrip.save
   		redirect_to mytrips_path, notice: "アップデートが完了しました !"
   	else
   		render "edit"
@@ -96,8 +96,8 @@ def seemore
 	end
 
 	def destroy
-		@mytrip = Mytrip.find(params[:id])
-  	@mytrip.destroy
+		mytrip = Mytrip.find(params[:id])
+  	mytrip.destroy
   	redirect_to mytrips_path, notice: "削除が完了しました !"
 	end
 

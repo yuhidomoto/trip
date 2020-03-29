@@ -50,13 +50,13 @@ class Admins::MytripsController < ApplicationController
 	end
 
 def update
-	@mytrip = Mytrip.find(params[:id])
-	@user = @mytrip.user
-	@country_list = country_list
-  if @mytrip.update(mytrip_params)
-  	country = ISO3166::Country.new(@mytrip.country)
-			@mytrip.region = country.region
-			@mytrip.save
+	mytrip = Mytrip.find(params[:id])
+	user = mytrip.user
+	country_list = country_list
+  if mytrip.update(mytrip_params)
+  	country = ISO3166::Country.new(mytrip.country)
+			mytrip.region = country.region
+			mytrip.save
   		redirect_to admins_mytrips_path, notice: "アップデートが完了しました !"
   else
   	render "edit"
@@ -64,8 +64,8 @@ def update
 end
 
 	def destroy
-		@mytrip = Mytrip.find(params[:id])
-  	@mytrip.destroy
+		mytrip = Mytrip.find(params[:id])
+  	mytrip.destroy
   	redirect_to admins_mytrips_path, notice: "削除が完了しました !"
   end
 
