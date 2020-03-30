@@ -7,11 +7,6 @@ class Admins::MytripsController < ApplicationController
 		@region_asia = Mytrip.where(region: "Asia")
 		@region_oceania = Mytrip.where(region: "Oceania")
 		@region_africa = Mytrip.where(region: "Africa")
-		@country = {}
-		@mytrips.each do |mytrip|
-			country_name = mytrip.country
-			@country[mytrip.country] = ISO3166::Country.new(country_name)
-		end
 		@country_list = country_list
 	end
 
@@ -26,12 +21,8 @@ class Admins::MytripsController < ApplicationController
 			@mytrips = Mytrip.where(region: "Africa").page(params[:page]).per(9)
 		elsif params[:category] == "オセアニア"
 			@mytrips = Mytrip.where(region: "Oceania").page(params[:page]).per(9)
-		end
-
-		@country = {}
-		@mytrips.each do |mytrip|
-			country_name = mytrip.country
-			@country[mytrip.country] = ISO3166::Country.new(country_name)
+		else
+			redirect_to admins_mytrips_path
 		end
 	end
 

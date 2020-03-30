@@ -18,7 +18,7 @@
       <div class="row">
         <h3>　ヨーロッパ</h3>
         <% @region_europe.first(3).each do |europe| %>
-          <%= render 'trip', mytrip: europe ,country: @country %>
+          <%= render 'trip', mytrip: europe %>
         <% end %>
         <%= link_to "ヨーロッパ一覧", admins_seemore_path(category:"ヨーロッパ"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
       </div>
@@ -26,7 +26,7 @@
       <div class="row">
         <h3>　アメリカ州</h3>
         <% @region_americas.first(3).each do |americas| %>
-          <%= render 'trip', mytrip: americas ,country: @country %>
+          <%= render 'trip', mytrip: americas %>
         <% end %>
         <%= link_to "アメリカ州一覧", admins_seemore_path(category:"アメリカ州"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
       </div>
@@ -34,7 +34,7 @@
       <div class="row">
         <h3>　アフリカ</h3>
         <% @region_africa.first(3).each do |africa| %>
-          <%= render 'trip', mytrip: africa ,country: @country %>
+          <%= render 'trip', mytrip: africa %>
         <% end %>
         <%= link_to "アフリカ一覧", admins_seemore_path(category:"アフリカ"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
       </div>
@@ -42,7 +42,7 @@
       <div class="row">
         <h3>　アジア</h3>
         <% @region_asia.first(3).each do |asia| %>
-          <%= render 'trip', mytrip: asia ,country: @country %>
+          <%= render 'trip', mytrip: asia %>
         <% end %>
         <%= link_to "アジア一覧", admins_seemore_path(category:"アジア"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
       </div>
@@ -50,7 +50,7 @@
       <div class="row">
         <h3>　オセアニア</h3>
         <% @region_oceania.first(3).each do |oceania| %>
-          <%= render 'trip', mytrip: oceania ,country: @country %>
+          <%= render 'trip', mytrip: oceania %>
         <% end %>
         <%= link_to "オセアニア一覧", admins_seemore_path(category:"オセアニア"),class: "col-xs-2 col-xs-offset-10 btn btn-info" %>
       </div>

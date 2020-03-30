@@ -1,75 +1,65 @@
 class MytripsController < ApplicationController
- before_action :authenticate_user!
+	before_action :authenticate_user!
 	def new
 		@mytrip = Mytrip.new
 		@user = current_user
 		@country_list = country_list
 	end
 
-
-def create
-	@mytrip = Mytrip.new(mytrip_params)
-	@user = current_user
-	@mytrip.user_id  = @user.id
-	@country_list = country_list
-	country = ISO3166::Country.new(@mytrip.country)
-	@mytrip.region = country.region
-	if @mytrip.save
-		redirect_to mytrip_path(@mytrip.id)
-		flash[:notice] = "新規投稿に成功しました !"
-	else
-		render "new"
-	end
-end
-
-def index
-	@mytrips = Mytrip.all
-	@region_americas = Mytrip.where(region: "Americas")
-	@region_europe = Mytrip.where(region: "Europe")
-	@region_asia = Mytrip.where(region: "Asia")
-	@region_oceania = Mytrip.where(region: "Oceania")
-	@region_africa = Mytrip.where(region: "Africa")
-	@country = {}
-	@mytrips.each do |mytrip|
-		country_name = mytrip.country
-		@country[mytrip.country] = ISO3166::Country.new(country_name)
-	end
-  @user = current_user
-  @country_list = country_list
-end
-
-def seemore
-	if params[:category] == "Asia"
-		@mytrips = Mytrip.where(region: "Asia").page(params[:page]).per(9)
-	elsif params[:category] == "Europe"
-		@mytrips = Mytrip.where(region: "Europe").page(params[:page]).per(9)
-	elsif params[:category] == "Americas"
-		@mytrips = Mytrip.where(region: "Americas").page(params[:page]).per(9)
-	elsif params[:category] == "Africa"
-		@mytrips = Mytrip.where(region: "Africa").page(params[:page]).per(9)
-	elsif params[:category] == "Oceania"
-		@mytrips = Mytrip.where(region: "Oceania").page(params[:page]).per(9)
+	def create
+		@mytrip = Mytrip.new(mytrip_params)
+		@user = current_user
+		@mytrip.user_id  = @user.id
+		@country_list = country_list
+		country = ISO3166::Country.new(@mytrip.country)
+		@mytrip.region = country.region
+		if @mytrip.save
+			redirect_to mytrip_path(@mytrip.id)
+			flash[:notice] = "新規投稿に成功しました !"
+		else
+			render "new"
+		end
 	end
 
-	@country = {}
-		@mytrips.each do |mytrip|
-			country_name = mytrip.country
-			@country[mytrip.country] = ISO3166::Country.new(country_name)
+	def index
+		@mytrips = Mytrip.all
+		@user = current_user
+	  @country_list = country_list
+		@region_americas = Mytrip.where(region: "Americas")
+		@region_europe = Mytrip.where(region: "Europe")
+		@region_asia = Mytrip.where(region: "Asia")
+		@region_oceania = Mytrip.where(region: "Oceania")
+		@region_africa = Mytrip.where(region: "Africa")
+	end
+
+	def seemore
+		if params[:category] == "Asia"
+			@mytrips = Mytrip.where(region: "Asia").page(params[:page]).per(9)
+		elsif params[:category] == "Europe"
+			@mytrips = Mytrip.where(region: "Europe").page(params[:page]).per(9)
+		elsif params[:category] == "Americas"
+			@mytrips = Mytrip.where(region: "Americas").page(params[:page]).per(9)
+		elsif params[:category] == "Africa"
+			@mytrips = Mytrip.where(region: "Africa").page(params[:page]).per(9)
+		elsif params[:category] == "Oceania"
+			@mytrips = Mytrip.where(region: "Oceania").page(params[:page]).per(9)
+		else
+			redirect_to mytrips_path
 		end
 	end
 
 	def show
-		@comment = Comment.new
 		@mytrip = Mytrip.find(params[:id])
 		@user = current_user
+		@comment = Comment.new
 		country_name = @mytrip.country
 		@country = ISO3166::Country.new(country_name)
 		@country_list = country_list
 		@hash = Gmaps4rails.build_markers(@mytrip) do |place, marker|
-      marker.lat @country.latitude
-      marker.lng @country.longitude
-      marker.infowindow place.country
-  	end
+	    marker.lat @country.latitude
+	    marker.lng @country.longitude
+	    marker.infowindow place.country
+		end
 	end
 
 	def edit
@@ -77,22 +67,22 @@ def seemore
 		@mytrip = Mytrip.find(params[:id])
 		@country_list = country_list
 		if @mytrip.user.id != current_user.id
-     	redirect_to mytrip_path(mytrip.id)
-   	end
+	   	redirect_to mytrip_path(mytrip.id)
+	 	end
 	end
 
 	def update
 		@mytrip = Mytrip.find(params[:id])
 		@user = current_user
 		@country_list = country_list
-  	if @mytrip.update(mytrip_params)
-  		country = ISO3166::Country.new(@mytrip.country)
+		if @mytrip.update(mytrip_params)
+			country = ISO3166::Country.new(@mytrip.country)
 			@mytrip.region = country.region
 			@mytrip.save
-  		redirect_to mytrips_path, notice: "アップデートが完了しました !"
-  	else
-  		render "edit"
-  	end
+			redirect_to mytrips_path, notice: "アップデートが完了しました !"
+		else
+			render "edit"
+		end
 	end
 
 	def destroy

@@ -30,7 +30,7 @@
   	  				<div class="font">　Europe</div>
   						  <% @region_europe.first(3).each do |europe| %>
                 <div class="font2">
-  							  <%= render 'trip', mytrip: europe ,country: @country %>
+  							  <%= render 'trip', mytrip: europe %>
                 </div>
   							<% end %>
   							<%= link_to "もっと見る", seemore_path(category:"Europe"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
@@ -40,7 +40,7 @@
   					  <div class="font">　Americas</div>
   						  <% @region_americas.first(3).each do |americas| %>
                 <div class="font2">
-  						  	<%= render 'trip', mytrip: americas ,country: @country %>
+  						  	<%= render 'trip', mytrip: americas %>
                 </div>
   						  <% end %>
   						  <%= link_to "もっと見る", seemore_path(category:"Americas"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
@@ -50,7 +50,7 @@
   					  <div class="font">　Africa</div>
   						  <% @region_africa.first(3).each do |africa| %>
                 <div class="font2">
-  						  	<%= render 'trip', mytrip: africa ,country: @country %>
+  						  	<%= render 'trip', mytrip: africa %>
                 </div>
   					  	<% end %>
   							<%= link_to "もっと見る", seemore_path(category:"Africa"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
@@ -60,7 +60,7 @@
   				    <div class="font">　Asia</div>
   				    	<% @region_asia.first(3).each do |asia| %>
   					  <div class="font2">
-                <%= render 'trip', mytrip: asia ,country: @country %>
+                <%= render 'trip', mytrip: asia %>
               </div>
   					    <% end %>
   					    <%= link_to "もっと見る", seemore_path(category:"Asia"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>
@@ -70,7 +70,7 @@
   				     <div class="font">　Oceania</div>
   					     <% @region_oceania.first(3).each do |oceania| %>
                 <div class="font2">
-  					     	<%= render 'trip', mytrip: oceania ,country: @country %>
+  					     	<%= render 'trip', mytrip: oceania %>
                 </div>
   					     <% end %>
   					     <%= link_to "もっと見る", seemore_path(category:"Oceania"),class: "col-xs-2 col-xs-offset-9 btn btn-default" %>

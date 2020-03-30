@@ -6,7 +6,7 @@
   		<div class="font">　<%= params[:category] %></div>
       <div class="font2">
     		<% @mytrips.each do |mytrip| %>
-    	  	<%= render 'mytrips/trip', mytrip: mytrip ,country: @country %>
+    	  	<%= render 'mytrips/trip', mytrip: mytrip %>
     		<% end %>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
         <div id="page_top"><a href="#"></a></div>
