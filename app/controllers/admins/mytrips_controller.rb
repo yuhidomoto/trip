@@ -7,7 +7,6 @@ class Admins::MytripsController < ApplicationController
 		@region_asia = Mytrip.where(region: "Asia")
 		@region_oceania = Mytrip.where(region: "Oceania")
 		@region_africa = Mytrip.where(region: "Africa")
-		@country_list = country_list
 	end
 
 	def seemore
@@ -31,13 +30,12 @@ class Admins::MytripsController < ApplicationController
 		@mytrip = Mytrip.find(params[:id])
 		country_name = @mytrip.country
 		@country = ISO3166::Country.new(country_name)
-		@country_list = country_list
 	end
 
-		def edit
-		 @mytrip = Mytrip.find(params[:id])
-		 @user = @mytrip.user
-		 @country_list = country_list
+	def edit
+	 @mytrip = Mytrip.find(params[:id])
+	 @user = @mytrip.user
+	 @country_list = country_list
 	end
 
 def update
@@ -46,9 +44,9 @@ def update
 	@country_list = country_list
   if @mytrip.update(mytrip_params)
   	country = ISO3166::Country.new(@mytrip.country)
-			@mytrip.region = country.region
-			@mytrip.save
-  		redirect_to admins_mytrips_path, notice: "アップデートが完了しました !"
+		@mytrip.region = country.region
+		@mytrip.save
+		redirect_to admins_mytrips_path, notice: "アップデートが完了しました !"
   else
   	render "edit"
   end
@@ -97,7 +95,6 @@ end
 	["セントルシア","LC"],["ニュージーランド","NZ"],["サンバルテルミ","BL"],["ウズベキスタン","UZ"],["インドネシア","ID"],["エリトリア国","ER"],["ベネズエラ","VE"],
 	["ミクロネシア連邦","FM"],["ソロモン諸島","SB"],["モンテネグロ","ME"],["米領サモア","AS"],["パキスタン","PK"]]
 	end
-
 
   private
 	def mytrip_params

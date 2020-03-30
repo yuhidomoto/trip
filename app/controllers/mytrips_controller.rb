@@ -24,7 +24,6 @@ class MytripsController < ApplicationController
 	def index
 		@mytrips = Mytrip.all
 		@user = current_user
-	  @country_list = country_list
 		@region_americas = Mytrip.where(region: "Americas")
 		@region_europe = Mytrip.where(region: "Europe")
 		@region_asia = Mytrip.where(region: "Asia")
@@ -54,7 +53,6 @@ class MytripsController < ApplicationController
 		@comment = Comment.new
 		country_name = @mytrip.country
 		@country = ISO3166::Country.new(country_name)
-		@country_list = country_list
 		@hash = Gmaps4rails.build_markers(@mytrip) do |place, marker|
 	    marker.lat @country.latitude
 	    marker.lng @country.longitude
