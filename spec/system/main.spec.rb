@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'ユーザー権限のテスト'  do
   let!(:user) { create(:user) }
   let!(:mytrip) { create(:mytrip, user: user) }
+
   describe 'ログインしていない場合' do
     context '投稿関連のURLにアクセス' do
       it '一覧画面に遷移できない' do

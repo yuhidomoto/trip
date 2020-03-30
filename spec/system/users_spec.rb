@@ -20,7 +20,7 @@ RSpec.describe User, type: :system do
 			        fill_in 'user[password]', with: 'yuhi44'
 			        fill_in 'user[password_confirmation]', with: 'yuhi44'
 			        click_button 'Sign up'
-			        expect(current_path).to eq(root_path)
+			        expect(current_path).to eq(mytrips_path)
 				end
 
 				it '新規登録に失敗' do
@@ -47,7 +47,7 @@ RSpec.describe User, type: :system do
 		        fill_in 'user[password]', with: user.password
 		        click_button 'Log in'
 		        # 現在のページが特定のパスであることを検証
-		        expect(current_path).to eq(root_path)
+		        expect(current_path).to eq(mytrips_path)
 				end
 
 				it 'ログインに失敗' do

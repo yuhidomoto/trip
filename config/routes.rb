@@ -20,10 +20,10 @@ Rails.application.routes.draw do
 	resources :users
 
   resources :mytrips do
-  resource :favorites, only: [:create, :destroy]
-  resource :comments, only: [:create, :destroy]
-  collection do
-    get 'search' => 'searchs#search'
-  end
+    resource :favorites, only: [:create, :destroy]
+    resource :comments, only: [:create, :destroy]
+    collection do
+      get 'search' => 'searchs#search'
+    end
   end
 end
