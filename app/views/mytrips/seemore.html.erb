@@ -12,11 +12,11 @@
         <div id="page_top"><a href="#"></a></div>
         <%= link_to "Post page", new_mytrip_path,class: "col-xs-2 col-xs-offset-9 new-btn" %>
     		<%= link_to "Posts list", mytrips_path, class: "col-xs-2 col-xs-offset-9 new-btn" %>
-        <div class="text-center">
+      </div>
+      <div class="text-center">
           <div class ="pagenate center">
             <%= paginate @mytrips, class: "paginate" %>
           </div>
-        </div>
       </div>
 	  </div>
   </div>

@@ -25,7 +25,7 @@ class Admins::MytripsController < ApplicationController
 		end
 	end
 
-		def show
+	def show
 		@comment = Comment.new
 		@mytrip = Mytrip.find(params[:id])
 		country_name = @mytrip.country
@@ -38,19 +38,19 @@ class Admins::MytripsController < ApplicationController
 	 @country_list = country_list
 	end
 
-def update
-	@mytrip = Mytrip.find(params[:id])
-	@user = @mytrip.user
-	@country_list = country_list
-  if @mytrip.update(mytrip_params)
-  	country = ISO3166::Country.new(@mytrip.country)
-		@mytrip.region = country.region
-		@mytrip.save
-		redirect_to admins_mytrips_path, notice: "アップデートが完了しました !"
-  else
-  	render "edit"
-  end
-end
+	def update
+		@mytrip = Mytrip.find(params[:id])
+		@user = @mytrip.user
+		@country_list = country_list
+	  if @mytrip.update(mytrip_params)
+	  	country = ISO3166::Country.new(@mytrip.country)
+			@mytrip.region = country.region
+			@mytrip.save
+			redirect_to admins_mytrips_path, notice: "アップデートが完了しました !"
+	  else
+	  	render "edit"
+		end
+	end
 
 	def destroy
 		mytrip = Mytrip.find(params[:id])
