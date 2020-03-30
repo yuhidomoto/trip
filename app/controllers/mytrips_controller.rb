@@ -34,15 +34,15 @@ class MytripsController < ApplicationController
 
 	def seemore
 		if params[:category] == "Asia"
-			@mytrips = Mytrip.where(region: "Asia").page(params[:page]).per(9)
+			@mytrips = Mytrip.where(region: "Asia").page(params[:page]).per(6)
 		elsif params[:category] == "Europe"
-			@mytrips = Mytrip.where(region: "Europe").page(params[:page]).per(9)
+			@mytrips = Mytrip.where(region: "Europe").page(params[:page]).per(6)
 		elsif params[:category] == "Americas"
-			@mytrips = Mytrip.where(region: "Americas").page(params[:page]).per(9)
+			@mytrips = Mytrip.where(region: "Americas").page(params[:page]).per(6)
 		elsif params[:category] == "Africa"
-			@mytrips = Mytrip.where(region: "Africa").page(params[:page]).per(9)
+			@mytrips = Mytrip.where(region: "Africa").page(params[:page]).per(6)
 		elsif params[:category] == "Oceania"
-			@mytrips = Mytrip.where(region: "Oceania").page(params[:page]).per(9)
+			@mytrips = Mytrip.where(region: "Oceania").page(params[:page]).per(6)
 		else
 			redirect_to mytrips_path
 		end
