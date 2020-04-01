@@ -33,11 +33,11 @@
 }
 
 header {
-	width:930px;
-	margin-right: auto;
-	margin-left : auto;
-	height: 20px;
-	line-height: 30px;
+  padding-left: 185px;
+	height: 63px;
+	line-height: 5px;
+  width:100%;
+  background-color:rgba(255,255,255,0.85);
 }
 
 footer {
@@ -55,6 +55,7 @@ footer {
 .pagenate {
   margin-top: 10px;
 }
+
 
 //--------------------------ページ先頭へ戻る
 
