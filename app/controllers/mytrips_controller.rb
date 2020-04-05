@@ -14,6 +14,10 @@ class MytripsController < ApplicationController
 		country = ISO3166::Country.new(@mytrip.country)
 		@mytrip.region = country.region
 		if @mytrip.save
+			tags = Vision.get_image_data(@mytrip.image)
+      	tags.each do |tag|
+        	@mytrip.tags.create(name: tag)
+    		end
 			redirect_to mytrip_path(@mytrip.id)
 			flash[:notice] = "新規投稿に成功しました !"
 		else

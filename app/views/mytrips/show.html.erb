@@ -66,10 +66,13 @@
             </script>
           </div>
           <div class="col-xs-6" >
-          <%= attachment_image_tag @mytrip, :image, :fill, 360, 260, format: 'jpeg', size:"460x320" %>
+            <%= attachment_image_tag @mytrip, :image, :fill, 360, 260, format: 'jpeg', size:"460x320" %>
+            <h4>
+              <% @mytrip.tags.each do |tag| %>
+                <span class="label label-default"><%= tag.name %></span>
+              <% end %>
+            </h4>
           </div>
-        </div>
-           <br>
            <div class="comment2">
             <h4><strong>作成日時　<%= @mytrip.created_at.strftime('%Y/%m/%d') %></strong></h4>
           </div>
