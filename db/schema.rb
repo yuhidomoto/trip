@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_28_072323) do
+ActiveRecord::Schema.define(version: 2020_04_05_050603) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -70,6 +70,13 @@ ActiveRecord::Schema.define(version: 2020_03_28_072323) do
     t.string "area"
     t.string "country"
     t.integer "year"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.integer "mytrip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
