@@ -78,6 +78,10 @@ class MytripsController < ApplicationController
 		@user = current_user
 		@country_list = country_list
 		if @mytrip.update(mytrip_params)
+			tags = Vision.get_image_data(@mytrip.image)
+      	tags.each do |tag|
+        	@mytrip.tags.create(name: tag)
+    		end
 			country = ISO3166::Country.new(@mytrip.country)
 			@mytrip.region = country.region
 			@mytrip.save
