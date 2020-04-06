@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   @mytrip = Mytrip.find(params[:mytrip_id])
   comment = current_user.comments.new(comment_params)
   comment.mytrip_id = @mytrip.id
+  comment.score = Language.get_data(params[:comment][:body])
   comment.save
  end
 

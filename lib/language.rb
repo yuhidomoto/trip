@@ -20,6 +20,8 @@ module Language
       request['Content-Type'] = 'application/json'
       response = https.request(request, params)
       # APIレスポンス出力
+      pp uri
+      pp response.body
       JSON.parse(response.body)['documentSentiment']['score']
     end
   end

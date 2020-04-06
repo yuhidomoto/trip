@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_050603) do
+ActiveRecord::Schema.define(version: 2020_04_05_232318) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_050603) do
     t.integer "mytrip_id"
     t.integer "user_id"
     t.string "body"
+    t.decimal "score", precision: 5, scale: 3
   end
 
   create_table "favorites", force: :cascade do |t|

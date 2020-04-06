@@ -6,6 +6,7 @@
       </div>
       <div class="col-xs-7">
         <strong> <%= comment.body %> </strong>
+        <p><%= comment.score %></p>
       </div>
       <div class="col-xs-2">
         <% if comment.user == current_user %>
