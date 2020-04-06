@@ -6,11 +6,7 @@ module Vision
     def get_image_data(image_file)
       api_url = "https://vision.googleapis.com/v1/images:annotate?key=#{ENV['GOOGLE_VISION_API_KEY']}"
       # 画像をbase64にエンコード
-      # if Rails.env.production?
-      #   base64_image = Base64.encode64(open(image_file.url).read)
-      # else
       base64_image = Base64.encode64(open("#{Rails.root}/public/uploads/#{image_file.id}").read)
-      # end
       # APIリクエスト用のJSONパラメータ
       params = {
         requests: [{
@@ -30,11 +26,7 @@ module Vision
       https.use_ssl = true
       request = Net::HTTP::Post.new(uri.request_uri)
       request['Content-Type'] = 'application/json'
-      begin
         response = https.request(request, params)
-      rescue => e
-        logger.info e
-      end
       # APIレスポンス出力
       JSON.parse(response.body)['responses'][0]['labelAnnotations'].pluck('description').take(3)
     end
