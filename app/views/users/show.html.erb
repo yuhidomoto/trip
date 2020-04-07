@@ -34,7 +34,7 @@
 			</div>
 			<div class="col-xs-8">
 				<div class="font2">
-				  <% @user.mytrips.each do |mytrip| %>
+				  <% @mytrips.each do |mytrip| %>
 					  <% 	country = ISO3166::Country.new(mytrip.country) %>
 						<div class="col-md-4" >
 							<div class= "thumbnail trip_box3" >
