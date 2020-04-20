@@ -2,23 +2,23 @@ class Admins::MytripsController < ApplicationController
 	before_action :authenticate_admin!
 	def index
 		@mytrips = Mytrip.all
-		@region_americas = Mytrip.where(region: "Americas")
 		@region_europe = Mytrip.where(region: "Europe")
+		@region_americas = Mytrip.where(region: "Americas")
+		@region_africa = Mytrip.where(region: "Africa")
 		@region_asia = Mytrip.where(region: "Asia")
 		@region_oceania = Mytrip.where(region: "Oceania")
-		@region_africa = Mytrip.where(region: "Africa")
 	end
 
 	def seemore
-		if params[:category] == "アジア"
-			@mytrips = Mytrip.where(region: "Asia").page(params[:page]).per(6)
-		elsif params[:category] == "ヨーロッパ"
+		if params[:category] == "Europe"
 			@mytrips = Mytrip.where(region: "Europe").page(params[:page]).per(6)
-		elsif params[:category] == "アメリカ州"
+		elsif params[:category] == "Americas"
 			@mytrips = Mytrip.where(region: "Americas").page(params[:page]).per(6)
-		elsif params[:category] == "アフリカ"
+		elsif params[:category] == "Africa"
 			@mytrips = Mytrip.where(region: "Africa").page(params[:page]).per(6)
-		elsif params[:category] == "オセアニア"
+		elsif params[:category] == "Asia"
+			@mytrips = Mytrip.where(region: "Asia").page(params[:page]).per(6)
+		elsif params[:category] == "Oceania"
 			@mytrips = Mytrip.where(region: "Oceania").page(params[:page]).per(6)
 		else
 			redirect_to admins_mytrips_path

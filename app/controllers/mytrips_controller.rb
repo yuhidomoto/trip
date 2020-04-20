@@ -14,12 +14,18 @@ class MytripsController < ApplicationController
 		country = ISO3166::Country.new(@mytrip.country)
 		@mytrip.region = country.region
 		if @mytrip.save
-			tags = Vision.get_image_data(@mytrip.image)
-      	tags.each do |tag|
-        	@mytrip.tags.create(name: tag)
-    		end
-			redirect_to mytrip_path(@mytrip.id)
+			tags = []
+			# image(画像)が存在してる場合Visionで処理をする
+			if @mytrip.image
+				tags = Vision.get_image_data(@mytrip.image)
+			end
+
+	      	tags.each do |tag|
+	        	@mytrip.tags.create(name: tag)
+	    	end
+
 			flash[:notice] = "新規投稿に成功しました !"
+			redirect_to mytrip_path(@mytrip.id)
 		else
 			render "new"
 		end
@@ -28,22 +34,22 @@ class MytripsController < ApplicationController
 	def index
 		@mytrips = Mytrip.all
 		@user = current_user
-		@region_americas = Mytrip.where(region: "Americas")
 		@region_europe = Mytrip.where(region: "Europe")
+		@region_americas = Mytrip.where(region: "Americas")
+		@region_africa = Mytrip.where(region: "Africa")
 		@region_asia = Mytrip.where(region: "Asia")
 		@region_oceania = Mytrip.where(region: "Oceania")
-		@region_africa = Mytrip.where(region: "Africa")
 	end
 
 	def seemore
-		if params[:category] == "Asia"
-			@mytrips = Mytrip.where(region: "Asia").page(params[:page]).per(6)
-		elsif params[:category] == "Europe"
+		if params[:category] == "Europe"
 			@mytrips = Mytrip.where(region: "Europe").page(params[:page]).per(6)
 		elsif params[:category] == "Americas"
 			@mytrips = Mytrip.where(region: "Americas").page(params[:page]).per(6)
 		elsif params[:category] == "Africa"
 			@mytrips = Mytrip.where(region: "Africa").page(params[:page]).per(6)
+		elsif params[:category] == "Asia"
+			@mytrips = Mytrip.where(region: "Asia").page(params[:page]).per(6)
 		elsif params[:category] == "Oceania"
 			@mytrips = Mytrip.where(region: "Oceania").page(params[:page]).per(6)
 		else
