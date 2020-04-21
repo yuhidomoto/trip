@@ -4,7 +4,7 @@
 ## 概要
 どの国へ行こうか悩んでいる人のために、ガイドブックを手に取る前に様々な国の情報を提供し、旅行先を選ぶ手助けになれたらという思いを込めて作った旅行口コミ投稿サイトです。<br> 会員登録後、ユーザーは旅行の思い出を投稿し、他のユーザーの投稿を見ることができます。
 
-![概要](/app/assets/images/readme-about.jpg)
+![概要](/app/assets/images/readme-about2.jpg)
 
 ## バージョン
 
@@ -38,8 +38,8 @@
 ### 投稿一覧表示
 投稿が5つのジャンル（大陸）に自動的に振り分けられます。
 投稿一覧ページには、ジャンルごとに3つまで表示し、「もっと見るページ」にジャンル内の投稿を一覧表示することによって、ユーザーが見やすいように作成しました。
-![ゲーム投稿１](/app/assets/images/readme-index.jpg)<br><br>
-![ゲーム投稿２](/app/assets/images/readme-seemore.jpg)
+![投稿１](/app/assets/images/readme-index2.jpg)<br><br>
+![投稿２](/app/assets/images/readme-seemore.jpg)
 
 ### 検索機能
 あいまい検索によって、検索ワードに関連する投稿を全て洗い出すようにしました。
