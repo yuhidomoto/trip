@@ -4,7 +4,7 @@
 		<%= attachment_image_tag mytrip, :image, :fill, 300, 300, format: 'jpeg', fallback: "no_image.jpg", size:"310x308" %>
 		<div class="caption">
 	    <p>国名　<%= country.translation(:ja) %> (<%= mytrip.country %>)</p>
-	    <p><%= mytrip.important[0..40] %></p>
+	    <p><%= mytrip.important[0..39] %></p>
 	    <span class="iine__button2" id="mytrips_buttons_<%= mytrip.id %>">
          <%= render 'mytrips/favorite',mytrip: mytrip %>
       </span>
