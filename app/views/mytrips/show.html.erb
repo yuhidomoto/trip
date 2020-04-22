@@ -250,11 +250,11 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-xs-3" >
+            <div class="col-xs-2" >
               <div class="show2">
               </div>
             </div>
-            <div class="col-xs-8 col-xs-offset-1" >
+            <div class="col-xs-9 col-xs-offset-1" >
               <div class="box2">
               <% unless @mytrip.comments.present? %>
                 <p class="comment2">コメントを残してみましょう</p>
@@ -263,8 +263,7 @@
                   <br><%= render 'mytrips/comment',mytrip: @mytrip %>
                 </div>
               </div>
-            </div>
-            <div class="col-xs-8 col-xs-offset-1" >
+
               <div class="font">
                 <%= form_with model:[@mytrip, @comment], data: {remote: true} do |f| %>
                 <%= f.text_area :body, rows:'4', class: "form-control" %>
