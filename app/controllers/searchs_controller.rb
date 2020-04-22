@@ -1,16 +1,35 @@
 class SearchsController < ApplicationController
 	before_action :authenticate_user!
-def search
+	def search
 	  @mytrips = Mytrip.search(params[:search])
 	  @country_list = country_list
+	   # 国名を検索の対象にする(↓のif文が無いと(例 TJ)と検索しなければ国名は検索に引っかからない)
 	  if @mytrips.count == 0
-	  	flash[:notice] = "0件です"
-	 end
+	  	begin
+	  		# @country_list = の配列の中に2つずつの配列が入っている。（二次元配列）
+	  		# その中の |a| に配列の(例 タジキスタン)だけを取り出す。→ a[0]
+	  		# [1]は配列の2番目(例 TJ)という意味
+	  		# a[0]とsearch params[1]が一致したら( a[0] == params[:search] }[1] )
+	  		# それをキーにして、もう一度 mytripの検索をしてくださいという命令 ↓
+		  	pp @country_list
+				v = @country_list.find{|a| a[0] == params[:search] }[1]
+				pp v
+				@mytrips = Mytrip.search(v)
+
+			# 例外処理（エラーが起きても処理を進める）
+			rescue => e
+      	pp e
+    	end
+	 	end
 	 	@country = {}
 		@mytrips.each do |mytrip|
 			country_name = mytrip.country
 			@country[mytrip.country] = ISO3166::Country.new(country_name)
 		end
+		# each文の中に下のif文を入れるとeach分が回らなくなってしまう
+		#if @mytrips.count == 0
+			#flash[:notice] = "0件です"
+		#end
 	end
 
 	def country_list
