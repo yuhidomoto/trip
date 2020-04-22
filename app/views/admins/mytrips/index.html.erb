@@ -14,9 +14,9 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
         <div id="page_top"><a href="#"></a></div>
 
-      <br><h2>ー　投稿一覧　ー</h2>
+      <br><h3><strong>　投稿一覧　</strong></h3>
       <div class="row">
-        <h3>　ヨーロッパ</h3>
+        <div class="font">　Europe</div>
         <% @region_europe.first(3).each do |europe| %>
           <%= render 'trip', mytrip: europe %>
         <% end %>
@@ -24,7 +24,7 @@
       </div>
 
       <div class="row">
-        <h3>　アメリカ州</h3>
+        <div class="font">　Americas</div>
         <% @region_americas.first(3).each do |americas| %>
           <%= render 'trip', mytrip: americas %>
         <% end %>
@@ -32,7 +32,7 @@
       </div>
 
       <div class="row">
-        <h3>　アフリカ</h3>
+        <div class="font">　Africa</div>
         <% @region_africa.first(3).each do |africa| %>
           <%= render 'trip', mytrip: africa %>
         <% end %>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="row">
-        <h3>　アジア</h3>
+        <div class="font">　Asia</div>
         <% @region_asia.first(3).each do |asia| %>
           <%= render 'trip', mytrip: asia %>
         <% end %>
@@ -48,7 +48,7 @@
       </div>
 
       <div class="row">
-        <h3>　オセアニア</h3>
+        <div class="font">　Oceania</div>
         <% @region_oceania.first(3).each do |oceania| %>
           <%= render 'trip', mytrip: oceania %>
         <% end %>
