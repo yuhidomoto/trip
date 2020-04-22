@@ -8,14 +8,14 @@
           <div class="row">
           <div class="col-md-4" >
             <div class= "thumbnail trip_box" >
-              <%= attachment_image_tag mytrip, :image, :fill, 300, 300, format: 'jpeg', fallback: "no_image.jpg", size:"325x325" %>
+              <%= attachment_image_tag mytrip, :image, :fill, 300, 300, format: 'jpeg', fallback: "no_image.jpg", size:"310x308" %>
               <div class="caption">
                 <p>国名　<%= @country[mytrip.country].translation(:ja) %> (<%= mytrip.country %>)</p>
                 <p><%= mytrip.important[0..40] %></p>
                 <span class="iine__button2" id="mytrips_buttons_<%= mytrip.id %>">
                     <%= render 'mytrips/favorite',mytrip: mytrip %>
                 </span>
-          　         コメント<%= mytrip.comments.count %>件　<br><br>
+          　         コメント<%= mytrip.comments.count %>件　<br>
                     <%= link_to "Details",mytrip_path(mytrip.id), class: "btn btn-default" %>
               </div>
             </div>
