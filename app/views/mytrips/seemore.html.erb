@@ -1,22 +1,26 @@
 <div class="container">
-  <div class="visual">
+  <div class="seemore-visual">
   	<div class="row">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-        <div id="page_top"><a href="#"></a></div>
-  		<div class="font">　<%= params[:category] %></div>
-      <div class="font2">
-    		<% @mytrips.each do |mytrip| %>
-    	  	<%= render 'mytrips/trip', mytrip: mytrip %>
-    		<% end %>
+      <div class="col-xs-10 col-xs-offset-1">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
         <div id="page_top"><a href="#"></a></div>
-        <%= link_to "Post page", new_mytrip_path,class: "col-xs-2 col-xs-offset-9 new-btn" %>
-    		<%= link_to "Posts list", mytrips_path, class: "col-xs-2 col-xs-offset-9 new-btn" %>
-      </div>
-	  </div>
-    <div class="text-center">
-      <div class ="pagenate center">
-        <%= paginate @mytrips, class: "paginate" %>
+        <div class="row">
+  		    <div class="font">　<%= params[:category] %></div>
+          <div class="font2">
+    		    <% @mytrips.each do |mytrip| %>
+    	  	    <%= render 'mytrips/trip', mytrip: mytrip %>
+    		    <% end %>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+            <div id="page_top"><a href="#"></a></div>
+            <%= link_to "Post page", new_mytrip_path,class: "col-xs-2 col-xs-offset-9 new-btn" %>
+    		    <%= link_to "Posts list", mytrips_path, class: "col-xs-2 col-xs-offset-9 new-btn" %>
+          </div>
+	      </div>
+        <div class="text-center">
+          <div class ="pagenate center">
+            <%= paginate @mytrips, class: "paginate" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

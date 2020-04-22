@@ -29,7 +29,6 @@
   margin: 0 auto;
   padding-top: 80px;
   padding-bottom: 10px;
-  margin: 0 auto;
 }
 
 header {
@@ -227,52 +226,52 @@ footer {
   height: 175px;
   background-size: cover;
 }
- .box1 {
-    position: relative;
-    margin: 1.5em 0;
-    padding: 1.5em 1.5em;
-    border: solid 3px #a77e40;
-    border-radius: 8px;
-    color: #505050;
+.box1 {
+  position: relative;
+  margin: 1.5em 0;
+  padding: 1.5em 1.5em;
+  border: solid 3px #a77e40;
+  border-radius: 8px;
+  color: #505050;
 }
 .box1 .box-title {
-    position: absolute;
-    display: inline-block;
-    top: -13px;
-    left: 10px;
-    padding: 0 9px;
-    line-height: 1;
-    font-size: 19px;
-    background: #FFF;
-    color: #a77e40;
-    font-weight: bold;
+  position: absolute;
+  display: inline-block;
+  top: -13px;
+  left: 10px;
+  padding: 0 9px;
+  line-height: 1;
+  font-size: 19px;
+  background: #FFF;
+  color: #a77e40;
+  font-weight: bold;
 }
 .box1 p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .box2 {
-    margin:2em 0;
-    position: relative;
-    padding: 0.5em 1.5em;
-    border-top: solid 3px #505050;
+  margin:2em 0;
+  position: relative;
+  padding: 0.5em 1.5em;
+  border-top: solid 3px #505050;
     border-bottom: solid 3px #505050;
 }
 .box2:before, .box2:after{
-    content: '';
-    position: absolute;
-    top: -10px;
-    width: 2px;
-    height: -webkit-calc(100% + 20px);
-    height: calc(100% + 20px);
-    background-color: #505050;
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: -webkit-calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-color: #505050;
 }
 .box2:before {left: 10px;}
 .box2:after {right: 10px;}
 .box2 p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .comment2 {
   color: #a77e40;
@@ -303,6 +302,12 @@ footer {
 }
  .visual {
   width: 97%;
+  background-image: image-url("gold3.jpg");
+  background-repeat:  no-repeat;
+  background-size: cover;
+ }
+
+ .seemore-visual {
   background-image: image-url("gold3.jpg");
   background-repeat:  no-repeat;
   background-size: cover;
