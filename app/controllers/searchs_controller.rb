@@ -4,6 +4,7 @@ def search
 	  @mytrips = Mytrip.search(params[:search])
 	  @country_list = country_list
 	  if @mytrips.count == 0
+	  	flash[:notice] = "0件です"
 	 end
 	 	@country = {}
 		@mytrips.each do |mytrip|
