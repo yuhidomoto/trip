@@ -7,10 +7,16 @@ class MytripsController < ApplicationController
 	end
 
 	def create
+		# createやupdateは、(mytrip_params)を書く。ここではフォームで入力されたデータを受け取っている。
+        # paramsはRailsで送られてきた値を受け取るためのメソッド。
+        # requireでデータのオブジェクト名(ここでは:mytrip)を指定し、permitでキー(:year,:month,:season...)を指定している。
+		# これにより、mytrip_paramsの中にフォームで入力された全データが格納される。
 		@mytrip = Mytrip.new(mytrip_params)
 		@user = current_user
 		@mytrip.user_id  = @user.id
 		@country_list = country_list
+		# (@mytrip.country)→ 新規投稿時の入力した国（例"TJ"
+		# countryは TJ のgem内全てのデータが入る("alpha3"=>"TJK","alt_currency"=>"RUB", "country_code"=>"992"...)
 		country = ISO3166::Country.new(@mytrip.country)
 		@mytrip.region = country.region
 		if @mytrip.save
@@ -32,6 +38,7 @@ class MytripsController < ApplicationController
 	end
 
 	def index
+		# 全部取り出すため(params[:id])は付けない
 		@mytrips = Mytrip.all
 		@user = current_user
 		@region_europe = Mytrip.where(region: "Europe")
@@ -58,15 +65,15 @@ class MytripsController < ApplicationController
 	end
 
 	def show
+		# 一つだけ取り出すため(params[:id])が必要。データを1件取得
 		@mytrip = Mytrip.find(params[:id])
 		@user = current_user
 		@comment = Comment.new
-		country_name = @mytrip.country
-		@country = ISO3166::Country.new(country_name)
+		@country = ISO3166::Country.new(@mytrip.country)
 		@hash = Gmaps4rails.build_markers(@mytrip) do |place, marker|
-	    marker.lat @country.latitude
-	    marker.lng @country.longitude
-	    marker.infowindow place.country
+		    marker.lat @country.latitude
+		    marker.lng @country.longitude
+		    marker.infowindow place.country
 		end
 	end
 
@@ -75,7 +82,7 @@ class MytripsController < ApplicationController
 		@mytrip = Mytrip.find(params[:id])
 		@country_list = country_list
 		if @mytrip.user.id != current_user.id
-	   	redirect_to mytrip_path(mytrip.id)
+	   		redirect_to mytrip_path(mytrip.id)
 	 	end
 	end
 
@@ -85,9 +92,9 @@ class MytripsController < ApplicationController
 		@country_list = country_list
 		if @mytrip.update(mytrip_params)
 			tags = Vision.get_image_data(@mytrip.image)
-      	tags.each do |tag|
-        	@mytrip.tags.create(name: tag)
-    		end
+	      	tags.each do |tag|
+	        	@mytrip.tags.create(name: tag)
+	    	end
 			country = ISO3166::Country.new(@mytrip.country)
 			@mytrip.region = country.region
 			@mytrip.save
@@ -99,11 +106,12 @@ class MytripsController < ApplicationController
 
 	def destroy
 		mytrip = Mytrip.find(params[:id])
-  	mytrip.destroy
-  	redirect_to mytrips_path, notice: "削除が完了しました !"
+  		mytrip.destroy
+  		redirect_to mytrips_path, notice: "削除が完了しました !"
 	end
 
 	def country_list
+		# countries gemでは、国名を日本語名で表示する場合、もともとがアルファベット2文字の表示のため、配列で全世界のパターンを定義する必要がある
 		@country_list = [["タジキスタン","TJ"],["ジャマイカ","JM"],["ハイチ","HT"],["サントメ・プリンシペ","ST"],["モントセラト","MS"],["アラブ首長国連邦","AE"],
 	["オランダ","NL"],["ルクセンブルク","LU"],["ベリーズ","BZ"],["イラン・イスラム共和国","IR"],["ボリビア","BO"],["ウルグアイ","UY"],["ガーナ","GH"],
 	["サウジアラビア","SA"],["コートジボワール","CI"],["サンマルタン(仏領)","MF"],["フランス南方領土","TF"],["アングイラ","AI"],["カタール","QA"],
@@ -142,7 +150,9 @@ class MytripsController < ApplicationController
 	end
 
 	private
+	# ↓モデル名_params」とすることが多い
 	def mytrip_params
+		# カラム名は『image_id』だがここでは『image』と書く
 		params.require(:mytrip).permit(:name,:genre_id,:gender,:age,:image,:country,:time_difference,:climate,:year,:month,:season,:security,:prices,:traffic,:flight_time,:airline,:airline_comment,:with_whom,:days,:total_price,:bathroom,:card,:tip,:language,:must,:good_point,:bad_point,:important,:address,:area,:latitude,:longitude)
 	end
 end
