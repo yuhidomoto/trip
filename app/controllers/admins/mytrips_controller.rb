@@ -28,8 +28,7 @@ class Admins::MytripsController < ApplicationController
 	def show
 		@comment = Comment.new
 		@mytrip = Mytrip.find(params[:id])
-		country_name = @mytrip.country
-		@country = ISO3166::Country.new(country_name)
+		@country = ISO3166::Country.new(c@mytrip.country)
 	end
 
 	def edit

@@ -74,7 +74,9 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'pry-byebug'
 gem "refile",require: "refile/rails",github: 'manfe/refile'
+    # アプリケーション向けのファイル・アップロードのライブラリ
 gem "refile-mini_magick"
+    # サイズ調整など画像加工を行うgem
 gem 'jquery-rails'
 gem 'kaminari','~> 1.1.1'
 gem 'countries'
