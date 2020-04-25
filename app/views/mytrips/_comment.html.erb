@@ -1,5 +1,6 @@
 <% mytrip.comments.each do |comment| %>
   <!-- スコア0.0以上を表示 -->
+  <% comment.score = comment.score.blank? ? 0 : comment.score %>
   <% if comment.score >= 0.0 %>
     <div id="comment_<%= comment.id %>">
       <div class="row">
