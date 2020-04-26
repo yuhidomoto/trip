@@ -38,15 +38,16 @@
 ### 投稿一覧表示
 投稿が5つのジャンル（大陸）に自動的に振り分けられます。
 投稿一覧ページには、ジャンルごとに3つまで表示し、「もっと見るページ」にジャンル内の投稿を一覧表示することによって、ユーザーが見やすいように作成しました。
-![投稿１](/app/assets/images/readme-index2.jpg)<br><br>
-![投稿２](/app/assets/images/readme-seemore.jpg)
+
 
 ### 検索機能
 あいまい検索によって、検索ワードに関連する投稿を全て洗い出すようにしました。
+![検索](https://user-images.githubusercontent.com/59519897/80299440-573fcb00-87cf-11ea-883c-efa4e95e7661.gif)
 
 ### Google Map機能
 国名を投稿することにより、該当の国の日本語名、通貨、緯度、経度などが表示されます。
 その緯度、経度により、国の位置をGoogle Mapにて表示されます。
+![api](https://user-images.githubusercontent.com/59519897/80299357-afc29880-87ce-11ea-854f-498839c99607.gif)
 
 ## 最後に
 ご覧いただき、ありがとうございます。<br>
