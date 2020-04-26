@@ -47,7 +47,7 @@
 ### Google Map機能
 国名を投稿することにより、該当の国の日本語名、通貨、緯度、経度などが表示されます。
 その緯度、経度により、国の位置をGoogle Mapにて表示されます。
-![api](https://user-images.githubusercontent.com/59519897/80299357-afc29880-87ce-11ea-854f-498839c99607.gif)
+![api](https://user-images.githubusercontent.com/59519897/80299819-5d837680-87d2-11ea-874f-f07c1c9478ea.gif)
 
 ## 最後に
 ご覧いただき、ありがとうございます。<br>
