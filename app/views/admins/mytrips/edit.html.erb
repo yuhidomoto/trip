@@ -31,6 +31,8 @@
 	</div>
 </div>
 	<div class="form-horizontal" role="form">
+		<!-- ユーザー側とは異なり、アドミン側はform_forの後ろにURLを指定しなければならない。
+		URLはeditではなくupdateのPATCHを見ること。※form_forと（）は繋げる。スペース無し -->
 		<%= form_for(@mytrip, url:admins_mytrip_path(@mytrip), method: :patch) do |f| %>
 		<div class="col-xs-9 col-xs-offset-2">
 			<div class="form-group">

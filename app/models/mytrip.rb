@@ -18,6 +18,7 @@ class Mytrip < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
+  # selfはモデル名。ここはmytripモデル内なので、mytripが当てはまる。
   def self.search(search)
   	Mytrip.where('country LIKE ? or area LIKE ? or region LIKE ?  or year LIKE ? or airline LIKE ? or airline_comment LIKE ?
   	 or days LIKE ? or month LIKE ? or season LIKE ? or total_price LIKE ? or climate LIKE ? or prices LIKE ? or security LIKE ?

@@ -1,5 +1,6 @@
+<!--commentはhas manyのため、viewの記述はcomments。複数形になる。 -->
 <% mytrip.comments.each do |comment| %>
-  <!-- スコア0.0以上を表示 -->
+  <!-- スコア0.0以上を表示。コメントがない場合はスコア0と定義。 -->
   <% comment.score = comment.score.blank? ? 0 : comment.score %>
   <% if comment.score >= 0.0 %>
     <div id="comment_<%= comment.id %>">

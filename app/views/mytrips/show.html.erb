@@ -95,7 +95,9 @@
                  <div class="col-lg-3">
                    <div class="box1">
                     <span class="box-title">日本との時差</span>
+                    <!-- japanはcountries gemの"JP"だと定義する -->
                     <% japan = ISO3166::Country.new("JP") %>
+                    <!-- 時差は国の経度から日本の経度を引いて15で割る(1時間あたり、15度動くため) -->
                     <h4><%= ((@country.longitude - japan.longitude) / 15).round(2) %>時間</h4>
                    </div>
                 </div>
@@ -265,6 +267,9 @@
               </div>
 
               <div class="font">
+                <!-- 非同期通信はform forではなくform withを使う。form withの後ろにはモデルを記入。
+                この場合は、@book_commentだけだと不十分なため、@mytripを先頭にして何のcomment？か定義する。
+                この「remote true」が非同期通信の重要な要素のひとつ。 -->
                 <%= form_with model:[@mytrip, @comment], data: {remote: true} do |f| %>
                 <%= f.text_area :body, rows:'4', class: "form-control" %>
                 <%= f.submit "Submit", class: "btn btn-default pull-right" %><br><br>

@@ -6,6 +6,9 @@
 		<% end %>
     いいね　<%= mytrip.favorites.count %>
 <% else %>
+    <!-- コントローラ(受け取る側)には、Mytrip.find(params[:mytrip_id])と記載するが、
+        viewには基本「.id」(mytrip.id)と書く。なぜなら、渡す側はid(数字)を渡すため。
+        どのidを渡すかをまず考える。↓ この場合は、mytripのidを渡すためmytrip.idとなる。 -->
 		<%= link_to mytrip_favorites_path(mytrip.id), method: :post,remote: true do %>
 				<i class="far fa-heart"></i>
 		<% end %>
