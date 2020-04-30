@@ -296,7 +296,7 @@ footer {
   transition: .6s;
  }
 
-//---------------------mytrip index,seemore,show
+//---------------------mytrip index,seemore,show,search
 .trip_box {
   height: 466px;
 }
@@ -305,6 +305,11 @@ footer {
   background-image: image-url("gold3.jpg");
   background-repeat:  no-repeat;
   background-size: cover;
+ }
+
+ .visual-search {
+  width: 97%;
+  padding-top: 80px;
  }
 
  .seemore-visual {

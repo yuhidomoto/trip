@@ -2,7 +2,7 @@ class SearchsController < ApplicationController
 	include CountryList
 	before_action :authenticate_user!
 	def search
-	  @mytrips = Mytrip.search(params[:search])
+	  @mytrips = Mytrip.search(params[:search]).page(params[:page]).per(6)
 	  @country_list = return_country_list
 	   # 国名を検索の対象にする(↓のif文が無いと(例 TJ)と検索しなければ国名は検索に引っかからない)
 	  if @mytrips.count == 0
@@ -15,7 +15,7 @@ class SearchsController < ApplicationController
 		  	pp @country_list
 				v = @country_list.find{|a| a[0] == params[:search] }[1]
 				pp v
-				@mytrips = Mytrip.search(v)
+				@mytrips = Mytrip.search(v).page(params[:page]).per(6)
 
 			# 例外処理（エラーが起きても処理を進める）
 			rescue => e
