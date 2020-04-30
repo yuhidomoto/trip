@@ -6,7 +6,7 @@ class MytripsController < ApplicationController
 		@user = current_user
 		# return(自分で名付けたもの)_country_listを実行した結果が@country_listとなる
 		# return_country_listは concerns/country_list.rbに定義
-		@country_list = return_country_list
+		@country_list = [["タジキスタン","TJ"]]
 	end
 
 	def create

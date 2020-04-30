@@ -1,8 +1,8 @@
 module CountryList
   extend ActiveSupport::Concern
-  　# country_listをまとめるために当該ファイルを作成
-    # countries gemでは、国名を日本語名で表示する場合、もともとがアルファベット2文字の表示のため、
-    # 配列で全世界のパターンを定義する必要がある
+	# country_listをまとめるために当該ファイルを作成
+	# countries gemでは、国名を日本語名で表示する場合、もともとがアルファベット2文字の表示のため、
+	# 配列で全世界のパターンを定義する必要がある
   included do
   	def return_country_list
 	    return [["タジキスタン","TJ"],["ジャマイカ","JM"],["ハイチ","HT"],["サントメ・プリンシペ","ST"],["モントセラト","MS"],["アラブ首長国連邦","AE"],
