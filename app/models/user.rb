@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :mytrips, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :inquiries, dependent: :destroy
 
   validates :name, length: {maximum: 20, minimum: 2}
 

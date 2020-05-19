@@ -4,4 +4,5 @@ class Admin < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
   validates :name, length: {maximum: 20, minimum: 2}
+  has_many :inquiries, dependent: :destroy
 end
