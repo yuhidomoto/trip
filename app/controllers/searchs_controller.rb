@@ -19,7 +19,7 @@ class SearchsController < ApplicationController
 
 			# 例外処理（エラーが起きても処理を進める）
 			rescue => e
-      	pp e
+      	    pp e
     	end
 	 	end
 	 	# countryを初期化し、each文で回す
