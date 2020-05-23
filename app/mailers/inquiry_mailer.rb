@@ -1,13 +1,13 @@
 class InquiryMailer < ApplicationMailer
-  def admin_reply(admin,inquiry) #メソッドに対して引数を設定
-    @admin = admin
+  def admin_reply(user,inquiry) #メソッドに対して引数を設定
+    @user = user
     @inquiry = inquiry
-    mail to: @admin.email, subject: '【くわしめとりっぷ】 お問い合わせありがとうございます'
+    mail to: @user.email, subject: '【くわしめとりっぷ】 お問い合わせありがとうございます'
   end
 
-  def admin_replied(admin,inquiry)
-    @@admin = admin
+  def admin_replied(user,inquiry)
+    @user = user
     @inquiry = inquiry
-    mail to: @admin.email, subject: '【くわしめとりっぷ】 お問い合わせの件について'
+    mail to: @user.email, subject: '【くわしめとりっぷ】 お問い合わせの件について'
   end
 end

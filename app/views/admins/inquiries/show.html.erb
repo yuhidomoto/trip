@@ -1,0 +1,29 @@
+<div class="container"><br>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <h2><strong>お問い合わせ詳細</strong></h2><br>
+      <table class="table table-bordered">
+          <tr>
+            <th>お名前</th>
+            <th>タイトル</th>
+            <th>お問い合わせ内容</th>
+          </tr>
+          <tr>
+            <td><%= @inquiry.user.name %></td>
+            <td><%= @inquiry.title %></td>
+            <td><%= @inquiry.body %></td>
+          </tr>
+      </table>
+      <%= link_to "削除", admins_inquiry_path(@inquiry.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger" %>
+    </div>
+  </div><br><br><br>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <h2><strong>お問い合わせ返信</strong></h2><br>
+      <%= form_with model: @inquiry, url: admins_inquiry_path, local: true do |inquiry| %>
+        <%= inquiry.text_area :reply, class: 'form-control' %><br>
+        <%= inquiry.submit '返信',class: "col-xs-3 btn btn-default" %>
+      <% end %>
+    </div>
+  </div>
+</div>

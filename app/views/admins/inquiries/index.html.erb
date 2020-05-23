@@ -1,0 +1,19 @@
+<div class="container"><br>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <h2><strong>お問い合わせ一覧</strong></h2><br>
+      <table class="table table-bordered">
+        <tr>
+          <th>お名前</th>
+          <th>件名</th>
+        </tr>
+        <% @inquiries.each do |inquiry| %>
+          <tr>
+            <td><%= link_to inquiry.user.name, admins_user_path(inquiry.user.id) %></td>
+            <td><%= link_to inquiry.title, admins_inquiry_path(inquiry.id) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
