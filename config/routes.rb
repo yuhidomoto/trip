@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
   namespace :users do
-    resources :inquiries, only:[:index, :new, :create, :show]
+    resources :inquiries, only:[:new, :create]
   end
 
   # 機能
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   namespace :admins do
     resources :users, only: [:index,:show,:edit,:update,:destroy]
     resources :mytrips, only: [:index,:show,:edit,:update,:destroy]
-    resources :inquiries, only:[:index, :edit, :update, :show, :destroy]
+    resources :inquiries, only:[:index,:update, :show, :destroy]
     get 'top' => 'homes#top'
     get 'seemore' => 'mytrips#seemore'
   end
