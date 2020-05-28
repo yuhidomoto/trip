@@ -78,7 +78,7 @@ gem "refile",require: "refile/rails",github: 'manfe/refile'
 gem "refile-mini_magick"
     # サイズ調整など画像加工を行うgem
 gem 'jquery-rails'
-gem 'kaminari','~> 1.1.1'
+gem 'kaminari','~> 1.2.1'
 gem 'countries'
 gem "gmaps4rails"
 gem "geocoder"
